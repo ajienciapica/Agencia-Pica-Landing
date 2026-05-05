@@ -4,154 +4,210 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ajiencia Pica | Marketing que Pica 🔥</title>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; }
-    .hero-bg {
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(172, 37, 23, 0.85)), 
-                  url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat fixed;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000;
+      color: white;
     }
+
     .ají { color: #f3d847; }
-    .section-title { font-size: 3.5rem; line-height: 1.1; }
-    .card-hover {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    .glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: #ac2517;
+      filter: blur(180px);
+      opacity: 0.4;
+      top: -100px;
+      left: -100px;
     }
-    .card-hover:hover {
-      transform: translateY(-15px);
-      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-    }
-    .floating {
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(60px);
     }
   </style>
 </head>
-<body class="bg-zinc-950 text-white">
 
-  <!-- NAV -->
-  <nav class="fixed top-0 w-full bg-black/95 backdrop-blur-lg z-50 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-      <img src="Icono_Rojo.png" alt="Ajiencia Pica" class="h-11">
-      <div class="hidden md:flex items-center gap-10 text-sm font-medium">
-        <a href="#servicios" class="hover:text-[#f8ad47] transition">Servicios</a>
-        <a href="#sobre-mi" class="hover:text-[#f8ad47] transition">Sobre mí</a>
-        <a href="#contacto" class="hover:text-[#f8ad47] transition">Contacto</a>
-      </div>
+<body>
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-black/80 backdrop-blur-lg z-50 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+    <img src="Icono_Rojo.png" class="h-10">
+    <div class="hidden md:flex gap-10 text-sm">
+      <a href="#servicios" class="hover:text-[#f3d847]">Servicios</a>
+      <a href="#sobre-mi" class="hover:text-[#f3d847]">Sobre mí</a>
+      <a href="#contacto" class="hover:text-[#f3d847]">Contacto</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <header class="hero-bg h-screen flex items-center">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <img src="Logo_Negativo.png" alt="Ajiencia Pica" class="mx-auto h-48 md:h-56 mb-8 floating">
-      <h1 class="text-6xl md:text-8xl font-black leading-none mb-6 tracking-tighter">
-        MARKETING QUE <span class="ají">PICA</span> 🔥🌶️
+<!-- HERO -->
+<header class="h-screen flex items-center relative overflow-hidden">
+
+  <div class="glow"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+    <div>
+      <h1 class="text-6xl md:text-8xl font-black leading-[0.9]">
+        HACEMOS QUE<br>
+        TU MARCA<br>
+        <span class="ají">PIQUE</span>
       </h1>
-      <p class="text-3xl md:text-4xl mb-12 max-w-4xl mx-auto text-orange-100 font-light">
-        Tu marca es muy fome?<br>
-        <span class="font-bold">Nosotros la sazonamos y la hacemos quemar.</span>
+
+      <p class="mt-6 text-lg text-zinc-400 max-w-md">
+        Estrategia, creatividad y contenido que no pasa piola.
+        Si tu marca es fome, acá la prendemos fuego.
       </p>
-      <a href="#servicios" class="inline-block bg-[#ac2517] hover:bg-[#f8ad47] hover:text-black font-bold px-16 py-7 rounded-full text-2xl transition-all hover:scale-110">
-        VER SERVICIOS →
+
+      <a href="#contacto" class="inline-block mt-8 border border-white px-8 py-4 hover:bg-white hover:text-black transition">
+        HABLEMOS →
       </a>
     </div>
-  </header>
 
-  <!-- SOBRE MÍ -->
-  <section id="sobre-mi" class="py-28 bg-black">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div>
-          <img src="bastian.png" alt="Bastián Sanhueza" class="w-full rounded-3xl shadow-2xl">
+    <div>
+      <img src="Logo_Negativo.png" class="w-full opacity-90 hover:scale-105 transition duration-700">
+    </div>
+
+  </div>
+</header>
+
+<!-- SOBRE MI -->
+<section id="sobre-mi" class="py-32 bg-black">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+    <div class="fade-up">
+      <img src="bastian.png" class="rounded-3xl">
+    </div>
+
+    <div class="fade-up">
+      <h2 class="text-5xl md:text-7xl font-black mb-6">
+        SOY <span class="ají">BASTIÁN</span>
+      </h2>
+
+      <p class="text-zinc-400 text-lg leading-relaxed">
+        Publicista enfocado en hacer que las marcas dejen de ser normales.
+        Acá no hacemos contenido por hacer: hacemos que la gente mire, recuerde y actúe.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="py-32 bg-black">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <h2 class="text-5xl md:text-7xl font-black mb-20 fade-up">
+      LO QUE HACEMOS
+    </h2>
+
+    <div class="space-y-16">
+
+      <div class="group border-b border-white/10 pb-10 fade-up">
+        <div class="flex justify-between">
+          <h3 class="text-3xl md:text-5xl font-bold group-hover:text-[#f3d847]">
+            Branding
+          </h3>
+          <span class="text-zinc-500">01</span>
         </div>
-        <div class="space-y-6">
-          <h2 class="text-6xl font-bold">¡Hola! Soy <span class="ají">Bastián Sanhueza</span></h2>
-          <p class="text-3xl text-orange-300">Fundador de Ajiencia Pica</p>
-          <p class="text-xl text-zinc-400 leading-relaxed">
-            Egresado de Publicidad con una sola misión: hacer que las marcas dejen de ser "normales" y empiecen a picar fuerte en la mente de la gente.
-          </p>
-        </div>
+        <p class="text-zinc-400 mt-4 max-w-xl">
+          Diseño de marca con identidad real, no plantillas genéricas.
+        </p>
       </div>
-    </div>
-  </section>
 
-  <!-- SERVICIOS -->
-  <section id="servicios" class="py-28 bg-zinc-900">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-16">Servicios con <span class="ají">sabor</span> real 🌶️</h2>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-zinc-800 p-10 rounded-3xl card-hover">
-          <h3 class="text-3xl font-bold mb-8 text-[#f8ad47]">Diseño de Marca</h3>
-          <ul class="space-y-6 text-zinc-300 text-lg">
-            <li class="flex justify-between"><span>Diseño de Logo + Variantes</span><span class="font-bold">49.990.-</span></li>
-            <li class="flex justify-between"><span>Diseño de Marca Completo</span><span class="font-bold">119.000.-</span></li>
-          </ul>
+      <div class="group border-b border-white/10 pb-10 fade-up">
+        <div class="flex justify-between">
+          <h3 class="text-3xl md:text-5xl font-bold group-hover:text-[#f3d847]">
+            Redes Sociales
+          </h3>
+          <span class="text-zinc-500">02</span>
         </div>
-
-        <div class="bg-zinc-800 p-10 rounded-3xl card-hover">
-          <h3 class="text-3xl font-bold mb-8 text-[#f8ad47]">Redes Sociales</h3>
-          <ul class="space-y-6 text-zinc-300 text-lg">
-            <li class="flex justify-between"><span>Starter Pack Picante</span><span class="font-bold">49.990.-</span></li>
-            <li class="flex justify-between"><span>Gráfica para redes</span><span class="font-bold">14.990.- c/u</span></li>
-            <li class="flex justify-between"><span>Edición de Reels</span><span class="font-bold">24.990.- c/u</span></li>
-          </ul>
-        </div>
-
-        <div class="bg-zinc-800 p-10 rounded-3xl card-hover md:col-span-2">
-          <h3 class="text-3xl font-bold mb-8 text-[#f8ad47]">Community Manager</h3>
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="text-center card-hover">
-              <h4 class="font-bold text-xl">Básico</h4>
-              <p class="text-5xl font-bold mt-4">80.000.-</p>
-              <p class="text-zinc-400">/mes</p>
-            </div>
-            <div class="text-center border-2 border-[#f8ad47] rounded-3xl p-6 card-hover">
-              <h4 class="font-bold text-xl">Pro 🌶️</h4>
-              <p class="text-5xl font-bold mt-4">119.000.-</p>
-              <p class="text-zinc-400">/mes</p>
-            </div>
-            <div class="text-center card-hover">
-              <h4 class="font-bold text-xl">Picante 🌶️🔥</h4>
-              <p class="text-5xl font-bold mt-4">149.990.-</p>
-              <p class="text-zinc-400">/mes</p>
-            </div>
-          </div>
-        </div>
+        <p class="text-zinc-400 mt-4 max-w-xl">
+          Contenido que llama la atención y genera interacción.
+        </p>
       </div>
+
+      <div class="group border-b border-white/10 pb-10 fade-up">
+        <div class="flex justify-between">
+          <h3 class="text-3xl md:text-5xl font-bold group-hover:text-[#f3d847]">
+            Growth
+          </h3>
+          <span class="text-zinc-500">03</span>
+        </div>
+        <p class="text-zinc-400 mt-4 max-w-xl">
+          Estrategias para crecer con intención, no por inercia.
+        </p>
+      </div>
+
     </div>
-  </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="py-28 bg-gradient-to-b from-zinc-900 to-black text-center">
-    <div class="max-w-2xl mx-auto px-6">
-      <img src="Isotipo_Rojo.png" alt="Ajiencia Pica" class="mx-auto h-28 mb-8">
-      <h2 class="text-5xl font-bold mb-6">¿Listo para que tu marca <span class="ají">QUEME</span>? 🔥</h2>
-      <p class="text-xl text-zinc-400 mb-12">Hablemos y armemos algo que realmente destaque.</p>
-      
-      <form class="space-y-6 max-w-lg mx-auto">
-        <input type="text" placeholder="Tu nombre" class="w-full bg-zinc-800 border border-zinc-700 p-6 rounded-3xl focus:border-[#f8ad47]">
-        <input type="email" placeholder="Correo electrónico" class="w-full bg-zinc-800 border border-zinc-700 p-6 rounded-3xl focus:border-[#f8ad47]">
-        <textarea placeholder="Cuéntanos tu proyecto..." rows="6" class="w-full bg-zinc-800 border border-zinc-700 p-6 rounded-3xl focus:border-[#f8ad47]"></textarea>
-        <button type="submit" class="w-full bg-[#ac2517] hover:bg-[#f3d847] hover:text-black py-8 rounded-3xl font-bold text-2xl transition-all hover:scale-105">
-          ENVIAR MENSAJE PICANTE →
-        </button>
-      </form>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="bg-black py-16 text-center text-sm text-zinc-500">
-    © 2026 Ajiencia Pica • Santiago, Chile • Hecho con mucho ají y cariño 🌶️🔥
-  </footer>
+<!-- CTA -->
+<section id="contacto" class="py-32 text-center">
+  <div class="max-w-3xl mx-auto px-6 fade-up">
 
-  <!-- WhatsApp -->
-  <a href="https://wa.me/569XXXXXXXX" target="_blank" class="fixed bottom-8 right-8 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-4xl shadow-2xl hover:bg-green-600 transition z-50 hover:scale-110">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+    <h2 class="text-5xl md:text-7xl font-black mb-6">
+      ¿HACEMOS QUE TU<br><span class="ají">MARCA QUEME?</span>
+    </h2>
+
+    <p class="text-zinc-400 mb-10">
+      Escríbeme y armamos algo que realmente destaque.
+    </p>
+
+    <a href="https://wa.me/569XXXXXXXX" target="_blank"
+      class="inline-block bg-[#ac2517] px-10 py-6 text-xl font-bold hover:scale-105 transition">
+      HABLAR POR WHATSAPP →
+    </a>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-16 text-center text-sm text-zinc-500">
+  © 2026 Ajiencia Pica — Santiago, Chile
+</footer>
+
+<!-- ANIMACIONES -->
+<script>
+gsap.utils.toArray(".fade-up").forEach((el, i) => {
+  gsap.fromTo(el,
+    { opacity: 0, y: 60 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      delay: i * 0.1,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%"
+      }
+    }
+  );
+});
+</script>
+
+<!-- ScrollTrigger -->
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+</script>
 
 </body>
 </html>
