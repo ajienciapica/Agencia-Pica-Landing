@@ -9,23 +9,29 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     .hero-bg {
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(172, 37, 23, 0.75)), 
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(172, 37, 23, 0.75)), 
                   url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat fixed;
     }
     .ají { color: #f3d847; }
     .card-hover:hover {
-      transform: translateY(-12px) scale(1.04);
-      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+      transform: translateY(-15px) scale(1.05);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
     }
   </style>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="bg-zinc-950 text-white overflow-x-hidden">
 
   <!-- NAV -->
   <nav class="fixed top-0 w-full bg-black/95 backdrop-blur-md z-50 border-b border-orange-900">
     <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-      <img src="Icono_Rojo.png" alt="Ajiencia Pica" class="h-12">
+      <img src="Icono_Rojo.png" alt="Ajiencia Pica" class="h-12 floating">
       <div class="hidden md:flex gap-8 text-sm font-medium">
         <a href="#servicios" class="hover:text-[#f8ad47] transition">Servicios</a>
         <a href="#sobre-mi" class="hover:text-[#f8ad47] transition">Sobre mí</a>
@@ -34,12 +40,12 @@
     </div>
   </nav>
 
-  <!-- HERO - Estilo Meat.cl -->
-  <header class="hero-bg h-screen flex items-center">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <img src="Logo_Negativo.png" alt="Ajiencia Pica" class="mx-auto h-40 md:h-48 mb-6">
-      <h1 class="text-6xl md:text-7xl font-black leading-none mb-6">
-        MARKETING QUE <span class="ají">PICA</span> 🔥🌶️
+  <!-- HERO con más movimiento -->
+  <header class="hero-bg h-screen flex items-center relative">
+    <div class="max-w-6xl mx-auto px-6 text-center z-10">
+      <img src="Logo_Negativo.png" alt="Ajiencia Pica" class="mx-auto h-40 md:h-52 mb-6 floating">
+      <h1 class="text-6xl md:text-7xl font-black leading-none mb-6 tracking-tighter">
+        MARKETING QUE <span class="ají">PICA</span> <span class="text-6xl">🔥🌶️</span>
       </h1>
       <p class="text-2xl md:text-3xl mb-10 max-w-3xl mx-auto text-orange-100">
         Tu marca es muy fome?<br>
@@ -49,6 +55,10 @@
         VER SERVICIOS →
       </a>
     </div>
+
+    <!-- GIFs flotantes en hero -->
+    <img src="https://media.giphy.com/media/3o7aD2mQ8Uq0j1Q5q0/giphy.gif" class="absolute bottom-10 left-10 w-24 opacity-80 floating" style="animation-delay: 0.5s;">
+    <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" class="absolute top-20 right-10 w-28 opacity-80 floating" style="animation-delay: 1.2s;">
   </header>
 
   <!-- SOBRE MÍ -->
@@ -63,13 +73,8 @@
           <p class="text-2xl font-medium text-orange-300 mb-6">Fundador de Ajiencia Pica</p>
           <p class="text-zinc-300 text-lg leading-relaxed">
             Egresado de Publicidad y fanático de hacer marcas que no pasan desapercibidas. 
-            Creo que el marketing debe tener sabor, personalidad y mucho fuego.
+            Creo que el marketing debe tener sabor, personalidad y mucho fuego 🔥
           </p>
-          <a href="https://linkedin.com/in/bastián-alejandro-sanhueza-herrera-8bab25243?originalSubdomain=cl" 
-             target="_blank" class="inline-flex items-center gap-3 mt-8 text-[#f8ad47] hover:text-white transition text-lg">
-            <i class="fab fa-linkedin text-3xl"></i>
-            <span class="font-medium">Conóceme en LinkedIn →</span>
-          </a>
         </div>
       </div>
     </div>
@@ -126,7 +131,7 @@
   <!-- CONTACTO -->
   <section id="contacto" class="py-28 bg-gradient-to-b from-zinc-900 to-black text-center">
     <div class="max-w-2xl mx-auto px-6">
-      <img src="Isotipo_Rojo.png" alt="Ajiencia Pica" class="mx-auto h-28 mb-8">
+      <img src="Isotipo_Rojo.png" alt="Ajiencia Pica" class="mx-auto h-28 mb-8 floating">
       <h2 class="text-5xl font-bold mb-6">¿Listo para que tu marca <span class="ají">QUEME</span>? 🔥</h2>
       <p class="text-xl text-zinc-400 mb-10">Hablemos y armemos algo que realmente destaque.</p>
       
