@@ -9,20 +9,21 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     .hero-bg {
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(172, 37, 23, 0.7)), 
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(172, 37, 23, 0.75)), 
                   url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat fixed;
     }
     .ají { color: #f3d847; }
     .card-hover:hover {
-      transform: translateY(-10px) scale(1.03);
-      transition: all 0.4s ease;
+      transform: translateY(-12px) scale(1.04);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
   </style>
 </head>
 <body class="bg-zinc-950 text-white">
 
   <!-- NAV -->
-  <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-orange-900">
+  <nav class="fixed top-0 w-full bg-black/95 backdrop-blur-md z-50 border-b border-orange-900">
     <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
       <img src="Icono_Rojo.png" alt="Ajiencia Pica" class="h-12">
       <div class="hidden md:flex gap-8 text-sm font-medium">
@@ -33,17 +34,18 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO - Estilo Meat.cl -->
   <header class="hero-bg h-screen flex items-center">
     <div class="max-w-6xl mx-auto px-6 text-center">
-      <img src="Logo_Negativo.png" alt="Ajiencia Pica" class="mx-auto h-44 md:h-52 mb-8">
-      <h1 class="text-6xl md:text-7xl font-black leading-tight mb-6">
-        MARKETING QUE <span class="ají">QUEMA</span> 🔥🌶️
+      <img src="Logo_Negativo.png" alt="Ajiencia Pica" class="mx-auto h-40 md:h-48 mb-6">
+      <h1 class="text-6xl md:text-7xl font-black leading-none mb-6">
+        MARKETING QUE <span class="ají">PICA</span> 🔥🌶️
       </h1>
       <p class="text-2xl md:text-3xl mb-10 max-w-3xl mx-auto text-orange-100">
-        Tu marca es muy fome? Nosotros la sazonamos.
+        Tu marca es muy fome?<br>
+        <span class="font-bold">Nosotros la sazonamos y la hacemos quemar.</span>
       </p>
-      <a href="#servicios" class="inline-block bg-[#ac2517] hover:bg-[#f8ad47] hover:text-black font-bold px-12 py-6 rounded-full text-xl transition-all hover:scale-110">
+      <a href="#servicios" class="inline-block bg-[#ac2517] hover:bg-[#f8ad47] hover:text-black font-bold px-14 py-6 rounded-full text-xl transition-all hover:scale-110">
         VER SERVICIOS →
       </a>
     </div>
@@ -60,11 +62,11 @@
           <h2 class="text-5xl font-bold mb-6">¡Hola! Soy <span class="ají">Bastián Sanhueza</span> 👋</h2>
           <p class="text-2xl font-medium text-orange-300 mb-6">Fundador de Ajiencia Pica</p>
           <p class="text-zinc-300 text-lg leading-relaxed">
-            Egresado de Publicidad y apasionado por hacer que las marcas no pasen desapercibidas. 
-            Creo en el marketing con alma, sabor y mucho fuego 🔥
+            Egresado de Publicidad y fanático de hacer marcas que no pasan desapercibidas. 
+            Creo que el marketing debe tener sabor, personalidad y mucho fuego.
           </p>
           <a href="https://linkedin.com/in/bastián-alejandro-sanhueza-herrera-8bab25243?originalSubdomain=cl" 
-             target="_blank" class="inline-flex items-center gap-3 mt-8 text-[#f8ad47] hover:text-white transition">
+             target="_blank" class="inline-flex items-center gap-3 mt-8 text-[#f8ad47] hover:text-white transition text-lg">
             <i class="fab fa-linkedin text-3xl"></i>
             <span class="font-medium">Conóceme en LinkedIn →</span>
           </a>
