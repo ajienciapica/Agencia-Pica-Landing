@@ -85,19 +85,30 @@
 </header>
 
 <!-- SOBRE MI -->
-<section id="sobre-mi" class="py-32 bg-black">
+<section id="sobre-mi" class="py-32 bg-black relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-    <div class="fade-up">
-      <img src="bastian.png" class="rounded-3xl shadow-2xl">
+    <!-- IMAGEN PRO -->
+    <div class="relative flex justify-center fade-up">
+
+      <!-- Glow detrás -->
+      <div class="absolute w-[400px] h-[400px] bg-[#ac2517] blur-[120px] opacity-40"></div>
+
+      <!-- Forma orgánica -->
+      <div class="absolute w-[300px] h-[300px] bg-[#f3d847] opacity-20 rounded-full blur-3xl top-10 left-10"></div>
+
+      <!-- Imagen -->
+      <img src="bastian.png"
+        class="relative z-10 w-[350px] md:w-[420px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] hover:scale-105 transition duration-500">
     </div>
 
+    <!-- TEXTO -->
     <div class="fade-up">
-      <h2 class="text-5xl md:text-7xl font-black mb-6">
-        SOY <span class="ají">BASTIÁN</span>
+      <h2 class="text-5xl md:text-7xl font-black mb-6 leading-[0.9]">
+        SOY <span class="ají">BASTIÁN SANHUEZA</span>
       </h2>
 
-      <p class="text-zinc-400 text-lg leading-relaxed">
+      <p class="text-zinc-400 text-lg leading-relaxed max-w-xl">
         Egresado de Publicidad con una misión clara:
         hacer que las marcas dejen de ser normales y empiecen a destacar.
       </p>
