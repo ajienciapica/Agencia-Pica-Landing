@@ -9,15 +9,21 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     .hero-bg {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(172, 37, 23, 0.85)), 
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(172, 37, 23, 0.85)), 
                   url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat fixed;
     }
     .ají { color: #f3d847; }
-    .card-hover:hover {
-      transform: translateY(-15px) scale(1.05);
+    .section-title { font-size: 3.5rem; line-height: 1.1; }
+    .card-hover {
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .floating { animation: float 3s ease-in-out infinite; }
+    .card-hover:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    }
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-20px); }
@@ -27,10 +33,10 @@
 <body class="bg-zinc-950 text-white">
 
   <!-- NAV -->
-  <nav class="fixed top-0 w-full bg-black/95 backdrop-blur-md z-50 border-b border-orange-900">
-    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-      <img src="Icono_Rojo.png" alt="Ajiencia Pica" class="h-12 floating">
-      <div class="hidden md:flex gap-8 text-sm font-medium">
+  <nav class="fixed top-0 w-full bg-black/95 backdrop-blur-lg z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+      <img src="Icono_Rojo.png" alt="Ajiencia Pica" class="h-11">
+      <div class="hidden md:flex items-center gap-10 text-sm font-medium">
         <a href="#servicios" class="hover:text-[#f8ad47] transition">Servicios</a>
         <a href="#sobre-mi" class="hover:text-[#f8ad47] transition">Sobre mí</a>
         <a href="#contacto" class="hover:text-[#f8ad47] transition">Contacto</a>
@@ -38,35 +44,35 @@
     </div>
   </nav>
 
-  <!-- HERO - Más impactante -->
+  <!-- HERO -->
   <header class="hero-bg h-screen flex items-center">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <img src="Logo_Negativo.png" alt="Ajiencia Pica" class="mx-auto h-44 md:h-52 mb-8 floating">
-      <h1 class="text-6xl md:text-7xl font-black leading-none mb-6 tracking-tighter">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <img src="Logo_Negativo.png" alt="Ajiencia Pica" class="mx-auto h-48 md:h-56 mb-8 floating">
+      <h1 class="text-6xl md:text-8xl font-black leading-none mb-6 tracking-tighter">
         MARKETING QUE <span class="ají">PICA</span> 🔥🌶️
       </h1>
-      <p class="text-2xl md:text-3xl mb-10 max-w-3xl mx-auto text-orange-100">
+      <p class="text-3xl md:text-4xl mb-12 max-w-4xl mx-auto text-orange-100 font-light">
         Tu marca es muy fome?<br>
         <span class="font-bold">Nosotros la sazonamos y la hacemos quemar.</span>
       </p>
-      <a href="#servicios" class="inline-block bg-[#ac2517] hover:bg-[#f8ad47] hover:text-black font-bold px-14 py-6 rounded-full text-xl transition-all hover:scale-110">
+      <a href="#servicios" class="inline-block bg-[#ac2517] hover:bg-[#f8ad47] hover:text-black font-bold px-16 py-7 rounded-full text-2xl transition-all hover:scale-110">
         VER SERVICIOS →
       </a>
     </div>
   </header>
 
   <!-- SOBRE MÍ -->
-  <section id="sobre-mi" class="py-24 bg-black">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+  <section id="sobre-mi" class="py-28 bg-black">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
         <div>
           <img src="bastian.png" alt="Bastián Sanhueza" class="w-full rounded-3xl shadow-2xl">
         </div>
-        <div>
-          <h2 class="text-5xl font-bold mb-6">¡Hola! Soy <span class="ají">Bastián Sanhueza</span> 👋</h2>
-          <p class="text-2xl font-medium text-orange-300 mb-6">Fundador de Ajiencia Pica</p>
-          <p class="text-zinc-300 text-lg leading-relaxed">
-            Egresado de Publicidad y apasionado por crear marcas que conectan de verdad y pican fuerte.
+        <div class="space-y-6">
+          <h2 class="text-6xl font-bold">¡Hola! Soy <span class="ají">Bastián Sanhueza</span></h2>
+          <p class="text-3xl text-orange-300">Fundador de Ajiencia Pica</p>
+          <p class="text-xl text-zinc-400 leading-relaxed">
+            Egresado de Publicidad con una sola misión: hacer que las marcas dejen de ser "normales" y empiecen a picar fuerte en la mente de la gente.
           </p>
         </div>
       </div>
@@ -74,46 +80,45 @@
   </section>
 
   <!-- SERVICIOS -->
-  <section id="servicios" class="py-24 bg-zinc-900">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-4">Servicios con <span class="ají">sabor</span> 🌶️</h2>
-      <p class="text-center text-zinc-400 mb-16">Precios en CLP • IVA incluido</p>
+  <section id="servicios" class="py-28 bg-zinc-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16">Servicios con <span class="ají">sabor</span> real 🌶️</h2>
 
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-zinc-800 p-8 rounded-3xl card-hover">
-          <h3 class="text-2xl font-bold mb-6 text-[#f8ad47]">🔥 Diseño de Marca</h3>
-          <ul class="space-y-4 text-zinc-300">
+        <div class="bg-zinc-800 p-10 rounded-3xl card-hover">
+          <h3 class="text-3xl font-bold mb-8 text-[#f8ad47]">Diseño de Marca</h3>
+          <ul class="space-y-6 text-zinc-300 text-lg">
             <li class="flex justify-between"><span>Diseño de Logo + Variantes</span><span class="font-bold">49.990.-</span></li>
             <li class="flex justify-between"><span>Diseño de Marca Completo</span><span class="font-bold">119.000.-</span></li>
           </ul>
         </div>
 
-        <div class="bg-zinc-800 p-8 rounded-3xl card-hover">
-          <h3 class="text-2xl font-bold mb-6 text-[#f8ad47]">📱 Redes Sociales</h3>
-          <ul class="space-y-4 text-zinc-300">
+        <div class="bg-zinc-800 p-10 rounded-3xl card-hover">
+          <h3 class="text-3xl font-bold mb-8 text-[#f8ad47]">Redes Sociales</h3>
+          <ul class="space-y-6 text-zinc-300 text-lg">
             <li class="flex justify-between"><span>Starter Pack Picante</span><span class="font-bold">49.990.-</span></li>
             <li class="flex justify-between"><span>Gráfica para redes</span><span class="font-bold">14.990.- c/u</span></li>
             <li class="flex justify-between"><span>Edición de Reels</span><span class="font-bold">24.990.- c/u</span></li>
           </ul>
         </div>
 
-        <div class="bg-zinc-800 p-8 rounded-3xl card-hover md:col-span-2">
-          <h3 class="text-2xl font-bold mb-6 text-[#f8ad47]">Community Manager</h3>
-          <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-zinc-900 p-6 rounded-2xl text-center card-hover">
-              <h4 class="font-bold">Básico</h4>
-              <p class="text-3xl font-bold mt-3">80.000.-</p>
-              <p class="text-sm text-zinc-400">/mes</p>
+        <div class="bg-zinc-800 p-10 rounded-3xl card-hover md:col-span-2">
+          <h3 class="text-3xl font-bold mb-8 text-[#f8ad47]">Community Manager</h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center card-hover">
+              <h4 class="font-bold text-xl">Básico</h4>
+              <p class="text-5xl font-bold mt-4">80.000.-</p>
+              <p class="text-zinc-400">/mes</p>
             </div>
-            <div class="bg-zinc-900 p-6 rounded-2xl border-2 border-[#f8ad47] text-center card-hover">
-              <h4 class="font-bold">Pro 🌶️</h4>
-              <p class="text-3xl font-bold mt-3">119.000.-</p>
-              <p class="text-sm text-zinc-400">/mes</p>
+            <div class="text-center border-2 border-[#f8ad47] rounded-3xl p-6 card-hover">
+              <h4 class="font-bold text-xl">Pro 🌶️</h4>
+              <p class="text-5xl font-bold mt-4">119.000.-</p>
+              <p class="text-zinc-400">/mes</p>
             </div>
-            <div class="bg-zinc-900 p-6 rounded-2xl border-2 border-orange-500 text-center card-hover">
-              <h4 class="font-bold">Picante 🌶️🔥</h4>
-              <p class="text-3xl font-bold mt-3">149.990.-</p>
-              <p class="text-sm text-zinc-400">/mes</p>
+            <div class="text-center card-hover">
+              <h4 class="font-bold text-xl">Picante 🌶️🔥</h4>
+              <p class="text-5xl font-bold mt-4">149.990.-</p>
+              <p class="text-zinc-400">/mes</p>
             </div>
           </div>
         </div>
@@ -126,26 +131,25 @@
     <div class="max-w-2xl mx-auto px-6">
       <img src="Isotipo_Rojo.png" alt="Ajiencia Pica" class="mx-auto h-28 mb-8">
       <h2 class="text-5xl font-bold mb-6">¿Listo para que tu marca <span class="ají">QUEME</span>? 🔥</h2>
-      <p class="text-xl text-zinc-400 mb-10">Hablemos y armemos algo que realmente destaque.</p>
+      <p class="text-xl text-zinc-400 mb-12">Hablemos y armemos algo que realmente destaque.</p>
       
       <form class="space-y-6 max-w-lg mx-auto">
-        <input type="text" placeholder="Tu nombre" class="w-full bg-zinc-800 border border-zinc-700 p-6 rounded-2xl focus:border-[#f8ad47]">
-        <input type="email" placeholder="Correo electrónico" class="w-full bg-zinc-800 border border-zinc-700 p-6 rounded-2xl focus:border-[#f8ad47]">
-        <textarea placeholder="Cuéntanos tu proyecto..." rows="6" class="w-full bg-zinc-800 border border-zinc-700 p-6 rounded-2xl focus:border-[#f8ad47]"></textarea>
-        <button type="submit" class="w-full bg-[#ac2517] hover:bg-[#f3d847] hover:text-black py-7 rounded-2xl font-bold text-xl transition-all hover:scale-105">
+        <input type="text" placeholder="Tu nombre" class="w-full bg-zinc-800 border border-zinc-700 p-6 rounded-3xl focus:border-[#f8ad47]">
+        <input type="email" placeholder="Correo electrónico" class="w-full bg-zinc-800 border border-zinc-700 p-6 rounded-3xl focus:border-[#f8ad47]">
+        <textarea placeholder="Cuéntanos tu proyecto..." rows="6" class="w-full bg-zinc-800 border border-zinc-700 p-6 rounded-3xl focus:border-[#f8ad47]"></textarea>
+        <button type="submit" class="w-full bg-[#ac2517] hover:bg-[#f3d847] hover:text-black py-8 rounded-3xl font-bold text-2xl transition-all hover:scale-105">
           ENVIAR MENSAJE PICANTE →
         </button>
       </form>
     </div>
   </section>
 
-  <footer class="bg-black py-12 text-center text-sm text-zinc-500">
+  <footer class="bg-black py-16 text-center text-sm text-zinc-500">
     © 2026 Ajiencia Pica • Santiago, Chile • Hecho con mucho ají y cariño 🌶️🔥
   </footer>
 
   <!-- WhatsApp -->
-  <a href="https://wa.me/569XXXXXXXX" target="_blank" 
-     class="fixed bottom-8 right-8 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-4xl shadow-2xl hover:bg-green-600 transition z-50 hover:scale-110">
+  <a href="https://wa.me/569XXXXXXXX" target="_blank" class="fixed bottom-8 right-8 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-4xl shadow-2xl hover:bg-green-600 transition z-50 hover:scale-110">
     <i class="fab fa-whatsapp"></i>
   </a>
 
