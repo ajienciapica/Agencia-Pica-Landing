@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Ajiencia Pica | Agencia de Marketing Digital en Chile</title>
+  <meta name="description" content="Agencia de marketing digital en Chile. Branding, redes sociales y performance con estrategia real. Haz crecer tu marca con Ajiencia Pica.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ajiencia Pica | Marketing que Pica 🔥">
+  <meta property="og:description" content="Le ponemos estrategia, fuego y sabor a tu marca.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: system-ui, sans-serif; }
+
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+                  url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+    }
+
+    .aji { color: #f3d847; }
+  </style>
+</head>
+
+<body class="bg-zinc-950 text-white">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-black/80 backdrop-blur z-50 border-b border-orange-900">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <img src="icono-rojo.png" alt="Ajiencia Pica" class="h-10" loading="lazy">
+    <div class="flex gap-6 text-sm font-medium">
+      <a href="#servicios" class="hover:text-[#f8ad47]">Servicios</a>
+      <a href="#sobre-mi" class="hover:text-[#f8ad47]">Sobre mí</a>
+      <a href="#contacto" class="hover:text-[#f8ad47]">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero-bg min-h-screen flex items-center text-center">
+  <div class="max-w-5xl mx-auto px-6">
+    <img src="logo-negativo.png" alt="Ajiencia Pica" class="mx-auto h-36 mb-6" loading="lazy">
+
+    <h1 class="text-5xl md:text-7xl font-black mb-6">
+      MARKETING QUE <span class="aji">PICA</span> 🔥
+    </h1>
+
+    <p class="text-xl md:text-2xl mb-8 text-orange-100">
+      Estrategia, creatividad y performance para marcas que quieren vender de verdad.
+    </p>
+
+    <a href="#contacto"
+       class="inline-block bg-[#ac2517] hover:bg-[#f8ad47] hover:text-black font-bold px-10 py-5 rounded-full text-lg transition">
+      CUÉNTANOS TU PROYECTO →
+    </a>
+  </div>
+</header>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="py-20 bg-zinc-900">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-14">
+      Servicios con <span class="aji">sabor</span>
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-zinc-800 p-8 rounded-2xl hover:scale-105 transition">
+        <div class="text-5xl mb-4">🌶️</div>
+        <h3 class="text-2xl font-bold mb-3">Branding</h3>
+        <p class="text-zinc-400">Identidad visual y posicionamiento que venden.</p>
+      </div>
+
+      <div class="bg-zinc-800 p-8 rounded-2xl hover:scale-105 transition">
+        <div class="text-5xl mb-4">📱</div>
+        <h3 class="text-2xl font-bold mb-3">Redes Sociales</h3>
+        <p class="text-zinc-400">Contenido estratégico que genera clientes.</p>
+      </div>
+
+      <div class="bg-zinc-800 p-8 rounded-2xl hover:scale-105 transition">
+        <div class="text-5xl mb-4">📈</div>
+        <h3 class="text-2xl font-bold mb-3">Ads & Performance</h3>
+        <p class="text-zinc-400">Campañas optimizadas para vender más.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MI -->
+<section id="sobre-mi" class="py-20 bg-black">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
+    <img src="bastian.png" alt="Bastián Sanhueza" class="rounded-2xl shadow-xl" loading="lazy">
+
+    <div>
+      <h2 class="text-4xl font-bold mb-4">
+        Hola, soy <span class="aji">Bastián</span>
+      </h2>
+
+      <p class="text-orange-300 mb-4">Fundador de Ajiencia Pica</p>
+
+      <p class="text-zinc-300">
+        Ayudo a marcas a crecer con estrategia real. Nada de humo: marketing que vende.
+      </p>
+
+      <a href="https://linkedin.com"
+         target="_blank"
+         class="inline-flex items-center gap-2 mt-6 text-[#f8ad47] hover:text-white">
+        <i class="fab fa-linkedin text-2xl"></i>
+        Ver LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="py-24 text-center">
+  <div class="max-w-xl mx-auto px-6">
+
+    <h2 class="text-4xl font-bold mb-6">
+      ¿Listo para crecer?
+    </h2>
+
+    <p class="text-zinc-400 mb-8">
+      Escríbeme directo y vemos tu caso.
+    </p>
+
+    <form onsubmit="enviarWhatsApp(event)" class="space-y-4">
+      <input id="nombre" type="text" placeholder="Tu nombre" required
+        class="w-full bg-zinc-800 p-4 rounded-xl">
+
+      <input id="email" type="email" placeholder="Correo" required
+        class="w-full bg-zinc-800 p-4 rounded-xl">
+
+      <textarea id="mensaje" placeholder="Cuéntame tu proyecto" rows="4"
+        class="w-full bg-zinc-800 p-4 rounded-xl"></textarea>
+
+      <button class="w-full bg-[#ac2517] hover:bg-[#f3d847] hover:text-black py-4 rounded-xl font-bold">
+        ENVIAR →
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 text-center text-sm text-zinc-500 border-t border-zinc-800">
+  © 2026 Ajiencia Pica • Chile
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/569XXXXXXXX"
+   target="_blank"
+   class="fixed bottom-6 right-6 bg-green-500 w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- SCRIPT -->
+<script>
+function enviarWhatsApp(e) {
+  e.preventDefault();
+
+  const nombre = document.getElementById("nombre").value;
+  const email = document.getElementById("email").value;
+  const mensaje = document.getElementById("mensaje").value;
+
+  const texto = `Hola, soy ${nombre}%0AEmail: ${email}%0A${mensaje}`;
+
+  window.open(`https://wa.me/569XXXXXXXX?text=${texto}`, "_blank");
+}
+</script>
+
+</body>
+</html>
