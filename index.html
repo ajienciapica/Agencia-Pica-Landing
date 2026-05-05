@@ -85,22 +85,12 @@
 </header>
 
 <!-- SOBRE MI -->
-<section id="sobre-mi" class="py-32 bg-black relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+<section id="sobre-mi" class="relative py-40 bg-black overflow-hidden">
 
-    <!-- IMAGEN GRANDE -->
-    <div class="relative flex items-end justify-center md:justify-start">
+  <!-- CONTENIDO TEXTO -->
+  <div class="max-w-7xl mx-auto px-6 relative z-20">
+    <div class="md:w-1/2 ml-auto">
 
-      <!-- Glow -->
-      <div class="absolute w-[500px] h-[500px] bg-[#ac2517] blur-[150px] opacity-40 left-0"></div>
-
-      <!-- Imagen -->
-      <img src="bastian.png"
-        class="relative z-10 w-[500px] md:w-[650px] lg:w-[750px] object-contain translate-y-10 drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)]">
-    </div>
-
-    <!-- TEXTO -->
-    <div class="relative z-20">
       <h2 class="text-5xl md:text-7xl font-black mb-6 leading-[0.9]">
         SOY <span class="ají">BASTIÁN SANHUEZA</span>
       </h2>
@@ -109,11 +99,23 @@
         Egresado de Publicidad con una misión clara:
         hacer que las marcas dejen de ser normales y empiecen a destacar.
       </p>
+
     </div>
+  </div>
+
+  <!-- IMAGEN ANCLADA -->
+  <div class="absolute bottom-0 left-0 w-full pointer-events-none">
+
+    <!-- Glow -->
+    <div class="absolute w-[700px] h-[700px] bg-[#ac2517] blur-[200px] opacity-40 left-[-150px] bottom-[-100px]"></div>
+
+    <!-- Imagen -->
+    <img src="bastian.png"
+      class="absolute bottom-0 left-0 w-[600px] md:w-[750px] lg:w-[900px] object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.9)]">
 
   </div>
-</section>
 
+</section>
 <!-- SERVICIOS -->
 <section id="servicios" class="py-32 bg-zinc-950">
   <div class="max-w-7xl mx-auto px-6">
