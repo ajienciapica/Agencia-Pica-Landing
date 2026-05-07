@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Ajiencia Pica | Marketing que Pica 🔥</title>
 
+  <!-- TAILWIND -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <!-- ICONS -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 
+  <!-- GSAP -->
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
@@ -28,17 +33,6 @@
       color:#f3d847;
     }
 
-    .glow{
-      position:absolute;
-      width:600px;
-      height:600px;
-      background:#ac2517;
-      filter:blur(180px);
-      opacity:.4;
-      top:-100px;
-      left:-100px;
-    }
-
     .noise{
       position:absolute;
       inset:0;
@@ -54,7 +48,7 @@
     }
 
     .card-hover:hover{
-      transform:translateY(-10px) scale(1.02);
+      transform:translateY(-10px);
     }
 
     .fade-up{
@@ -62,106 +56,70 @@
       transform:translateY(60px);
     }
 
-    /* =========================
-       MOBILE FIX REAL
-    ========================== */
+    .hero-glow{
+      position:absolute;
+      width:700px;
+      height:700px;
+      background:#ac2517;
+      filter:blur(180px);
+      opacity:.35;
+      top:-200px;
+      left:-200px;
+    }
+
+    .about-glow{
+      position:absolute;
+      width:800px;
+      height:800px;
+      background:#ac2517;
+      filter:blur(220px);
+      opacity:.35;
+      bottom:-300px;
+      left:-300px;
+    }
+
+    /* =======================
+       MOBILE
+    ======================== */
 
     @media(max-width:768px){
 
-      /* NAV */
-
-      nav{
-        padding:0;
-      }
-
-      /* HERO */
-
-      header{
-        min-height:auto !important;
-        padding-top:140px;
-        padding-bottom:80px;
-      }
-
-      .hero-grid{
-        display:flex !important;
-        flex-direction:column !important;
-        gap:60px !important;
-        text-align:center;
-      }
-
-      .hero-grid h1{
+      .hero-title{
         font-size:4rem !important;
         line-height:.9 !important;
       }
 
-      .hero-grid p{
-        margin-left:auto;
-        margin-right:auto;
-      }
-
-      .hero-grid a{
-        justify-content:center;
-      }
-
-      .hero-logo{
-        width:100% !important;
-        max-width:340px !important;
-        margin:auto;
-      }
-
-      /* SOBRE MI */
-
-      #sobre-mi{
-        height:auto !important;
-        padding-top:120px;
-        padding-bottom:0;
-      }
-
-      .about-wrapper{
-        position:relative;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-      }
-
-      .about-image{
-        position:relative !important;
-        left:auto !important;
-        bottom:auto !important;
-        width:130% !important;
-        max-width:none !important;
-        margin-left:-15%;
-        z-index:5;
-      }
-
-      .texto-about{
-        position:relative !important;
-        top:auto !important;
-        right:auto !important;
-        max-width:100% !important;
-        width:100%;
-        padding:0 24px 80px;
-        margin-top:-20px;
-        text-align:center;
-        z-index:10;
-      }
-
-      .texto-about h2{
+      .section-title{
         font-size:3rem !important;
         line-height:.95 !important;
       }
 
-      .texto-about p{
+      .mobile-center{
+        text-align:center;
+      }
+
+      .mobile-center p{
         margin-left:auto;
         margin-right:auto;
       }
 
-      /* GLOW */
+      .mobile-btn{
+        justify-content:center;
+      }
 
-      .about-glow{
-        width:500px !important;
-        height:500px !important;
-        left:-150px !important;
+      .service-row{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .service-price{
+        font-size:2rem !important;
+      }
+
+      .about-image{
+        width:130% !important;
+        max-width:none !important;
+        margin-left:-15%;
       }
 
     }
@@ -172,16 +130,26 @@
 <body class="text-white">
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full bg-black/80 backdrop-blur-lg z-50 border-b border-white/10">
+<nav class="fixed top-0 w-full bg-black/80 backdrop-blur-lg border-b border-white/10 z-50">
 
-  <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
     <img src="Icono_Rojo.png" class="h-10" />
 
     <div class="hidden md:flex gap-10 text-sm">
-      <a href="#servicios" class="hover:text-[#f3d847] transition">Servicios</a>
-      <a href="#sobre-mi" class="hover:text-[#f3d847] transition">Sobre mí</a>
-      <a href="#contacto" class="hover:text-[#f3d847] transition">Contacto</a>
+
+      <a href="#servicios" class="hover:text-[#f3d847] transition">
+        Servicios
+      </a>
+
+      <a href="#sobre-mi" class="hover:text-[#f3d847] transition">
+        Sobre mí
+      </a>
+
+      <a href="#contacto" class="hover:text-[#f3d847] transition">
+        Contacto
+      </a>
+
     </div>
 
   </div>
@@ -189,33 +157,32 @@
 </nav>
 
 <!-- HERO -->
-<header class="min-h-screen flex items-center relative overflow-hidden">
+<header class="relative min-h-screen flex items-center overflow-hidden">
 
   <div class="noise"></div>
+  <div class="hero-glow"></div>
 
-  <div class="glow"></div>
-
-  <div class="hero-grid relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center z-10">
+  <div class="max-w-7xl mx-auto px-6 py-40 grid md:grid-cols-2 gap-20 items-center relative z-10">
 
     <!-- TEXTO -->
-    <div>
+    <div class="mobile-center fade-up">
 
-      <p class="uppercase tracking-[0.3em] text-zinc-500 mb-6 text-sm">
+      <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6">
         Agencia Creativa • Marketing • Diseño
       </p>
 
-      <h1 class="text-6xl md:text-8xl font-black leading-[0.9]">
+      <h1 class="hero-title text-6xl md:text-8xl font-black leading-[0.9]">
         MARKETING QUE<br>
         <span class="ají">PICA</span>
       </h1>
 
-      <p class="mt-8 text-lg text-zinc-400 max-w-md leading-relaxed">
+      <p class="mt-8 text-zinc-400 text-lg leading-relaxed max-w-md">
         Tu marca es fome?
         Nosotros la sazonamos, la hacemos destacar y la convertimos en algo imposible de ignorar.
       </p>
 
       <a href="#servicios"
-      class="inline-flex items-center gap-4 mt-10 border border-white px-8 py-4 hover:bg-white hover:text-black transition-all duration-300">
+      class="mobile-btn inline-flex items-center gap-4 mt-10 border border-white px-8 py-4 hover:bg-white hover:text-black transition">
 
         VER SERVICIOS
         <i class="fa-solid fa-arrow-right"></i>
@@ -225,13 +192,13 @@
     </div>
 
     <!-- LOGO -->
-    <div class="relative flex justify-center">
+    <div class="relative fade-up flex justify-center">
 
-      <div class="absolute w-[500px] h-[500px] bg-[#ac2517] opacity-30 blur-[150px]"></div>
+      <div class="absolute w-[500px] h-[500px] bg-[#ac2517] blur-[150px] opacity-30"></div>
 
       <img
       src="Logo%20Negativo.png"
-      class="hero-logo relative z-10 w-full max-w-[650px] opacity-90 hover:scale-105 transition duration-700">
+      class="relative z-10 w-full max-w-[650px] hover:scale-105 transition duration-700">
 
     </div>
 
@@ -240,37 +207,37 @@
 </header>
 
 <!-- SOBRE MI -->
-<section id="sobre-mi" class="relative h-[1200px] bg-black overflow-hidden">
+<section id="sobre-mi" class="relative overflow-hidden bg-black py-24 md:py-40">
 
-  <!-- GLOW -->
-  <div class="about-glow absolute left-[-250px] bottom-0 w-[900px] h-[900px] bg-[#ac2517] opacity-40 blur-[220px] rounded-full z-0"></div>
+  <div class="noise"></div>
+  <div class="about-glow"></div>
 
-  <div class="about-wrapper">
+  <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-16 items-end">
 
     <!-- IMAGEN -->
-    <img
-    src="bastian.png"
-    alt="Bastián Sanhueza"
-    class="about-image absolute bottom-0 left-[-120px]
-    w-[900px] md:w-[1050px] lg:w-[1150px]
-    max-w-none
-    z-10
-    object-contain
-    pointer-events-none
-    drop-shadow-[0_40px_100px_rgba(0,0,0,0.95)]">
+    <div class="relative fade-up">
+
+      <div class="absolute inset-0 bg-[#ac2517] blur-[140px] opacity-20"></div>
+
+      <img
+      src="bastian.png"
+      alt="Bastián Sanhueza"
+      class="about-image relative z-10 w-full max-w-[900px] object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.95)]">
+
+    </div>
 
     <!-- TEXTO -->
-    <div class="texto-about absolute z-20 right-[7%] top-[52%] max-w-[380px]">
+    <div class="mobile-center fade-up md:pb-24">
 
-      <p class="uppercase tracking-[0.3em] text-zinc-500 mb-6 text-sm">
+      <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6">
         Fundador de Ajiencia Pica
       </p>
 
-      <h2 class="text-5xl md:text-6xl font-black mb-8 leading-[0.9]">
+      <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.9] mb-8">
         SOY <span class="ají">BASTIÁN SANHUEZA</span>
       </h2>
 
-      <p class="text-zinc-400 text-lg leading-relaxed">
+      <p class="text-zinc-400 text-lg leading-relaxed max-w-lg">
         Egresado de Publicidad con una misión clara:
         hacer que las marcas dejen de ser normales y empiecen a destacar.
       </p>
@@ -282,37 +249,41 @@
 </section>
 
 <!-- SERVICIOS -->
-<section id="servicios" class="py-32 bg-zinc-950 relative overflow-hidden">
+<section id="servicios" class="relative py-32 bg-zinc-950 overflow-hidden">
 
   <div class="noise"></div>
 
   <div class="max-w-7xl mx-auto px-6 relative z-10">
 
-    <p class="uppercase tracking-[0.3em] text-zinc-500 mb-6 text-sm fade-up">
+    <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6 fade-up">
       Servicios
     </p>
 
-    <h2 class="text-5xl md:text-7xl font-black mb-20 fade-up leading-[0.9]">
+    <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.9] mb-20 fade-up">
       SERVICIOS CON <span class="ají">SABOR</span>
     </h2>
 
+    <!-- GRID -->
     <div class="grid md:grid-cols-2 gap-10">
 
-      <div class="bg-zinc-900/80 backdrop-blur-sm border border-white/5 p-10 rounded-[40px]">
+      <!-- DISEÑO -->
+      <div class="bg-zinc-900/80 border border-white/5 rounded-[40px] p-10 card-hover fade-up">
 
-        <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center justify-between mb-10">
+
           <h3 class="text-3xl font-black text-[#f3d847]">
             Diseño de Marca
           </h3>
 
           <i class="fa-solid fa-pepper-hot text-3xl text-[#f3d847]"></i>
+
         </div>
 
-        <div class="space-y-8">
+        <div class="space-y-10">
 
-          <div class="border-b border-white/10 pb-8">
+          <div class="border-b border-white/10 pb-10">
 
-            <div class="flex justify-between items-start gap-6">
+            <div class="service-row flex justify-between items-start gap-10">
 
               <div>
 
@@ -320,14 +291,14 @@
                   Diseño de Marca Completo
                 </h4>
 
-                <p class="text-zinc-400 mt-3 leading-relaxed">
-                  Variantes de logo, manual de tono y estilo,
-                  elementos gráficos y hasta 5 aplicaciones.
+                <p class="text-zinc-400 mt-4 leading-relaxed">
+                  Variantes de logo + manual tono y estilo +
+                  elementos gráficos + hasta 5 aplicaciones.
                 </p>
 
               </div>
 
-              <span class="text-3xl font-black whitespace-nowrap">
+              <span class="service-price text-3xl font-black whitespace-nowrap">
                 119.000.-
               </span>
 
@@ -337,7 +308,7 @@
 
           <div>
 
-            <div class="flex justify-between items-start gap-6">
+            <div class="service-row flex justify-between items-start gap-10">
 
               <div>
 
@@ -345,13 +316,13 @@
                   Diseño de Logo + Variantes
                 </h4>
 
-                <p class="text-zinc-400 mt-3 leading-relaxed">
+                <p class="text-zinc-400 mt-4 leading-relaxed">
                   Identidad visual sólida y adaptable.
                 </p>
 
               </div>
 
-              <span class="text-3xl font-black whitespace-nowrap">
+              <span class="service-price text-3xl font-black whitespace-nowrap">
                 49.990.-
               </span>
 
@@ -363,9 +334,10 @@
 
       </div>
 
-      <div class="bg-zinc-900/80 backdrop-blur-sm border border-white/5 p-10 rounded-[40px]">
+      <!-- REDES -->
+      <div class="bg-zinc-900/80 border border-white/5 rounded-[40px] p-10 card-hover fade-up">
 
-        <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center justify-between mb-10">
 
           <h3 class="text-3xl font-black text-[#f3d847]">
             Redes Sociales
@@ -375,11 +347,11 @@
 
         </div>
 
-        <div class="space-y-8">
+        <div class="space-y-10">
 
-          <div class="border-b border-white/10 pb-8">
+          <div class="border-b border-white/10 pb-10">
 
-            <div class="flex justify-between items-start gap-6">
+            <div class="service-row flex justify-between items-start gap-10">
 
               <div>
 
@@ -387,14 +359,14 @@
                   Starter Pack Picante
                 </h4>
 
-                <p class="text-zinc-400 mt-3 leading-relaxed">
-                  Vinculación Facebook + Instagram,
-                  diseño de feed y 5 posteos.
+                <p class="text-zinc-400 mt-4 leading-relaxed">
+                  Creación y vinculación de Facebook + Instagram,
+                  diseño de feed + 5 posteos.
                 </p>
 
               </div>
 
-              <span class="text-3xl font-black whitespace-nowrap">
+              <span class="service-price text-3xl font-black whitespace-nowrap">
                 49.990.-
               </span>
 
@@ -402,23 +374,23 @@
 
           </div>
 
-          <div class="border-b border-white/10 pb-8">
+          <div class="border-b border-white/10 pb-10">
 
-            <div class="flex justify-between items-start gap-6">
+            <div class="service-row flex justify-between items-start gap-10">
 
               <div>
 
                 <h4 class="text-2xl font-bold">
-                  Gráfica para Redes
+                  Generación de Gráfica
                 </h4>
 
-                <p class="text-zinc-400 mt-3 leading-relaxed">
-                  Diseño moderno adaptado a tu marca.
+                <p class="text-zinc-400 mt-4 leading-relaxed">
+                  Diseño moderno para redes sociales.
                 </p>
 
               </div>
 
-              <span class="text-3xl font-black whitespace-nowrap">
+              <span class="service-price text-3xl font-black whitespace-nowrap">
                 14.990.-
               </span>
 
@@ -428,7 +400,7 @@
 
           <div>
 
-            <div class="flex justify-between items-start gap-6">
+            <div class="service-row flex justify-between items-start gap-10">
 
               <div>
 
@@ -436,13 +408,13 @@
                   Edición de Reel
                 </h4>
 
-                <p class="text-zinc-400 mt-3 leading-relaxed">
+                <p class="text-zinc-400 mt-4 leading-relaxed">
                   Material entregado por el cliente.
                 </p>
 
               </div>
 
-              <span class="text-3xl font-black whitespace-nowrap">
+              <span class="service-price text-3xl font-black whitespace-nowrap">
                 24.990.-
               </span>
 
@@ -456,33 +428,273 @@
 
     </div>
 
+    <!-- COMMUNITY -->
+    <div class="mt-24 fade-up">
+
+      <h3 class="text-5xl font-black mb-12">
+        COMMUNITY MANAGER
+      </h3>
+
+      <div class="grid md:grid-cols-4 gap-8">
+
+        <!-- BASICO -->
+        <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-8 card-hover">
+
+          <h4 class="text-3xl font-black mb-6">
+            Básico
+          </h4>
+
+          <span class="text-5xl font-black block mb-8">
+            80.000.-
+          </span>
+
+          <ul class="space-y-4 text-zinc-300">
+
+            <li>✔ 2 gráficas semanales</li>
+            <li>✔ Grilla semanal</li>
+            <li>✔ Ideal para comenzar</li>
+
+          </ul>
+
+        </div>
+
+        <!-- PRO -->
+        <div class="bg-gradient-to-b from-[#f3d847]/20 to-zinc-900 border border-[#f3d847] rounded-[40px] p-8 card-hover scale-[1.02]">
+
+          <span class="inline-block bg-[#f3d847] text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
+            MÁS VENDIDO
+          </span>
+
+          <h4 class="text-3xl font-black mb-6">
+            Pro 🌶️
+          </h4>
+
+          <span class="text-5xl font-black text-[#f3d847] block mb-8">
+            119.000.-
+          </span>
+
+          <ul class="space-y-4 text-zinc-200">
+
+            <li>✔ 2 gráficas semanales</li>
+            <li>✔ 1 story semanal</li>
+            <li>✔ 2 reels mensuales</li>
+
+          </ul>
+
+        </div>
+
+        <!-- PICANTE -->
+        <div class="bg-gradient-to-b from-orange-500/20 to-zinc-900 border border-orange-500 rounded-[40px] p-8 card-hover scale-[1.03]">
+
+          <span class="inline-block bg-orange-500 text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
+            FULL PICANTE 🔥
+          </span>
+
+          <h4 class="text-3xl font-black text-orange-400 mb-6">
+            Picante 🌶️
+          </h4>
+
+          <span class="text-5xl font-black text-orange-400 block mb-8">
+            189.990.-
+          </span>
+
+          <ul class="space-y-4 text-zinc-200">
+
+            <li>🔥 3 gráficas semanales</li>
+            <li>🔥 1 reel semanal</li>
+            <li>🔥 1 story semanal</li>
+            <li>🔥 Configuración Meta Ads</li>
+
+          </ul>
+
+        </div>
+
+        <!-- PERSONALIZADO -->
+        <div class="bg-zinc-900 border border-dashed border-white/20 rounded-[40px] p-8 card-hover flex flex-col justify-between">
+
+          <div>
+
+            <h4 class="text-3xl font-black mb-6">
+              Personalizado
+            </h4>
+
+            <p class="text-zinc-400">
+              Armamos el plan que necesites.
+            </p>
+
+          </div>
+
+          <a href="#contacto" class="text-[#f3d847] font-bold mt-10">
+            Cotizar →
+          </a>
+
+        </div>
+
+      </div>
+
+      <p class="text-zinc-500 text-sm mt-14 text-center">
+        *IVA incluído
+      </p>
+
+    </div>
+
+    <!-- CORPORATIVOS -->
+    <div class="mt-32 fade-up">
+
+      <h3 class="text-5xl font-black mb-12">
+        TRABAJOS CORPORATIVOS
+      </h3>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="bg-zinc-900 border border-white/5 rounded-[35px] p-8">
+
+          <div class="flex justify-between items-center">
+            <h4 class="text-2xl font-bold">
+              Tarjeta de Presentación
+            </h4>
+
+            <span class="text-2xl font-black">
+              19.000.-
+            </span>
+          </div>
+
+        </div>
+
+        <div class="bg-zinc-900 border border-white/5 rounded-[35px] p-8">
+
+          <div class="flex justify-between items-center">
+            <h4 class="text-2xl font-bold">
+              Firma de Correo
+            </h4>
+
+            <span class="text-2xl font-black">
+              19.000.-
+            </span>
+          </div>
+
+        </div>
+
+        <div class="bg-zinc-900 border border-white/5 rounded-[35px] p-8">
+
+          <div class="flex justify-between items-center gap-6">
+            <h4 class="text-2xl font-bold">
+              Folletos / Brochure
+            </h4>
+
+            <span class="text-2xl font-black whitespace-nowrap">
+              24.990.- / 49.990.-
+            </span>
+          </div>
+
+        </div>
+
+        <div class="bg-zinc-900 border border-white/5 rounded-[35px] p-8">
+
+          <div class="flex justify-between items-center gap-6">
+            <h4 class="text-2xl font-bold">
+              Diseño de Pendón
+            </h4>
+
+            <span class="text-2xl font-black whitespace-nowrap">
+              19.990.- / 24.990.-
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="text-zinc-400 mt-10 text-lg">
+        ¿Lo que necesitas no aparece aquí?
+        <a href="#contacto" class="text-[#f3d847] font-bold">
+          Escríbenos.
+        </a>
+      </p>
+
+    </div>
+
   </div>
 
 </section>
 
+<!-- CONTACTO -->
+<section id="contacto" class="relative py-40 overflow-hidden">
+
+  <div class="noise"></div>
+
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-up">
+
+    <img
+    src="Isotipo%20Rojo.png"
+    class="mx-auto h-24 mb-10">
+
+    <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.95] mb-8">
+      ¿LISTO PARA QUE<br>
+      TU MARCA <span class="ají">QUEME?</span>
+    </h2>
+
+    <p class="text-zinc-400 text-lg mb-12 max-w-xl mx-auto">
+      Hablemos y armemos algo distinto.
+    </p>
+
+    <a href="https://wa.me/569XXXXXXXX"
+    target="_blank"
+    class="mobile-btn inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition hover:scale-105">
+
+      HABLAR POR WHATSAPP
+      <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-12 text-center text-sm text-zinc-500">
+
+  © 2026 Ajiencia Pica • Santiago, Chile • Hecho con mucho ají 🌶️
+
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/569XXXXXXXX"
+target="_blank"
+class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50">
+
+  <i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- GSAP -->
 <script>
+
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.utils.toArray(".fade-up").forEach((el, i) => {
+
   gsap.fromTo(
     el,
     {
-      opacity: 0,
-      y: 60
+      opacity:0,
+      y:60
     },
     {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: i * 0.08,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%"
+      opacity:1,
+      y:0,
+      duration:1,
+      delay:i * 0.08,
+      ease:"power3.out",
+      scrollTrigger:{
+        trigger:el,
+        start:"top 85%"
       }
     }
   );
+
 });
+
 </script>
 
 </body>
