@@ -69,8 +69,8 @@
 
     .about-glow{
       position:absolute;
-      width:800px;
-      height:800px;
+      width:900px;
+      height:900px;
       background:#ac2517;
       filter:blur(220px);
       opacity:.35;
@@ -120,6 +120,11 @@
         width:130% !important;
         max-width:none !important;
         margin-left:-15%;
+        transform:none !important;
+      }
+
+      .about-text{
+        padding-top:20px;
       }
 
     }
@@ -215,19 +220,30 @@
   <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-16 items-end">
 
     <!-- IMAGEN -->
-    <div class="relative fade-up">
+    <div class="relative fade-up flex items-end">
 
-      <div class="absolute inset-0 bg-[#ac2517] blur-[140px] opacity-20"></div>
+      <!-- glow -->
+      <div class="absolute w-[700px] h-[700px] bg-[#ac2517] blur-[180px] opacity-30 left-[-150px] bottom-[-100px]"></div>
 
+      <!-- imagen -->
       <img
       src="bastian.png"
       alt="Bastián Sanhueza"
-      class="about-image relative z-10 w-full max-w-[900px] object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.95)]">
+      class="about-image relative z-10
+      w-full
+      md:max-w-[1150px]
+      lg:max-w-[1300px]
+      xl:max-w-[1450px]
+      object-contain
+      scale-[1.15]
+      md:translate-x-[-120px]
+      lg:translate-x-[-180px]
+      drop-shadow-[0_40px_100px_rgba(0,0,0,0.95)]">
 
     </div>
 
     <!-- TEXTO -->
-    <div class="mobile-center fade-up md:pb-24">
+    <div class="about-text mobile-center fade-up md:pb-24 relative z-20">
 
       <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6">
         Fundador de Ajiencia Pica
