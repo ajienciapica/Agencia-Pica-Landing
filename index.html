@@ -13,10 +13,15 @@
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
   <style>
+
     body{
       font-family:'Inter',system-ui,sans-serif;
       background:#000;
       overflow-x:hidden;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     .ají{
@@ -34,6 +39,16 @@
       left:-100px;
     }
 
+    .noise{
+      position:absolute;
+      inset:0;
+      opacity:.04;
+      background-image:
+      radial-gradient(#ffffff 1px, transparent 1px);
+      background-size:22px 22px;
+      pointer-events:none;
+    }
+
     .card-hover{
       transition:all .4s ease;
     }
@@ -47,44 +62,36 @@
       transform:translateY(60px);
     }
 
-    .noise{
-      position:absolute;
-      inset:0;
-      opacity:.04;
-      background-image:
-      radial-gradient(#ffffff 1px, transparent 1px);
-      background-size:22px 22px;
-      pointer-events:none;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    /* ================= MOBILE ================= */
+    /* =========================
+       MOBILE FIX REAL
+    ========================== */
 
     @media(max-width:768px){
 
+      /* NAV */
+
       nav{
-        padding-left:0;
-        padding-right:0;
+        padding:0;
       }
 
-      h1{
-        font-size:4rem !important;
-        line-height:.9 !important;
-      }
+      /* HERO */
 
-      h2{
-        font-size:3rem !important;
-        line-height:.95 !important;
+      header{
+        min-height:auto !important;
+        padding-top:140px;
+        padding-bottom:80px;
       }
 
       .hero-grid{
-        grid-template-columns:1fr !important;
+        display:flex !important;
+        flex-direction:column !important;
+        gap:60px !important;
         text-align:center;
-        padding-top:120px;
-        gap:40px;
+      }
+
+      .hero-grid h1{
+        font-size:4rem !important;
+        line-height:.9 !important;
       }
 
       .hero-grid p{
@@ -97,7 +104,8 @@
       }
 
       .hero-logo{
-        max-width:85%;
+        width:100% !important;
+        max-width:340px !important;
         margin:auto;
       }
 
@@ -109,7 +117,7 @@
         padding-bottom:0;
       }
 
-      .about-container{
+      .about-wrapper{
         position:relative;
         display:flex;
         flex-direction:column;
@@ -120,20 +128,27 @@
         position:relative !important;
         left:auto !important;
         bottom:auto !important;
-        width:120% !important;
+        width:130% !important;
         max-width:none !important;
-        margin-left:-10%;
-        z-index:10;
+        margin-left:-15%;
+        z-index:5;
       }
 
       .texto-about{
         position:relative !important;
-        right:auto !important;
         top:auto !important;
+        right:auto !important;
         max-width:100% !important;
+        width:100%;
         padding:0 24px 80px;
-        margin-top:-40px;
+        margin-top:-20px;
         text-align:center;
+        z-index:10;
+      }
+
+      .texto-about h2{
+        font-size:3rem !important;
+        line-height:.95 !important;
       }
 
       .texto-about p{
@@ -141,51 +156,16 @@
         margin-right:auto;
       }
 
-      /* SERVICIOS */
+      /* GLOW */
 
-      #servicios{
-        padding-top:100px;
-        padding-bottom:100px;
-      }
-
-      .services-grid{
-        grid-template-columns:1fr !important;
-      }
-
-      .community-grid{
-        grid-template-columns:1fr !important;
-      }
-
-      .corporative-grid{
-        grid-template-columns:1fr !important;
-      }
-
-      .price{
-        font-size:2rem !important;
-      }
-
-      .service-row{
-        flex-direction:column;
-        align-items:flex-start !important;
-      }
-
-      .service-row span{
-        margin-top:20px;
-      }
-
-      /* CONTACTO */
-
-      #contacto{
-        padding-top:120px;
-        padding-bottom:120px;
-      }
-
-      .contact-btn{
-        width:100%;
-        justify-content:center;
+      .about-glow{
+        width:500px !important;
+        height:500px !important;
+        left:-150px !important;
       }
 
     }
+
   </style>
 </head>
 
@@ -193,6 +173,7 @@
 
 <!-- NAV -->
 <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-lg z-50 border-b border-white/10">
+
   <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
 
     <img src="Icono_Rojo.png" class="h-10" />
@@ -204,6 +185,7 @@
     </div>
 
   </div>
+
 </nav>
 
 <!-- HERO -->
@@ -215,6 +197,7 @@
 
   <div class="hero-grid relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center z-10">
 
+    <!-- TEXTO -->
     <div>
 
       <p class="uppercase tracking-[0.3em] text-zinc-500 mb-6 text-sm">
@@ -222,7 +205,7 @@
       </p>
 
       <h1 class="text-6xl md:text-8xl font-black leading-[0.9]">
-        MARKETING QUE<br />
+        MARKETING QUE<br>
         <span class="ají">PICA</span>
       </h1>
 
@@ -232,7 +215,7 @@
       </p>
 
       <a href="#servicios"
-        class="inline-flex items-center gap-4 mt-10 border border-white px-8 py-4 hover:bg-white hover:text-black transition-all duration-300">
+      class="inline-flex items-center gap-4 mt-10 border border-white px-8 py-4 hover:bg-white hover:text-black transition-all duration-300">
 
         VER SERVICIOS
         <i class="fa-solid fa-arrow-right"></i>
@@ -241,14 +224,14 @@
 
     </div>
 
+    <!-- LOGO -->
     <div class="relative flex justify-center">
 
       <div class="absolute w-[500px] h-[500px] bg-[#ac2517] opacity-30 blur-[150px]"></div>
 
       <img
-        src="Logo%20Negativo.png"
-        class="hero-logo relative z-10 w-full max-w-[650px] opacity-90 hover:scale-105 transition duration-700"
-      />
+      src="Logo%20Negativo.png"
+      class="hero-logo relative z-10 w-full max-w-[650px] opacity-90 hover:scale-105 transition duration-700">
 
     </div>
 
@@ -259,22 +242,24 @@
 <!-- SOBRE MI -->
 <section id="sobre-mi" class="relative h-[1200px] bg-black overflow-hidden">
 
-  <div class="absolute left-[-250px] bottom-0 w-[900px] h-[900px] bg-[#ac2517] opacity-40 blur-[220px] rounded-full z-0"></div>
+  <!-- GLOW -->
+  <div class="about-glow absolute left-[-250px] bottom-0 w-[900px] h-[900px] bg-[#ac2517] opacity-40 blur-[220px] rounded-full z-0"></div>
 
-  <div class="about-container">
+  <div class="about-wrapper">
 
+    <!-- IMAGEN -->
     <img
-      src="bastian.png"
-      alt="Bastián Sanhueza"
-      class="about-image absolute bottom-0 left-[-120px]
-      w-[900px] md:w-[1050px] lg:w-[1150px]
-      max-w-none
-      z-10
-      object-contain
-      pointer-events-none
-      drop-shadow-[0_40px_100px_rgba(0,0,0,0.95)]"
-    />
+    src="bastian.png"
+    alt="Bastián Sanhueza"
+    class="about-image absolute bottom-0 left-[-120px]
+    w-[900px] md:w-[1050px] lg:w-[1150px]
+    max-w-none
+    z-10
+    object-contain
+    pointer-events-none
+    drop-shadow-[0_40px_100px_rgba(0,0,0,0.95)]">
 
+    <!-- TEXTO -->
     <div class="texto-about absolute z-20 right-[7%] top-[52%] max-w-[380px]">
 
       <p class="uppercase tracking-[0.3em] text-zinc-500 mb-6 text-sm">
@@ -311,11 +296,9 @@
       SERVICIOS CON <span class="ají">SABOR</span>
     </h2>
 
-    <!-- GRID -->
-    <div class="services-grid grid md:grid-cols-2 gap-10">
+    <div class="grid md:grid-cols-2 gap-10">
 
-      <!-- DISEÑO -->
-      <div class="bg-zinc-900/80 backdrop-blur-sm border border-white/5 p-10 rounded-[40px] card-hover fade-up">
+      <div class="bg-zinc-900/80 backdrop-blur-sm border border-white/5 p-10 rounded-[40px]">
 
         <div class="flex items-center justify-between mb-8">
           <h3 class="text-3xl font-black text-[#f3d847]">
@@ -329,9 +312,10 @@
 
           <div class="border-b border-white/10 pb-8">
 
-            <div class="service-row flex justify-between items-start gap-6">
+            <div class="flex justify-between items-start gap-6">
 
               <div>
+
                 <h4 class="text-2xl font-bold">
                   Diseño de Marca Completo
                 </h4>
@@ -340,9 +324,10 @@
                   Variantes de logo, manual de tono y estilo,
                   elementos gráficos y hasta 5 aplicaciones.
                 </p>
+
               </div>
 
-              <span class="price text-3xl font-black whitespace-nowrap">
+              <span class="text-3xl font-black whitespace-nowrap">
                 119.000.-
               </span>
 
@@ -352,9 +337,10 @@
 
           <div>
 
-            <div class="service-row flex justify-between items-start gap-6">
+            <div class="flex justify-between items-start gap-6">
 
               <div>
+
                 <h4 class="text-2xl font-bold">
                   Diseño de Logo + Variantes
                 </h4>
@@ -362,9 +348,10 @@
                 <p class="text-zinc-400 mt-3 leading-relaxed">
                   Identidad visual sólida y adaptable.
                 </p>
+
               </div>
 
-              <span class="price text-3xl font-black whitespace-nowrap">
+              <span class="text-3xl font-black whitespace-nowrap">
                 49.990.-
               </span>
 
@@ -376,22 +363,23 @@
 
       </div>
 
-      <!-- REDES -->
-      <div class="bg-zinc-900/80 backdrop-blur-sm border border-white/5 p-10 rounded-[40px] card-hover fade-up">
+      <div class="bg-zinc-900/80 backdrop-blur-sm border border-white/5 p-10 rounded-[40px]">
 
         <div class="flex items-center justify-between mb-8">
+
           <h3 class="text-3xl font-black text-[#f3d847]">
             Redes Sociales
           </h3>
 
           <i class="fa-solid fa-mobile-screen text-3xl text-[#f3d847]"></i>
+
         </div>
 
         <div class="space-y-8">
 
           <div class="border-b border-white/10 pb-8">
 
-            <div class="service-row flex justify-between items-start gap-6">
+            <div class="flex justify-between items-start gap-6">
 
               <div>
 
@@ -406,7 +394,7 @@
 
               </div>
 
-              <span class="price text-3xl font-black whitespace-nowrap">
+              <span class="text-3xl font-black whitespace-nowrap">
                 49.990.-
               </span>
 
@@ -416,7 +404,7 @@
 
           <div class="border-b border-white/10 pb-8">
 
-            <div class="service-row flex justify-between items-start gap-6">
+            <div class="flex justify-between items-start gap-6">
 
               <div>
 
@@ -430,7 +418,7 @@
 
               </div>
 
-              <span class="price text-3xl font-black whitespace-nowrap">
+              <span class="text-3xl font-black whitespace-nowrap">
                 14.990.-
               </span>
 
@@ -440,7 +428,7 @@
 
           <div>
 
-            <div class="service-row flex justify-between items-start gap-6">
+            <div class="flex justify-between items-start gap-6">
 
               <div>
 
@@ -454,7 +442,7 @@
 
               </div>
 
-              <span class="price text-3xl font-black whitespace-nowrap">
+              <span class="text-3xl font-black whitespace-nowrap">
                 24.990.-
               </span>
 
@@ -468,173 +456,10 @@
 
     </div>
 
-    <!-- COMMUNITY -->
-    <div class="mt-20 fade-up">
-
-      <h3 class="text-5xl font-black mb-12">
-        COMMUNITY MANAGER
-      </h3>
-
-      <div class="community-grid grid md:grid-cols-4 gap-8">
-
-        <!-- BASICO -->
-        <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-8 card-hover flex flex-col">
-
-          <h4 class="text-3xl font-black mb-6">
-            Básico
-          </h4>
-
-          <span class="text-5xl font-black mb-8">
-            80.000.-
-          </span>
-
-          <ul class="space-y-4 text-zinc-300 flex-1">
-
-            <li>✔ 2 gráficas semanales</li>
-            <li>✔ Grilla semanal</li>
-            <li>✔ Ideal para comenzar</li>
-
-          </ul>
-
-        </div>
-
-        <!-- PRO -->
-        <div class="bg-gradient-to-b from-[#f3d847]/20 to-zinc-900 border border-[#f3d847] rounded-[40px] p-8 card-hover scale-[1.02]">
-
-          <span class="inline-block bg-[#f3d847] text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
-            MÁS VENDIDO
-          </span>
-
-          <h4 class="text-3xl font-black mb-6">
-            Pro 🌶️
-          </h4>
-
-          <span class="text-5xl font-black text-[#f3d847] mb-8 block">
-            119.000.-
-          </span>
-
-          <ul class="space-y-4 text-zinc-200">
-
-            <li>✔ 2 gráficas semanales</li>
-            <li>✔ 1 story semanal</li>
-            <li>✔ 2 reels mensuales</li>
-
-          </ul>
-
-        </div>
-
-        <!-- PICANTE -->
-        <div class="bg-gradient-to-b from-orange-500/20 to-zinc-900 border border-orange-500 rounded-[40px] p-8 card-hover scale-[1.03]">
-
-          <span class="inline-block bg-orange-500 text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
-            FULL PICANTE 🔥
-          </span>
-
-          <h4 class="text-3xl font-black text-orange-400 mb-6">
-            Picante 🌶️
-          </h4>
-
-          <span class="text-5xl font-black text-orange-400 mb-8 block">
-            189.990.-
-          </span>
-
-          <ul class="space-y-4 text-zinc-200">
-
-            <li>🔥 3 gráficas semanales</li>
-            <li>🔥 1 reel semanal</li>
-            <li>🔥 1 story semanal</li>
-            <li>🔥 Configuración Meta</li>
-
-          </ul>
-
-        </div>
-
-        <!-- PERSONALIZADO -->
-        <div class="bg-zinc-900 border border-dashed border-white/20 rounded-[40px] p-8 card-hover flex flex-col justify-between">
-
-          <div>
-
-            <h4 class="text-3xl font-black mb-6">
-              Personalizado
-            </h4>
-
-            <p class="text-zinc-400">
-              Armamos el plan que necesites.
-            </p>
-
-          </div>
-
-          <a href="#contacto"
-            class="mt-10 text-[#f3d847] font-bold">
-
-            Cotizar →
-          </a>
-
-        </div>
-
-      </div>
-
-      <p class="text-zinc-500 text-sm mt-14 text-center">
-        *Todos los valores incluyen IVA
-      </p>
-
-    </div>
-
   </div>
 
 </section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="py-40 relative overflow-hidden">
-
-  <div class="absolute inset-0 bg-gradient-to-b from-zinc-950 to-black"></div>
-
-  <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-up">
-
-    <img
-      src="Isotipo%20Rojo.png"
-      class="mx-auto h-24 mb-10"
-    />
-
-    <h2 class="text-5xl md:text-7xl font-black mb-8 leading-[0.95]">
-      ¿LISTO PARA QUE<br />
-      TU MARCA <span class="ají">QUEME?</span>
-    </h2>
-
-    <p class="text-zinc-400 text-lg mb-12 max-w-xl mx-auto">
-      Hablemos y armemos algo distinto.
-    </p>
-
-    <a
-      href="https://wa.me/569XXXXXXXX"
-      target="_blank"
-      class="contact-btn inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition-all duration-300 hover:scale-105"
-    >
-
-      HABLAR POR WHATSAPP
-      <i class="fa-solid fa-arrow-right"></i>
-
-    </a>
-
-  </div>
-
-</section>
-
-<!-- FOOTER -->
-<footer class="border-t border-white/5 py-12 text-center text-sm text-zinc-500">
-  © 2026 Ajiencia Pica • Santiago, Chile • Hecho con mucho ají 🌶️
-</footer>
-
-<!-- WHATSAPP -->
-<a
-  href="https://wa.me/569XXXXXXXX"
-  target="_blank"
-  class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50"
->
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- GSAP -->
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
