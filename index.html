@@ -69,8 +69,8 @@
 
     .about-glow{
       position:absolute;
-      width:900px;
-      height:900px;
+      width:1000px;
+      height:1000px;
       background:#ac2517;
       filter:blur(220px);
       opacity:.35;
@@ -78,9 +78,9 @@
       left:-300px;
     }
 
-    /* =======================
+    /* =========================
        MOBILE
-    ======================== */
+    ========================== */
 
     @media(max-width:768px){
 
@@ -116,15 +116,29 @@
         font-size:2rem !important;
       }
 
+      .about-wrapper{
+        grid-template-columns:1fr !important;
+      }
+
+      .about-image-container{
+        min-height:500px !important;
+      }
+
       .about-image{
         width:130% !important;
         max-width:none !important;
-        margin-left:-15%;
-        transform:none !important;
+        left:-15% !important;
       }
 
       .about-text{
         padding-top:20px;
+        padding-bottom:0 !important;
+        text-align:center;
+      }
+
+      .about-text p{
+        margin-left:auto;
+        margin-right:auto;
       }
 
     }
@@ -217,33 +231,30 @@
   <div class="noise"></div>
   <div class="about-glow"></div>
 
-  <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-16 items-end">
+  <div class="about-wrapper max-w-[1900px] mx-auto px-6 relative z-10 grid md:grid-cols-[1.4fr_.6fr] items-end">
 
     <!-- IMAGEN -->
-    <div class="relative fade-up flex items-end">
+    <div class="about-image-container relative fade-up min-h-[1050px] flex items-end">
 
-      <!-- glow -->
-      <div class="absolute w-[700px] h-[700px] bg-[#ac2517] blur-[180px] opacity-30 left-[-150px] bottom-[-100px]"></div>
+      <!-- GLOW -->
+      <div class="absolute w-[1000px] h-[1000px] bg-[#ac2517] blur-[220px] opacity-40 left-[-300px] bottom-[-250px]"></div>
 
-      <!-- imagen -->
+      <!-- BASTIAN -->
       <img
       src="bastian.png"
       alt="Bastián Sanhueza"
-      class="about-image relative z-10
-      w-full
-      md:max-w-[1150px]
-      lg:max-w-[1300px]
-      xl:max-w-[1450px]
+      class="about-image absolute bottom-0 left-[-220px]
+      w-[1500px]
+      xl:w-[1700px]
+      max-w-none
       object-contain
-      scale-[1.15]
-      md:translate-x-[-120px]
-      lg:translate-x-[-180px]
-      drop-shadow-[0_40px_100px_rgba(0,0,0,0.95)]">
+      z-10
+      drop-shadow-[0_40px_120px_rgba(0,0,0,0.95)]">
 
     </div>
 
     <!-- TEXTO -->
-    <div class="about-text mobile-center fade-up md:pb-24 relative z-20">
+    <div class="about-text fade-up relative z-20 pb-32 pr-10">
 
       <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6">
         Fundador de Ajiencia Pica
@@ -550,82 +561,6 @@
 
       <p class="text-zinc-500 text-sm mt-14 text-center">
         *IVA incluído
-      </p>
-
-    </div>
-
-    <!-- CORPORATIVOS -->
-    <div class="mt-32 fade-up">
-
-      <h3 class="text-5xl font-black mb-12">
-        TRABAJOS CORPORATIVOS
-      </h3>
-
-      <div class="grid md:grid-cols-2 gap-8">
-
-        <div class="bg-zinc-900 border border-white/5 rounded-[35px] p-8">
-
-          <div class="flex justify-between items-center">
-            <h4 class="text-2xl font-bold">
-              Tarjeta de Presentación
-            </h4>
-
-            <span class="text-2xl font-black">
-              19.000.-
-            </span>
-          </div>
-
-        </div>
-
-        <div class="bg-zinc-900 border border-white/5 rounded-[35px] p-8">
-
-          <div class="flex justify-between items-center">
-            <h4 class="text-2xl font-bold">
-              Firma de Correo
-            </h4>
-
-            <span class="text-2xl font-black">
-              19.000.-
-            </span>
-          </div>
-
-        </div>
-
-        <div class="bg-zinc-900 border border-white/5 rounded-[35px] p-8">
-
-          <div class="flex justify-between items-center gap-6">
-            <h4 class="text-2xl font-bold">
-              Folletos / Brochure
-            </h4>
-
-            <span class="text-2xl font-black whitespace-nowrap">
-              24.990.- / 49.990.-
-            </span>
-          </div>
-
-        </div>
-
-        <div class="bg-zinc-900 border border-white/5 rounded-[35px] p-8">
-
-          <div class="flex justify-between items-center gap-6">
-            <h4 class="text-2xl font-bold">
-              Diseño de Pendón
-            </h4>
-
-            <span class="text-2xl font-black whitespace-nowrap">
-              19.990.- / 24.990.-
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <p class="text-zinc-400 mt-10 text-lg">
-        ¿Lo que necesitas no aparece aquí?
-        <a href="#contacto" class="text-[#f3d847] font-bold">
-          Escríbenos.
-        </a>
       </p>
 
     </div>
