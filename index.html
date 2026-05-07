@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ajiencia Pica | Marketing que Pica 🔥</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; background:#000; }
-    .ají { color: #f3d847; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #000;
+      overflow-x: hidden;
+    }
+
+    .ají {
+      color: #f3d847;
+    }
 
     .glow {
-      position:absolute;
-      width:600px;
-      height:600px;
-      background:#ac2517;
-      filter:blur(180px);
-      opacity:.4;
-      top:-100px;
-      left:-100px;
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: #ac2517;
+      filter: blur(180px);
+      opacity: .4;
+      top: -100px;
+      left: -100px;
     }
 
     .card-hover {
@@ -35,196 +43,346 @@
     }
 
     .fade-up {
-      opacity:0;
-      transform:translateY(60px);
+      opacity: 0;
+      transform: translateY(60px);
+    }
+
+    .noise {
+      position: absolute;
+      inset: 0;
+      opacity: .04;
+      background-image:
+      radial-gradient(#ffffff 1px, transparent 1px);
+      background-size: 22px 22px;
+      pointer-events: none;
     }
   </style>
 </head>
 
 <body class="text-white">
 
-<!-- NAV -->
-<nav class="fixed top-0 w-full bg-black/80 backdrop-blur-lg z-50 border-b border-white/10">
-  <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-    <img src="Icono_Rojo.png" class="h-10">
-    <div class="hidden md:flex gap-10 text-sm">
-      <a href="#servicios" class="hover:text-[#f3d847]">Servicios</a>
-      <a href="#sobre-mi" class="hover:text-[#f3d847]">Sobre mí</a>
-      <a href="#contacto" class="hover:text-[#f3d847]">Contacto</a>
-    </div>
-  </div>
-</nav>
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-lg z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
 
-<!-- HERO -->
-<header class="h-screen flex items-center relative overflow-hidden">
+      <img src="Icono_Rojo.png" class="h-10" />
 
-  <div class="glow"></div>
-
-  <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
-    <div>
-      <h1 class="text-6xl md:text-8xl font-black leading-[0.9]">
-        MARKETING QUE<br>
-        <span class="ají">PICA</span>
-      </h1>
-
-      <p class="mt-6 text-lg text-zinc-400 max-w-md">
-        Tu marca es fome? Nosotros la hacemos quemar.
-      </p>
-
-      <a href="#servicios" class="inline-block mt-8 border border-white px-8 py-4 hover:bg-white hover:text-black transition">
-        VER SERVICIOS →
-      </a>
-    </div>
-
-    <div>
-      <img src="Logo%20Negativo.png" class="w-full opacity-90 hover:scale-105 transition duration-700">
-    </div>
-
-  </div>
-</header>
-
-<!-- SOBRE MI -->
-<section id="sobre-mi" class="relative py-40 bg-black overflow-hidden">
-
-  <!-- CONTENIDO TEXTO -->
-  <div class="max-w-7xl mx-auto px-6 relative z-20">
-    <div class="md:w-1/2 ml-auto">
-
-      <h2 class="text-5xl md:text-7xl font-black mb-6 leading-[0.9]">
-        SOY <span class="ají">BASTIÁN SANHUEZA</span>
-      </h2>
-
-      <p class="text-zinc-400 text-lg leading-relaxed max-w-xl">
-        Egresado de Publicidad con una misión clara:
-        hacer que las marcas dejen de ser normales y empiecen a destacar.
-      </p>
+      <div class="hidden md:flex gap-10 text-sm">
+        <a href="#servicios" class="hover:text-[#f3d847] transition">Servicios</a>
+        <a href="#sobre-mi" class="hover:text-[#f3d847] transition">Sobre mí</a>
+        <a href="#contacto" class="hover:text-[#f3d847] transition">Contacto</a>
+      </div>
 
     </div>
-  </div>
+  </nav>
 
-  <!-- IMAGEN ANCLADA -->
-  <div class="absolute bottom-0 left-0 w-full pointer-events-none">
+  <!-- HERO -->
+  <header class="min-h-screen flex items-center relative overflow-hidden">
+
+    <div class="noise"></div>
+
+    <div class="glow"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center z-10">
+
+      <div>
+
+        <p class="uppercase tracking-[0.3em] text-zinc-500 mb-6 text-sm">
+          Agencia Creativa • Marketing • Diseño
+        </p>
+
+        <h1 class="text-6xl md:text-8xl font-black leading-[0.9]">
+          MARKETING QUE<br />
+          <span class="ají">PICA</span>
+        </h1>
+
+        <p class="mt-8 text-lg text-zinc-400 max-w-md leading-relaxed">
+          Tu marca es fome?
+          Nosotros la sazonamos, la hacemos destacar y la convertimos en algo imposible de ignorar.
+        </p>
+
+        <a href="#servicios"
+          class="inline-flex items-center gap-4 mt-10 border border-white px-8 py-4 hover:bg-white hover:text-black transition-all duration-300">
+
+          VER SERVICIOS
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+      </div>
+
+      <div class="relative flex justify-center">
+
+        <div class="absolute w-[500px] h-[500px] bg-[#ac2517] opacity-30 blur-[150px]"></div>
+
+        <img
+          src="Logo%20Negativo.png"
+          class="relative z-10 w-full max-w-[650px] opacity-90 hover:scale-105 transition duration-700"
+        />
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" class="relative min-h-[1200px] bg-black overflow-visible">
 
     <!-- Glow -->
-    <div class="absolute w-[700px] h-[700px] bg-[#ac2517] blur-[200px] opacity-40 left-[-150px] bottom-[-100px]"></div>
+    <div class="absolute left-[-250px] bottom-[0px] w-[900px] h-[900px] bg-[#ac2517] opacity-40 blur-[220px] rounded-full z-0"></div>
 
     <!-- Imagen -->
-    <img src="bastian.png"
-      class="absolute bottom-0 left-0 w-[600px] md:w-[750px] lg:w-[900px] object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.9)]">
+    <img
+      src="bastian.png"
+      alt="Bastián Sanhueza"
+      class="absolute bottom-0 left-[-120px]
+      w-[950px] md:w-[1150px] lg:w-[1350px]
+      max-w-none
+      z-10
+      object-contain
+      pointer-events-none
+      drop-shadow-[0_40px_100px_rgba(0,0,0,0.95)]"
+    />
 
-  </div>
+    <!-- Contenido -->
+    <div class="max-w-7xl mx-auto px-6 relative z-20 pt-52">
 
-</section>
-<!-- SERVICIOS -->
-<section id="servicios" class="py-32 bg-zinc-950">
-  <div class="max-w-7xl mx-auto px-6">
+      <div class="md:w-[45%] ml-auto pt-20">
 
-    <h2 class="text-5xl md:text-7xl font-black mb-20 fade-up">
-      SERVICIOS CON <span class="ají">SABOR</span>
-    </h2>
+        <p class="uppercase tracking-[0.3em] text-zinc-500 mb-6 text-sm">
+          Fundador de Ajiencia Pica
+        </p>
 
-    <div class="grid md:grid-cols-2 gap-10">
+        <h2 class="text-5xl md:text-7xl font-black mb-8 leading-[0.9]">
+          SOY <span class="ají">BASTIÁN SANHUEZA</span>
+        </h2>
 
-      <div class="bg-zinc-900 p-10 rounded-3xl card-hover fade-up">
-        <h3 class="text-3xl font-bold mb-8 text-[#f3d847]">Diseño de Marca</h3>
-        <ul class="space-y-6 text-zinc-300">
-          <li class="flex justify-between"><span>Logo + Variantes</span><span class="font-bold">49.990</span></li>
-          <li class="flex justify-between"><span>Marca Completa</span><span class="font-bold">119.000</span></li>
-        </ul>
+        <p class="text-zinc-400 text-lg leading-relaxed max-w-xl">
+          Egresado de Publicidad con una misión clara:
+          hacer que las marcas dejen de ser normales y empiecen a destacar.
+        </p>
+
       </div>
 
-      <div class="bg-zinc-900 p-10 rounded-3xl card-hover fade-up">
-        <h3 class="text-3xl font-bold mb-8 text-[#f3d847]">Redes Sociales</h3>
-        <ul class="space-y-6 text-zinc-300">
-          <li class="flex justify-between"><span>Starter Pack</span><span class="font-bold">49.990</span></li>
-          <li class="flex justify-between"><span>Gráfica</span><span class="font-bold">14.990</span></li>
-          <li class="flex justify-between"><span>Reels</span><span class="font-bold">24.990</span></li>
-        </ul>
-      </div>
+    </div>
 
-      <div class="md:col-span-2 bg-zinc-900 p-10 rounded-3xl fade-up">
-        <h3 class="text-3xl font-bold mb-10 text-[#f3d847]">Community Manager</h3>
+  </section>
 
-        <div class="grid md:grid-cols-3 gap-8 text-center">
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-32 bg-zinc-950 relative overflow-hidden">
 
-          <div class="card-hover">
-            <h4 class="font-bold">Básico</h4>
-            <p class="text-4xl mt-4">80.000</p>
-            <span class="text-zinc-400">/mes</span>
-          </div>
+    <div class="noise"></div>
 
-          <div class="border border-[#f3d847] p-6 rounded-3xl card-hover">
-            <h4 class="font-bold">Pro 🌶️</h4>
-            <p class="text-4xl mt-4">119.000</p>
-            <span class="text-zinc-400">/mes</span>
-          </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
 
-          <div class="card-hover">
-            <h4 class="font-bold">Picante 🔥</h4>
-            <p class="text-4xl mt-4">149.990</p>
-            <span class="text-zinc-400">/mes</span>
+      <p class="uppercase tracking-[0.3em] text-zinc-500 mb-6 text-sm fade-up">
+        Servicios
+      </p>
+
+      <h2 class="text-5xl md:text-7xl font-black mb-20 fade-up">
+        SERVICIOS CON <span class="ají">SABOR</span>
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <!-- Diseño -->
+        <div class="bg-zinc-900/80 backdrop-blur-sm border border-white/5 p-10 rounded-[40px] card-hover fade-up">
+
+          <h3 class="text-3xl font-bold mb-10 text-[#f3d847]">
+            Diseño de Marca
+          </h3>
+
+          <ul class="space-y-6 text-zinc-300">
+
+            <li class="flex justify-between border-b border-white/5 pb-4">
+              <span>Diseño de Logo + Variantes</span>
+              <span class="font-bold">49.990</span>
+            </li>
+
+            <li class="flex justify-between border-b border-white/5 pb-4">
+              <span>Diseño de Marca Completo</span>
+              <span class="font-bold">119.000</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <!-- Redes -->
+        <div class="bg-zinc-900/80 backdrop-blur-sm border border-white/5 p-10 rounded-[40px] card-hover fade-up">
+
+          <h3 class="text-3xl font-bold mb-10 text-[#f3d847]">
+            Redes Sociales
+          </h3>
+
+          <ul class="space-y-6 text-zinc-300">
+
+            <li class="flex justify-between border-b border-white/5 pb-4">
+              <span>Starter Pack Picante</span>
+              <span class="font-bold">49.990</span>
+            </li>
+
+            <li class="flex justify-between border-b border-white/5 pb-4">
+              <span>Gráfica para redes</span>
+              <span class="font-bold">14.990</span>
+            </li>
+
+            <li class="flex justify-between border-b border-white/5 pb-4">
+              <span>Edición de Reels</span>
+              <span class="font-bold">24.990</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <!-- Community -->
+        <div class="md:col-span-2 bg-zinc-900/80 backdrop-blur-sm border border-white/5 p-10 rounded-[40px] fade-up">
+
+          <h3 class="text-3xl font-bold mb-12 text-[#f3d847]">
+            Community Manager
+          </h3>
+
+          <div class="grid md:grid-cols-3 gap-8 text-center">
+
+            <div class="border border-white/5 rounded-[30px] p-8 card-hover">
+
+              <h4 class="font-bold text-xl">
+                Básico
+              </h4>
+
+              <p class="text-5xl mt-6 font-black">
+                80.000
+              </p>
+
+              <span class="text-zinc-500">
+                /mes
+              </span>
+
+            </div>
+
+            <div class="border border-[#f3d847] rounded-[30px] p-8 card-hover bg-gradient-to-b from-[#f3d847]/10 to-transparent">
+
+              <h4 class="font-bold text-xl">
+                Pro 🌶️
+              </h4>
+
+              <p class="text-5xl mt-6 font-black">
+                119.000
+              </p>
+
+              <span class="text-zinc-500">
+                /mes
+              </span>
+
+            </div>
+
+            <div class="border border-white/5 rounded-[30px] p-8 card-hover">
+
+              <h4 class="font-bold text-xl">
+                Picante 🔥
+              </h4>
+
+              <p class="text-5xl mt-6 font-black">
+                149.990
+              </p>
+
+              <span class="text-zinc-500">
+                /mes
+              </span>
+
+            </div>
+
           </div>
 
         </div>
+
       </div>
 
     </div>
-  </div>
-</section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="py-32 text-center">
-  <div class="max-w-2xl mx-auto px-6 fade-up">
+  </section>
 
-    <img src="Isotipo%20Rojo.png" class="mx-auto h-24 mb-8">
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-40 relative overflow-hidden">
 
-    <h2 class="text-5xl md:text-7xl font-black mb-6">
-      ¿HACEMOS QUE TU<br><span class="ají">MARCA QUEME?</span>
-    </h2>
+    <div class="absolute inset-0 bg-gradient-to-b from-zinc-950 to-black"></div>
 
-    <p class="text-zinc-400 mb-10">
-      Hablemos y armemos algo distinto.
-    </p>
+    <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-up">
 
-    <a href="https://wa.me/569XXXXXXXX" target="_blank"
-      class="inline-block bg-[#ac2517] px-10 py-6 text-xl font-bold hover:scale-105 transition">
-      HABLAR POR WHATSAPP →
-    </a>
+      <img
+        src="Isotipo%20Rojo.png"
+        class="mx-auto h-24 mb-10"
+      />
 
-  </div>
-</section>
+      <p class="uppercase tracking-[0.3em] text-zinc-500 mb-6 text-sm">
+        Contacto
+      </p>
 
-<footer class="py-16 text-center text-sm text-zinc-500">
-  © 2026 Ajiencia Pica — Santiago, Chile
-</footer>
+      <h2 class="text-5xl md:text-7xl font-black mb-8 leading-[0.95]">
+        ¿LISTO PARA QUE<br />
+        TU MARCA <span class="ají">QUEME?</span>
+      </h2>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/569XXXXXXXX" target="_blank"
-class="fixed bottom-8 right-8 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-xl hover:scale-110 transition">
-<i class="fab fa-whatsapp"></i>
-</a>
+      <p class="text-zinc-400 text-lg mb-12 max-w-xl mx-auto">
+        Hablemos y armemos algo que realmente destaque.
+      </p>
 
-<!-- ANIMACIONES -->
-<script>
-gsap.registerPlugin(ScrollTrigger);
+      <a
+        href="https://wa.me/569XXXXXXXX"
+        target="_blank"
+        class="inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition-all duration-300 hover:scale-105"
+      >
 
-gsap.utils.toArray(".fade-up").forEach((el, i) => {
-  gsap.fromTo(el,
-    { opacity: 0, y: 60 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: i * 0.1,
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%"
-      }
-    }
-  );
-});
-</script>
+        HABLAR POR WHATSAPP
+        <i class="fa-solid fa-arrow-right"></i>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 py-12 text-center text-sm text-zinc-500">
+    © 2026 Ajiencia Pica • Santiago, Chile • Hecho con mucho ají 🌶️
+  </footer>
+
+  <!-- BOTÓN WHATSAPP -->
+  <a
+    href="https://wa.me/569XXXXXXXX"
+    target="_blank"
+    class="fixed bottom-8 right-8 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- GSAP -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray(".fade-up").forEach((el, i) => {
+      gsap.fromTo(
+        el,
+        {
+          opacity: 0,
+          y: 60
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: i * 0.08,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%"
+          }
+        }
+      );
+    });
+  </script>
 
 </body>
 </html>
