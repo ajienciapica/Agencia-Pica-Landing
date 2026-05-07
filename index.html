@@ -13,72 +13,176 @@
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
   <style>
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #000;
-      overflow-x: hidden;
+    body{
+      font-family:'Inter',system-ui,sans-serif;
+      background:#000;
+      overflow-x:hidden;
     }
 
-    .ají {
-      color: #f3d847;
+    .ají{
+      color:#f3d847;
     }
 
-    .glow {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      background: #ac2517;
-      filter: blur(180px);
-      opacity: .4;
-      top: -100px;
-      left: -100px;
+    .glow{
+      position:absolute;
+      width:600px;
+      height:600px;
+      background:#ac2517;
+      filter:blur(180px);
+      opacity:.4;
+      top:-100px;
+      left:-100px;
     }
 
-    .card-hover {
-      transition: all .4s ease;
+    .card-hover{
+      transition:all .4s ease;
     }
 
-    .card-hover:hover {
-      transform: translateY(-10px) scale(1.02);
+    .card-hover:hover{
+      transform:translateY(-10px) scale(1.02);
     }
 
-    .fade-up {
-      opacity: 0;
-      transform: translateY(60px);
+    .fade-up{
+      opacity:0;
+      transform:translateY(60px);
     }
 
-    .noise {
-      position: absolute;
-      inset: 0;
-      opacity: .04;
+    .noise{
+      position:absolute;
+      inset:0;
+      opacity:.04;
       background-image:
       radial-gradient(#ffffff 1px, transparent 1px);
-      background-size: 22px 22px;
-      pointer-events: none;
+      background-size:22px 22px;
+      pointer-events:none;
     }
 
-    @media (max-width: 768px) {
+    html{
+      scroll-behavior:smooth;
+    }
 
-      #sobre-mi {
-        height: auto !important;
-        padding-top: 120px;
-        padding-bottom: 0;
+    /* ================= MOBILE ================= */
+
+    @media(max-width:768px){
+
+      nav{
+        padding-left:0;
+        padding-right:0;
       }
 
-      #sobre-mi img {
-        position: relative !important;
-        width: 100% !important;
-        left: auto !important;
-        bottom: auto !important;
+      h1{
+        font-size:4rem !important;
+        line-height:.9 !important;
       }
 
-      #sobre-mi .texto-about {
-        position: relative !important;
-        right: auto !important;
-        top: auto !important;
-        max-width: 100% !important;
-        padding: 0 24px 60px;
-        margin-top: -40px;
+      h2{
+        font-size:3rem !important;
+        line-height:.95 !important;
+      }
+
+      .hero-grid{
+        grid-template-columns:1fr !important;
+        text-align:center;
+        padding-top:120px;
+        gap:40px;
+      }
+
+      .hero-grid p{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .hero-grid a{
+        justify-content:center;
+      }
+
+      .hero-logo{
+        max-width:85%;
+        margin:auto;
+      }
+
+      /* SOBRE MI */
+
+      #sobre-mi{
+        height:auto !important;
+        padding-top:120px;
+        padding-bottom:0;
+      }
+
+      .about-container{
+        position:relative;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .about-image{
+        position:relative !important;
+        left:auto !important;
+        bottom:auto !important;
+        width:120% !important;
+        max-width:none !important;
+        margin-left:-10%;
+        z-index:10;
+      }
+
+      .texto-about{
+        position:relative !important;
+        right:auto !important;
+        top:auto !important;
+        max-width:100% !important;
+        padding:0 24px 80px;
+        margin-top:-40px;
+        text-align:center;
+      }
+
+      .texto-about p{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      /* SERVICIOS */
+
+      #servicios{
+        padding-top:100px;
+        padding-bottom:100px;
+      }
+
+      .services-grid{
+        grid-template-columns:1fr !important;
+      }
+
+      .community-grid{
+        grid-template-columns:1fr !important;
+      }
+
+      .corporative-grid{
+        grid-template-columns:1fr !important;
+      }
+
+      .price{
+        font-size:2rem !important;
+      }
+
+      .service-row{
+        flex-direction:column;
+        align-items:flex-start !important;
+      }
+
+      .service-row span{
+        margin-top:20px;
+      }
+
+      /* CONTACTO */
+
+      #contacto{
+        padding-top:120px;
+        padding-bottom:120px;
+      }
+
+      .contact-btn{
+        width:100%;
+        justify-content:center;
       }
 
     }
@@ -109,7 +213,7 @@
 
   <div class="glow"></div>
 
-  <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center z-10">
+  <div class="hero-grid relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center z-10">
 
     <div>
 
@@ -143,7 +247,7 @@
 
       <img
         src="Logo%20Negativo.png"
-        class="relative z-10 w-full max-w-[650px] opacity-90 hover:scale-105 transition duration-700"
+        class="hero-logo relative z-10 w-full max-w-[650px] opacity-90 hover:scale-105 transition duration-700"
       />
 
     </div>
@@ -157,32 +261,36 @@
 
   <div class="absolute left-[-250px] bottom-0 w-[900px] h-[900px] bg-[#ac2517] opacity-40 blur-[220px] rounded-full z-0"></div>
 
-  <img
-    src="bastian.png"
-    alt="Bastián Sanhueza"
-    class="absolute bottom-0 left-[-120px]
-    w-[900px] md:w-[1050px] lg:w-[1150px]
-    max-w-none
-    z-10
-    object-contain
-    pointer-events-none
-    drop-shadow-[0_40px_100px_rgba(0,0,0,0.95)]"
-  />
+  <div class="about-container">
 
-  <div class="texto-about absolute z-20 right-[7%] top-[52%] max-w-[380px]">
+    <img
+      src="bastian.png"
+      alt="Bastián Sanhueza"
+      class="about-image absolute bottom-0 left-[-120px]
+      w-[900px] md:w-[1050px] lg:w-[1150px]
+      max-w-none
+      z-10
+      object-contain
+      pointer-events-none
+      drop-shadow-[0_40px_100px_rgba(0,0,0,0.95)]"
+    />
 
-    <p class="uppercase tracking-[0.3em] text-zinc-500 mb-6 text-sm">
-      Fundador de Ajiencia Pica
-    </p>
+    <div class="texto-about absolute z-20 right-[7%] top-[52%] max-w-[380px]">
 
-    <h2 class="text-5xl md:text-6xl font-black mb-8 leading-[0.9]">
-      SOY <span class="ají">BASTIÁN SANHUEZA</span>
-    </h2>
+      <p class="uppercase tracking-[0.3em] text-zinc-500 mb-6 text-sm">
+        Fundador de Ajiencia Pica
+      </p>
 
-    <p class="text-zinc-400 text-lg leading-relaxed">
-      Egresado de Publicidad con una misión clara:
-      hacer que las marcas dejen de ser normales y empiecen a destacar.
-    </p>
+      <h2 class="text-5xl md:text-6xl font-black mb-8 leading-[0.9]">
+        SOY <span class="ají">BASTIÁN SANHUEZA</span>
+      </h2>
+
+      <p class="text-zinc-400 text-lg leading-relaxed">
+        Egresado de Publicidad con una misión clara:
+        hacer que las marcas dejen de ser normales y empiecen a destacar.
+      </p>
+
+    </div>
 
   </div>
 
@@ -204,9 +312,9 @@
     </h2>
 
     <!-- GRID -->
-    <div class="grid md:grid-cols-2 gap-10">
+    <div class="services-grid grid md:grid-cols-2 gap-10">
 
-      <!-- DISEÑO MARCA -->
+      <!-- DISEÑO -->
       <div class="bg-zinc-900/80 backdrop-blur-sm border border-white/5 p-10 rounded-[40px] card-hover fade-up">
 
         <div class="flex items-center justify-between mb-8">
@@ -221,7 +329,7 @@
 
           <div class="border-b border-white/10 pb-8">
 
-            <div class="flex justify-between items-start gap-6 mb-4">
+            <div class="service-row flex justify-between items-start gap-6">
 
               <div>
                 <h4 class="text-2xl font-bold">
@@ -230,12 +338,11 @@
 
                 <p class="text-zinc-400 mt-3 leading-relaxed">
                   Variantes de logo, manual de tono y estilo,
-                  elementos gráficos y hasta 5 aplicaciones de marca.
+                  elementos gráficos y hasta 5 aplicaciones.
                 </p>
-
               </div>
 
-              <span class="text-3xl font-black whitespace-nowrap">
+              <span class="price text-3xl font-black whitespace-nowrap">
                 119.000.-
               </span>
 
@@ -245,7 +352,7 @@
 
           <div>
 
-            <div class="flex justify-between items-start gap-6">
+            <div class="service-row flex justify-between items-start gap-6">
 
               <div>
                 <h4 class="text-2xl font-bold">
@@ -253,13 +360,11 @@
                 </h4>
 
                 <p class="text-zinc-400 mt-3 leading-relaxed">
-                  Ideal para marcas que necesitan una identidad visual
-                  sólida, limpia y adaptable.
+                  Identidad visual sólida y adaptable.
                 </p>
-
               </div>
 
-              <span class="text-3xl font-black whitespace-nowrap">
+              <span class="price text-3xl font-black whitespace-nowrap">
                 49.990.-
               </span>
 
@@ -286,7 +391,7 @@
 
           <div class="border-b border-white/10 pb-8">
 
-            <div class="flex justify-between items-start gap-6">
+            <div class="service-row flex justify-between items-start gap-6">
 
               <div>
 
@@ -295,13 +400,13 @@
                 </h4>
 
                 <p class="text-zinc-400 mt-3 leading-relaxed">
-                  Creación y vinculación de Facebook e Instagram,
-                  diseño de feed y 5 posteos listos para publicar.
+                  Vinculación Facebook + Instagram,
+                  diseño de feed y 5 posteos.
                 </p>
 
               </div>
 
-              <span class="text-3xl font-black whitespace-nowrap">
+              <span class="price text-3xl font-black whitespace-nowrap">
                 49.990.-
               </span>
 
@@ -311,7 +416,7 @@
 
           <div class="border-b border-white/10 pb-8">
 
-            <div class="flex justify-between items-start gap-6">
+            <div class="service-row flex justify-between items-start gap-6">
 
               <div>
 
@@ -320,13 +425,12 @@
                 </h4>
 
                 <p class="text-zinc-400 mt-3 leading-relaxed">
-                  Diseño de piezas gráficas modernas,
-                  adaptadas a la identidad visual de tu marca.
+                  Diseño moderno adaptado a tu marca.
                 </p>
 
               </div>
 
-              <span class="text-3xl font-black whitespace-nowrap">
+              <span class="price text-3xl font-black whitespace-nowrap">
                 14.990.-
               </span>
 
@@ -336,7 +440,7 @@
 
           <div>
 
-            <div class="flex justify-between items-start gap-6">
+            <div class="service-row flex justify-between items-start gap-6">
 
               <div>
 
@@ -345,13 +449,12 @@
                 </h4>
 
                 <p class="text-zinc-400 mt-3 leading-relaxed">
-                  Edición dinámica y moderna para contenido vertical.
-                  El material debe ser entregado por el cliente.
+                  Material entregado por el cliente.
                 </p>
 
               </div>
 
-              <span class="text-3xl font-black whitespace-nowrap">
+              <span class="price text-3xl font-black whitespace-nowrap">
                 24.990.-
               </span>
 
@@ -366,178 +469,81 @@
     </div>
 
     <!-- COMMUNITY -->
-    <div class="mt-14 fade-up">
+    <div class="mt-20 fade-up">
 
-      <div class="flex items-center justify-between mb-12">
+      <h3 class="text-5xl font-black mb-12">
+        COMMUNITY MANAGER
+      </h3>
 
-        <div>
-          <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-4">
-            Planes Mensuales
-          </p>
-
-          <h3 class="text-5xl font-black">
-            COMMUNITY MANAGER
-          </h3>
-        </div>
-
-      </div>
-
-      <div class="grid md:grid-cols-4 gap-8">
+      <div class="community-grid grid md:grid-cols-4 gap-8">
 
         <!-- BASICO -->
         <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-8 card-hover flex flex-col">
 
-          <div class="mb-8">
+          <h4 class="text-3xl font-black mb-6">
+            Básico
+          </h4>
 
-            <p class="text-zinc-500 uppercase tracking-[0.2em] text-sm mb-3">
-              Plan Básico
-            </p>
-
-            <h4 class="text-3xl font-black">
-              Básico
-            </h4>
-
-          </div>
-
-          <div class="mb-8">
-
-            <span class="text-5xl font-black">
-              80.000.-
-            </span>
-
-            <p class="text-zinc-500 mt-2">
-              mensualidad*
-            </p>
-
-          </div>
+          <span class="text-5xl font-black mb-8">
+            80.000.-
+          </span>
 
           <ul class="space-y-4 text-zinc-300 flex-1">
 
-            <li class="flex gap-3">
-              <i class="fa-solid fa-check text-[#f3d847] mt-1"></i>
-              Grilla de contenido semanal
-            </li>
-
-            <li class="flex gap-3">
-              <i class="fa-solid fa-check text-[#f3d847] mt-1"></i>
-              2 gráficas semanales
-            </li>
-
-            <li class="flex gap-3">
-              <i class="fa-solid fa-check text-[#f3d847] mt-1"></i>
-              Ideal para marcas que recién comienzan
-            </li>
+            <li>✔ 2 gráficas semanales</li>
+            <li>✔ Grilla semanal</li>
+            <li>✔ Ideal para comenzar</li>
 
           </ul>
 
         </div>
 
         <!-- PRO -->
-        <div class="bg-gradient-to-b from-[#f3d847]/20 to-zinc-900 border border-[#f3d847] rounded-[40px] p-8 card-hover flex flex-col scale-[1.02] shadow-[0_0_60px_rgba(243,216,71,0.15)]">
+        <div class="bg-gradient-to-b from-[#f3d847]/20 to-zinc-900 border border-[#f3d847] rounded-[40px] p-8 card-hover scale-[1.02]">
 
-          <div class="mb-8">
+          <span class="inline-block bg-[#f3d847] text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
+            MÁS VENDIDO
+          </span>
 
-            <span class="inline-block bg-[#f3d847] text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
-              MÁS VENDIDO
-            </span>
+          <h4 class="text-3xl font-black mb-6">
+            Pro 🌶️
+          </h4>
 
-            <h4 class="text-3xl font-black">
-              Pro 🌶️
-            </h4>
+          <span class="text-5xl font-black text-[#f3d847] mb-8 block">
+            119.000.-
+          </span>
 
-          </div>
+          <ul class="space-y-4 text-zinc-200">
 
-          <div class="mb-8">
-
-            <span class="text-5xl font-black text-[#f3d847]">
-              119.000.-
-            </span>
-
-            <p class="text-zinc-400 mt-2">
-              mensualidad*
-            </p>
-
-          </div>
-
-          <ul class="space-y-4 text-zinc-200 flex-1">
-
-            <li class="flex gap-3">
-              <i class="fa-solid fa-check text-[#f3d847] mt-1"></i>
-              2 gráficas semanales
-            </li>
-
-            <li class="flex gap-3">
-              <i class="fa-solid fa-check text-[#f3d847] mt-1"></i>
-              1 story semanal
-            </li>
-
-            <li class="flex gap-3">
-              <i class="fa-solid fa-check text-[#f3d847] mt-1"></i>
-              2 reels mensuales
-            </li>
-
-            <li class="flex gap-3">
-              <i class="fa-solid fa-check text-[#f3d847] mt-1"></i>
-              Mejor presencia y constancia en redes
-            </li>
+            <li>✔ 2 gráficas semanales</li>
+            <li>✔ 1 story semanal</li>
+            <li>✔ 2 reels mensuales</li>
 
           </ul>
 
         </div>
 
         <!-- PICANTE -->
-        <div class="bg-gradient-to-b from-orange-500/20 to-zinc-900 border border-orange-500 rounded-[40px] p-8 card-hover flex flex-col scale-[1.04] shadow-[0_0_80px_rgba(249,115,22,0.2)]">
+        <div class="bg-gradient-to-b from-orange-500/20 to-zinc-900 border border-orange-500 rounded-[40px] p-8 card-hover scale-[1.03]">
 
-          <div class="mb-8">
+          <span class="inline-block bg-orange-500 text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
+            FULL PICANTE 🔥
+          </span>
 
-            <span class="inline-block bg-orange-500 text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
-              FULL PICANTE 🔥
-            </span>
+          <h4 class="text-3xl font-black text-orange-400 mb-6">
+            Picante 🌶️
+          </h4>
 
-            <h4 class="text-3xl font-black text-orange-400">
-              Picante 🌶️
-            </h4>
+          <span class="text-5xl font-black text-orange-400 mb-8 block">
+            189.990.-
+          </span>
 
-          </div>
+          <ul class="space-y-4 text-zinc-200">
 
-          <div class="mb-8">
-
-            <span class="text-5xl font-black text-orange-400">
-              189.990.-
-            </span>
-
-            <p class="text-zinc-400 mt-2">
-              mensualidad*
-            </p>
-
-          </div>
-
-          <ul class="space-y-4 text-zinc-200 flex-1">
-
-            <li class="flex gap-3">
-              <i class="fa-solid fa-fire text-orange-400 mt-1"></i>
-              3 gráficas semanales
-            </li>
-
-            <li class="flex gap-3">
-              <i class="fa-solid fa-fire text-orange-400 mt-1"></i>
-              1 reel semanal
-            </li>
-
-            <li class="flex gap-3">
-              <i class="fa-solid fa-fire text-orange-400 mt-1"></i>
-              1 story semanal
-            </li>
-
-            <li class="flex gap-3">
-              <i class="fa-solid fa-fire text-orange-400 mt-1"></i>
-              Configuración de campañas Meta
-            </li>
-
-            <li class="flex gap-3">
-              <i class="fa-solid fa-fire text-orange-400 mt-1"></i>
-              Pensado para marcas que quieren crecer fuerte
-            </li>
+            <li>🔥 3 gráficas semanales</li>
+            <li>🔥 1 reel semanal</li>
+            <li>🔥 1 story semanal</li>
+            <li>🔥 Configuración Meta</li>
 
           </ul>
 
@@ -548,98 +554,23 @@
 
           <div>
 
-            <p class="text-zinc-500 uppercase tracking-[0.2em] text-sm mb-3">
-              Flexible
-            </p>
-
             <h4 class="text-3xl font-black mb-6">
               Personalizado
             </h4>
 
-            <p class="text-zinc-400 leading-relaxed">
-              Armamos un plan totalmente adaptado a las necesidades de tu marca.
+            <p class="text-zinc-400">
+              Armamos el plan que necesites.
             </p>
 
           </div>
 
           <a href="#contacto"
-            class="mt-10 inline-flex items-center gap-3 text-[#f3d847] font-bold">
+            class="mt-10 text-[#f3d847] font-bold">
 
-            Cotizar Plan
-            <i class="fa-solid fa-arrow-right"></i>
-
+            Cotizar →
           </a>
 
         </div>
-
-      </div>
-
-    </div>
-
-    <!-- CORPORATIVO -->
-    <div class="mt-24 fade-up">
-
-      <h3 class="text-4xl md:text-5xl font-black mb-14">
-        TRABAJOS <span class="ají">CORPORATIVOS</span>
-      </h3>
-
-      <div class="grid md:grid-cols-2 gap-8">
-
-        <div class="bg-zinc-900 border border-white/5 rounded-[35px] p-8 card-hover">
-          <div class="flex justify-between items-center">
-            <div>
-              <h4 class="text-2xl font-bold">Tarjetas de Presentación</h4>
-              <p class="text-zinc-400 mt-2">Diseño moderno y profesional</p>
-            </div>
-            <span class="text-3xl font-black">19.000.-</span>
-          </div>
-        </div>
-
-        <div class="bg-zinc-900 border border-white/5 rounded-[35px] p-8 card-hover">
-          <div class="flex justify-between items-center">
-            <div>
-              <h4 class="text-2xl font-bold">Firma de Correo</h4>
-              <p class="text-zinc-400 mt-2">Imagen profesional para tu empresa</p>
-            </div>
-            <span class="text-3xl font-black">19.000.-</span>
-          </div>
-        </div>
-
-        <div class="bg-zinc-900 border border-white/5 rounded-[35px] p-8 card-hover">
-          <div class="flex justify-between items-center">
-            <div>
-              <h4 class="text-2xl font-bold">Folletos / Brochure</h4>
-              <p class="text-zinc-400 mt-2">Valor según cantidad de páginas</p>
-            </div>
-            <span class="text-3xl font-black">24.990.- - 49.990.-</span>
-          </div>
-        </div>
-
-        <div class="bg-zinc-900 border border-white/5 rounded-[35px] p-8 card-hover">
-          <div class="flex justify-between items-center">
-            <div>
-              <h4 class="text-2xl font-bold">Diseño de Pendón</h4>
-              <p class="text-zinc-400 mt-2">Según complejidad del diseño</p>
-            </div>
-            <span class="text-3xl font-black">19.990.- - 24.990.-</span>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="mt-12 text-center">
-
-        <p class="text-zinc-400 text-lg">
-          ¿Lo que necesitas no aparece aquí?
-        </p>
-
-        <a href="#contacto"
-          class="inline-flex items-center gap-3 mt-4 text-[#f3d847] font-bold text-xl">
-
-          Escríbenos
-          <i class="fa-solid fa-arrow-right"></i>
-
-        </a>
 
       </div>
 
@@ -665,23 +596,19 @@
       class="mx-auto h-24 mb-10"
     />
 
-    <p class="uppercase tracking-[0.3em] text-zinc-500 mb-6 text-sm">
-      Contacto
-    </p>
-
     <h2 class="text-5xl md:text-7xl font-black mb-8 leading-[0.95]">
       ¿LISTO PARA QUE<br />
       TU MARCA <span class="ají">QUEME?</span>
     </h2>
 
     <p class="text-zinc-400 text-lg mb-12 max-w-xl mx-auto">
-      Hablemos y armemos algo que realmente destaque.
+      Hablemos y armemos algo distinto.
     </p>
 
     <a
       href="https://wa.me/569XXXXXXXX"
       target="_blank"
-      class="inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition-all duration-300 hover:scale-105"
+      class="contact-btn inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition-all duration-300 hover:scale-105"
     >
 
       HABLAR POR WHATSAPP
@@ -698,11 +625,11 @@
   © 2026 Ajiencia Pica • Santiago, Chile • Hecho con mucho ají 🌶️
 </footer>
 
-<!-- BOTÓN WHATSAPP -->
+<!-- WHATSAPP -->
 <a
   href="https://wa.me/569XXXXXXXX"
   target="_blank"
-  class="fixed bottom-8 right-8 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50"
+  class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50"
 >
   <i class="fab fa-whatsapp"></i>
 </a>
