@@ -64,17 +64,6 @@
       left:-200px;
     }
 
-    .about-glow{
-      position:absolute;
-      width:900px;
-      height:900px;
-      background:#ac2517;
-      filter:blur(220px);
-      opacity:.35;
-      bottom:-250px;
-      left:-250px;
-    }
-
     @media(max-width:768px){
 
       .hero-title{
@@ -221,21 +210,17 @@
 <section id="sobre-mi" class="relative overflow-hidden bg-black">
 
   <div class="noise"></div>
-  <div class="about-glow"></div>
 
-  <!-- CAMBIO IMPORTANTE:
-       saqué el items-end y el min-h-screen porque estaban cortando la imagen -->
+  <!-- GLOW CORREGIDO -->
+  <div class="absolute w-[700px] h-[700px] bg-[#ac2517] blur-[180px] opacity-25 left-[-180px] bottom-[-180px]"></div>
 
   <div class="about-wrapper max-w-[1800px] mx-auto px-6 relative z-10 grid md:grid-cols-[1.1fr_.9fr] items-center">
 
     <!-- IMAGEN -->
     <div class="about-image-container relative fade-up h-[980px] flex items-end">
 
-      <!-- SOMBRA -->
-      <div class="absolute bottom-0 left-0 w-full h-[260px] bg-gradient-to-t from-black to-transparent z-10"></div>
-
-      <!-- GLOW -->
-      <div class="absolute w-[850px] h-[850px] bg-[#ac2517] blur-[220px] opacity-40 left-[-250px] bottom-[-250px]"></div>
+      <!-- SOMBRA CORREGIDA -->
+      <div class="absolute bottom-0 left-0 w-full h-[180px] bg-gradient-to-t from-black via-black/70 to-transparent z-10"></div>
 
       <!-- IMAGEN -->
       <img
