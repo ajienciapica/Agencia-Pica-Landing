@@ -114,8 +114,7 @@
       }
 
       .about-image-container{
-        min-height:500px !important;
-        overflow:hidden !important;
+        min-height:520px !important;
       }
 
       .about-image{
@@ -125,7 +124,7 @@
       }
 
       .about-text{
-        padding-top:30px;
+        padding-top:20px;
         padding-bottom:0 !important;
         padding-left:0 !important;
         text-align:center;
@@ -219,7 +218,7 @@
 </header>
 
 <!-- SOBRE MI -->
-<section id="sobre-mi" class="relative overflow-hidden bg-black py-20 md:py-0">
+<section id="sobre-mi" class="relative overflow-hidden bg-black">
 
   <div class="noise"></div>
   <div class="about-glow"></div>
@@ -227,23 +226,23 @@
   <div class="about-wrapper max-w-[1800px] mx-auto px-6 relative z-10 grid md:grid-cols-[1.15fr_.85fr] items-end min-h-screen">
 
     <!-- IMAGEN -->
-    <div class="about-image-container relative fade-up min-h-screen flex items-end overflow-hidden">
+    <div class="about-image-container relative fade-up min-h-screen flex items-end">
+
+      <!-- SOMBRA BASE -->
+      <div class="absolute bottom-0 left-0 w-full h-[260px] bg-gradient-to-t from-black to-transparent z-10"></div>
 
       <!-- GLOW -->
       <div class="absolute w-[850px] h-[850px] bg-[#ac2517] blur-[220px] opacity-40 left-[-250px] bottom-[-250px]"></div>
-
-      <!-- SOMBRA -->
-      <div class="absolute bottom-0 left-0 w-full h-[220px] bg-gradient-to-t from-black to-transparent z-10"></div>
 
       <!-- IMAGEN -->
       <img
       src="bastian.png"
       alt="Bastián Sanhueza"
       class="about-image absolute
-      bottom-0
       left-[-120px]
-      w-[1200px]
-      xl:w-[1350px]
+      bottom-0
+      w-[1250px]
+      xl:w-[1400px]
       max-w-none
       object-contain
       z-20
@@ -252,7 +251,7 @@
     </div>
 
     <!-- TEXTO -->
-    <div class="about-text fade-up relative z-20 pb-24 pl-0 xl:pl-10">
+    <div class="about-text fade-up relative z-20 pb-28 pl-0 xl:pl-10">
 
       <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6">
         Fundador de Ajiencia Pica
@@ -543,6 +542,63 @@
           </a>
 
         </div>
+
+      </div>
+
+      <!-- CORPORATIVOS -->
+      <div class="mt-24 bg-zinc-900/70 border border-white/5 rounded-[40px] p-10 fade-up">
+
+        <h3 class="text-4xl font-black mb-10 text-[#f3d847]">
+          Trabajos Corporativos
+        </h3>
+
+        <div class="space-y-8">
+
+          <div class="service-row flex justify-between gap-10 border-b border-white/10 pb-6">
+            <div>
+              <h4 class="text-2xl font-bold">Tarjeta de Presentación</h4>
+              <p class="text-zinc-400 mt-2">Diseño corporativo profesional.</p>
+            </div>
+            <span class="service-price text-3xl font-black">19.000.-</span>
+          </div>
+
+          <div class="service-row flex justify-between gap-10 border-b border-white/10 pb-6">
+            <div>
+              <h4 class="text-2xl font-bold">Firma de Correo</h4>
+              <p class="text-zinc-400 mt-2">Imagen profesional para emails.</p>
+            </div>
+            <span class="service-price text-3xl font-black">19.000.-</span>
+          </div>
+
+          <div class="service-row flex justify-between gap-10 border-b border-white/10 pb-6">
+            <div>
+              <h4 class="text-2xl font-bold">Folletos / Brochure</h4>
+              <p class="text-zinc-400 mt-2">
+                Valor según cantidad de páginas y complejidad.
+              </p>
+            </div>
+            <span class="service-price text-3xl font-black">
+              24.990.- / 49.990.-
+            </span>
+          </div>
+
+          <div class="service-row flex justify-between gap-10">
+            <div>
+              <h4 class="text-2xl font-bold">Diseño de Pendón</h4>
+              <p class="text-zinc-400 mt-2">
+                Según complejidad del diseño requerido.
+              </p>
+            </div>
+            <span class="service-price text-3xl font-black">
+              19.990.- / 24.990.-
+            </span>
+          </div>
+
+        </div>
+
+        <p class="text-zinc-500 text-sm mt-10">
+          ¿Lo que necesitas no aparece aquí? Escríbenos y lo cotizamos.
+        </p>
 
       </div>
 
