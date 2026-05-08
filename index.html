@@ -114,17 +114,20 @@
       }
 
       .about-image-container{
-        min-height:480px !important;
+        min-height:500px !important;
+        overflow:hidden !important;
       }
 
       .about-image{
-        width:120% !important;
-        left:-10% !important;
+        width:135% !important;
+        left:-18% !important;
+        bottom:0 !important;
       }
 
       .about-text{
-        padding-top:20px;
+        padding-top:30px;
         padding-bottom:0 !important;
+        padding-left:0 !important;
         text-align:center;
       }
 
@@ -216,34 +219,40 @@
 </header>
 
 <!-- SOBRE MI -->
-<section id="sobre-mi" class="relative overflow-hidden bg-black py-24 md:py-32">
+<section id="sobre-mi" class="relative overflow-hidden bg-black py-20 md:py-0">
 
   <div class="noise"></div>
   <div class="about-glow"></div>
 
-  <div class="about-wrapper max-w-[1800px] mx-auto px-6 relative z-10 grid md:grid-cols-[1.1fr_.9fr] items-end">
+  <div class="about-wrapper max-w-[1800px] mx-auto px-6 relative z-10 grid md:grid-cols-[1.15fr_.85fr] items-end min-h-screen">
 
     <!-- IMAGEN -->
-    <div class="about-image-container relative fade-up min-h-[900px] flex items-end overflow-visible">
+    <div class="about-image-container relative fade-up min-h-screen flex items-end overflow-hidden">
 
+      <!-- GLOW -->
       <div class="absolute w-[850px] h-[850px] bg-[#ac2517] blur-[220px] opacity-40 left-[-250px] bottom-[-250px]"></div>
 
-      <!-- AJUSTE DEFINITIVO -->
+      <!-- SOMBRA -->
+      <div class="absolute bottom-0 left-0 w-full h-[220px] bg-gradient-to-t from-black to-transparent z-10"></div>
+
+      <!-- IMAGEN -->
       <img
       src="bastian.png"
       alt="Bastián Sanhueza"
-      class="about-image absolute bottom-0 left-[-40px]
-      w-[980px]
-      xl:w-[1100px]
+      class="about-image absolute
+      bottom-0
+      left-[-120px]
+      w-[1200px]
+      xl:w-[1350px]
       max-w-none
       object-contain
-      z-10
+      z-20
       drop-shadow-[0_40px_120px_rgba(0,0,0,0.95)]">
 
     </div>
 
     <!-- TEXTO -->
-    <div class="about-text fade-up relative z-20 pb-24 pl-6">
+    <div class="about-text fade-up relative z-20 pb-24 pl-0 xl:pl-10">
 
       <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6">
         Fundador de Ajiencia Pica
@@ -443,7 +452,7 @@
 
     </div>
 
-    <!-- COMMUNITY MANAGER -->
+    <!-- COMMUNITY -->
     <div class="mt-24 fade-up">
 
       <h3 class="text-5xl font-black mb-12">
@@ -452,7 +461,6 @@
 
       <div class="grid md:grid-cols-4 gap-8">
 
-        <!-- BASICO -->
         <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-8 card-hover">
 
           <h4 class="text-3xl font-black mb-6">
@@ -471,7 +479,6 @@
 
         </div>
 
-        <!-- PRO -->
         <div class="bg-gradient-to-b from-[#f3d847]/20 to-zinc-900 border border-[#f3d847] rounded-[40px] p-8 card-hover scale-[1.02]">
 
           <span class="inline-block bg-[#f3d847] text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
@@ -494,7 +501,6 @@
 
         </div>
 
-        <!-- PICANTE -->
         <div class="bg-gradient-to-b from-orange-500/20 to-zinc-900 border border-orange-500 rounded-[40px] p-8 card-hover scale-[1.03]">
 
           <span class="inline-block bg-orange-500 text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
@@ -518,7 +524,6 @@
 
         </div>
 
-        <!-- PERSONALIZADO -->
         <div class="bg-zinc-900 border border-dashed border-white/20 rounded-[40px] p-8 card-hover flex flex-col justify-between">
 
           <div>
