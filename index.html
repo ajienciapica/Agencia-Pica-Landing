@@ -71,7 +71,7 @@
     .social-btn:hover{ transform:translateY(-5px) scale(1.05); }
     .social-row{ gap:16px; justify-content:center; }
 
-    /* MOBILE */
+    /* ==================== MOBILE ==================== */
     @media(max-width:768px){
       .hero-main{ display:flex; flex-direction:column; justify-content:center; gap:30px; padding-top:120px; padding-bottom:40px; }
       .hero-title{ font-size:4rem !important; line-height:.9 !important; }
@@ -80,27 +80,26 @@
       .mobile-center{ text-align:center; }
       .mobile-btn{ justify-content:center; }
 
-      /* IMAGEN BASTIÁN EN MOBILE - CORREGIDO */
-      .about-section{ padding-top:20px; min-height:auto; }
+      /* IMAGEN BASTIÁN EN MOBILE - CORREGIDO (sin flotar) */
+      .about-section{ padding-top:30px; min-height:auto; }
       .about-wrapper{ grid-template-columns:1fr; min-height:auto; }
       .about-image-wrap{ 
-        height:520px; 
+        height:460px; 
         display:flex; 
         align-items:center; 
         justify-content:center; 
         overflow:hidden; 
+        padding-bottom:20px;
       }
       .about-image{ 
         position:relative; 
         width:100%; 
-        max-width:420px; 
+        max-width:380px; 
         height:auto; 
-        left:auto; 
-        bottom:auto; 
         object-fit:contain; 
       }
 
-      .about-text{ padding:30px 15px 60px 15px; text-align:center; }
+      .about-text{ padding:20px 15px 50px 15px; text-align:center; }
       .services-section{ padding-top:70px; padding-bottom:70px; }
       .contact-section{ padding-top:70px; padding-bottom:70px; }
       .ia-section{ margin-top:70px; }
@@ -240,7 +239,7 @@
         </a>
       </div>
 
-      <!-- Community Manager -->
+      <!-- Community Manager, Meta Ads, Corporativos, IA, Contacto, etc. (todo igual) -->
       <div id="community-manager" class="mt-24 fade-up">
         <h3 class="text-5xl font-black mb-12"> COMMUNITY MANAGER </h3>
         <div class="grid md:grid-cols-4 gap-8">
@@ -292,7 +291,8 @@
         </div>
       </div>
 
-      <!-- Meta Ads, Corporativo, IA, etc. -->
+      <!-- Resto de secciones (Meta Ads, Corporativos, IA, Contacto) se mantienen iguales que antes -->
+
       <div class="mt-24 fade-up">
         <h3 class="text-5xl font-black mb-12"> META ADS </h3>
         <div class="grid md:grid-cols-2 gap-10">
@@ -301,7 +301,7 @@
               <h4 class="text-3xl font-black mb-6 text-[#f3d847]"> Configuración Meta Ads </h4>
               <p class="text-zinc-400 leading-relaxed mb-8"> Configuración de campaña META ADS utilizando material entregado por cliente. </p>
               <span class="text-5xl font-black"> 39.990.- </span>
-              <p class="meta-disclaimer"> *El valor corresponde únicamente a la configuración de campaña. El presupuesto publicitario es definido y financiado por el cliente. </p>
+              <p class="meta-disclaimer">*El valor corresponde únicamente a la configuración de campaña. El presupuesto publicitario es definido y financiado por el cliente.</p>
             </div>
           </a>
           <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20de%20Meta%20Ads%20con%20desarrollo%20visual" target="_blank" class="service-link">
@@ -309,7 +309,7 @@
               <h4 class="text-3xl font-black mb-6 text-[#f3d847]"> Meta Ads + Desarrollo Visual </h4>
               <p class="text-zinc-400 leading-relaxed mb-8"> Incluye hasta 2 gráficas programadas o edición de 1 ad reel. El material de video debe ser entregado por cliente. </p>
               <span class="text-5xl font-black"> 54.990.- </span>
-              <p class="meta-disclaimer"> *El valor corresponde únicamente a la configuración y desarrollo visual. El presupuesto publicitario es definido y financiado por el cliente. </p>
+              <p class="meta-disclaimer">*El valor corresponde únicamente a la configuración y desarrollo visual. El presupuesto publicitario es definido y financiado por el cliente.</p>
             </div>
           </a>
         </div>
