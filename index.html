@@ -41,176 +41,77 @@
     .fade-up{ opacity:0; transform:translateY(60px); }
     .card-hover{ transition:all .35s ease; }
     .card-hover:hover{ transform:translateY(-8px); border-color:#f3d847; }
-    .service-link{ 
-      text-decoration:none; 
-      color:white; 
-      display:block; 
-      height:100%; 
-    }
-    .gif-divider{ 
-      width:100%; 
-      height:220px; 
-      object-fit:cover; 
-      display:block; 
-      margin:0; 
-      padding:0; 
-    }
-    .cm-button{ 
-      background:#ac2517; 
-      padding:12px 20px; 
-      border-radius:999px; 
-      font-size:.85rem; 
-      font-weight:700; 
-      border:1px solid rgba(255,255,255,.08); 
-      transition:.3s ease; 
-    }
+    .service-link{ text-decoration:none; color:white; display:block; height:100%; }
+    .gif-divider{ width:100%; height:220px; object-fit:cover; display:block; margin:0; padding:0; }
+    .cm-button{ background:#ac2517; padding:12px 20px; border-radius:999px; font-size:.85rem; font-weight:700; border:1px solid rgba(255,255,255,.08); transition:.3s ease; }
     .cm-button:hover{ background:#f3d847; color:black; }
     .about-image{ filter:drop-shadow(0 40px 120px rgba(0,0,0,.95)); }
-    .ia-glow{ 
-      position:absolute; 
-      width:450px; 
-      height:450px; 
-      background:#ac2517; 
-      filter:blur(140px); 
-      opacity:.35; 
-      z-index:1; 
-      pointer-events:none; 
-    }
-    .ia-image{ 
-      position:relative; 
-      z-index:2; 
-      width:100%; 
-      max-width:620px; 
-      object-fit:contain; 
-    }
+    .ia-glow{ position:absolute; width:450px; height:450px; background:#ac2517; filter:blur(140px); opacity:.35; z-index:1; pointer-events:none; }
+    .ia-image{ position:relative; z-index:2; width:100%; max-width:620px; object-fit:contain; }
     section{ position:relative; }
 
     /* DESKTOP */
-    .about-section{ 
-      padding-top:40px; 
-      padding-bottom:0; 
-      min-height:860px; 
-    }
-    .about-wrapper{ 
-      display:grid; 
-      grid-template-columns:1.2fr .8fr; 
-      align-items:end; 
-      min-height:860px; 
-      position:relative; 
-      z-index:2; 
-    }
-    .about-image-wrap{ 
-      position:relative; 
-      height:860px; 
-      display:flex; 
-      align-items:flex-end; 
-    }
-    .about-image{ 
-      position:absolute; 
-      left:-80px; 
-      bottom:0; 
-      width:980px; 
-      max-width:none; 
-      object-fit:contain; 
-    }
-    .about-text{ 
-      padding-left:30px; 
-      padding-bottom:180px; 
-      position:relative; 
-      z-index:3; 
-    }
+    .about-section{ padding-top:40px; padding-bottom:0; min-height:860px; }
+    .about-wrapper{ display:grid; grid-template-columns:1.2fr .8fr; align-items:end; min-height:860px; position:relative; z-index:2; }
+    .about-image-wrap{ position:relative; height:860px; display:flex; align-items:flex-end; }
+    .about-image{ position:absolute; left:-80px; bottom:0; width:980px; max-width:none; object-fit:contain; }
+    .about-text{ padding-left:30px; padding-bottom:180px; position:relative; z-index:3; }
+
     .hero-main{ gap:30px; }
     .services-section{ padding-top:90px; padding-bottom:90px; }
     .contact-section{ padding-top:90px; padding-bottom:90px; }
     .ia-section{ margin-top:90px; }
-    .meta-disclaimer{ 
-      color:#71717a; 
-      font-size:.8rem; 
-      margin-top:14px; 
-      line-height:1.5; 
-    }
+    .meta-disclaimer{ color:#71717a; font-size:.8rem; margin-top:14px; line-height:1.5; }
 
     /* SOCIAL BUTTONS */
     .social-btn{
-      width:58px;
-      height:58px;
-      border-radius:999px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:1.4rem;
-      transition:.3s ease;
-      border:1px solid rgba(255,255,255,.08);
+      width:58px; height:58px; border-radius:999px; display:flex; align-items:center; justify-content:center;
+      font-size:1.4rem; transition:.3s ease; border:1px solid rgba(255,255,255,.08);
     }
-    .social-btn:hover{
-      transform:translateY(-5px) scale(1.05);
-    }
-    .social-row{
-      justify-content:center;
-      gap:16px;
-    }
+    .social-btn:hover{ transform:translateY(-5px) scale(1.05); }
+    .social-row{ gap:16px; justify-content:center; }
 
     /* MOBILE */
     @media(max-width:768px){
-      body{ overflow-x:hidden; }
-      .hero-main{ 
-        display:flex; 
-        flex-direction:column; 
-        justify-content:center; 
-        gap:30px; 
-        padding-top:120px; 
-        padding-bottom:40px; 
-      }
+      .hero-main{ display:flex; flex-direction:column; justify-content:center; gap:30px; padding-top:120px; padding-bottom:40px; }
       .hero-title{ font-size:4rem !important; line-height:.9 !important; }
       .section-title{ font-size:3rem !important; line-height:.95 !important; }
       .hero-logo{ max-width:360px !important; }
       .mobile-center{ text-align:center; }
-      .mobile-center p{ margin-left:auto; margin-right:auto; }
       .mobile-btn{ justify-content:center; }
-      .about-section{ 
-        padding-top:0; 
-        min-height:auto; 
-      }
-      .about-wrapper{ 
-        grid-template-columns:1fr; 
-        min-height:auto; 
-      }
+
+      /* IMAGEN BASTIÁN EN MOBILE - CORREGIDO */
+      .about-section{ padding-top:20px; min-height:auto; }
+      .about-wrapper{ grid-template-columns:1fr; min-height:auto; }
       .about-image-wrap{ 
-        height:640px; 
+        height:520px; 
         display:flex; 
-        align-items:flex-end; 
+        align-items:center; 
         justify-content:center; 
         overflow:hidden; 
       }
       .about-image{ 
-        width:185%; 
+        position:relative; 
+        width:100%; 
+        max-width:420px; 
+        height:auto; 
         left:auto; 
-        bottom:0; 
-        position:absolute; 
+        bottom:auto; 
+        object-fit:contain; 
       }
-      .about-text{ 
-        padding:20px 10px 50px 10px; 
-        text-align:center; 
-      }
-      .about-text p{ margin-left:auto; margin-right:auto; }
+
+      .about-text{ padding:30px 15px 60px 15px; text-align:center; }
       .services-section{ padding-top:70px; padding-bottom:70px; }
       .contact-section{ padding-top:70px; padding-bottom:70px; }
       .ia-section{ margin-top:70px; }
-      .gif-divider{ 
-        height:140px; 
-        object-fit:cover; 
-        object-position:center; 
-      }
+      .gif-divider{ height:140px; object-fit:cover; object-position:center; }
       .service-row{ flex-direction:column; gap:20px; }
-      .service-price{ font-size:2rem !important; }
       .ia-grid{ grid-template-columns:1fr !important; gap:40px !important; }
-      .ia-image{ max-width:100%; }
-      .ia-glow{ width:300px; height:300px; }
-      .social-row{ justify-content:center; }
     }
   </style>
 </head>
 <body>
+
   <!-- NAV -->
   <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-lg border-b border-white/10 z-50">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
@@ -229,14 +130,12 @@
     <div class="noise"></div>
     <div class="hero-glow"></div>
     <div class="hero-main max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center relative z-10">
-      <!-- TEXTO -->
       <div class="mobile-center fade-up">
         <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6"> Agencia Creativa • Marketing • Diseño </p>
         <h1 class="hero-title text-6xl md:text-8xl font-black leading-[0.9]"> MARKETING QUE<br> <span class="ají">PICA</span> </h1>
         <p class="mt-8 text-zinc-400 text-lg leading-relaxed max-w-md"> Tu marca es fome? Nosotros la sazonamos, la hacemos destacar y la convertimos en algo imposible de ignorar. </p>
         <a href="#servicios" class="mobile-btn inline-flex items-center gap-4 mt-10 border border-white px-8 py-4 hover:bg-white hover:text-black transition"> VER SERVICIOS <i class="fa-solid fa-arrow-right"></i> </a>
       </div>
-      <!-- LOGO -->
       <div class="relative flex justify-center fade-up">
         <div class="absolute w-[420px] h-[420px] bg-[#ac2517] blur-[140px] opacity-30"></div>
         <img src="Logo%20Negativo.png" class="hero-logo relative z-10 w-full max-w-[560px] hover:scale-105 transition duration-700">
@@ -249,11 +148,9 @@
     <div class="noise"></div>
     <div class="absolute w-[700px] h-[700px] bg-[#ac2517] blur-[180px] opacity-20 left-[-250px] bottom-[-250px]"></div>
     <div class="about-wrapper max-w-[1800px] mx-auto px-6">
-      <!-- FOTO -->
       <div class="about-image-wrap fade-up">
         <img src="bastian.png" class="about-image">
       </div>
-      <!-- TEXTO -->
       <div class="about-text fade-up">
         <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6"> Fundador de Ajiencia Pica </p>
         <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.9] mb-8"> SOY <span class="ají">BASTIÁN SANHUEZA</span> </h2>
@@ -274,9 +171,7 @@
       <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6 fade-up"> Servicios </p>
       <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.9] mb-20 fade-up"> SERVICIOS CON <span class="ají">SABOR</span> </h2>
 
-      <!-- PRIMER GRID -->
       <div class="grid md:grid-cols-2 gap-10">
-        <!-- DISEÑO -->
         <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20servicio%20Diseño%20de%20Marca" target="_blank" class="service-link">
           <div class="bg-zinc-900/80 border border-white/5 rounded-[40px] p-10 card-hover fade-up h-full">
             <div class="flex items-center justify-between mb-10">
@@ -306,7 +201,6 @@
           </div>
         </a>
 
-        <!-- REDES -->
         <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20servicio%20Redes%20Sociales" target="_blank" class="service-link">
           <div class="bg-zinc-900/80 border border-white/5 rounded-[40px] p-10 card-hover fade-up h-full">
             <div class="flex items-center justify-between mb-10">
@@ -346,11 +240,10 @@
         </a>
       </div>
 
-      <!-- COMMUNITY MANAGER -->
+      <!-- Community Manager -->
       <div id="community-manager" class="mt-24 fade-up">
         <h3 class="text-5xl font-black mb-12"> COMMUNITY MANAGER </h3>
         <div class="grid md:grid-cols-4 gap-8">
-          <!-- BASICO -->
           <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20básico" target="_blank" class="service-link">
             <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-8 card-hover h-full">
               <h4 class="text-3xl font-black mb-6"> Básico </h4>
@@ -362,7 +255,6 @@
               </ul>
             </div>
           </a>
-          <!-- PRO -->
           <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20pro" target="_blank" class="service-link">
             <div class="bg-gradient-to-b from-[#f3d847]/20 to-zinc-900 border border-[#f3d847] rounded-[40px] p-8 card-hover h-full">
               <span class="inline-block bg-[#f3d847] text-black px-4 py-2 rounded-full text-xs font-bold mb-4"> MÁS VENDIDO </span>
@@ -375,7 +267,6 @@
               </ul>
             </div>
           </a>
-          <!-- PICANTE -->
           <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20picante" target="_blank" class="service-link">
             <div class="bg-gradient-to-b from-orange-500/20 to-zinc-900 border border-orange-500 rounded-[40px] p-8 card-hover h-full">
               <span class="inline-block bg-orange-500 text-black px-4 py-2 rounded-full text-xs font-bold mb-4"> FULL PICANTE 🔥 </span>
@@ -389,7 +280,6 @@
               </ul>
             </div>
           </a>
-          <!-- PERSONALIZADO -->
           <a href="https://wa.me/56930638154?text=Quiero%20cotizar%20un%20plan%20personalizado" target="_blank" class="service-link">
             <div class="bg-zinc-900 border border-dashed border-white/20 rounded-[40px] p-8 card-hover h-full flex flex-col justify-between">
               <div>
@@ -402,11 +292,10 @@
         </div>
       </div>
 
-      <!-- META ADS -->
+      <!-- Meta Ads, Corporativo, IA, etc. -->
       <div class="mt-24 fade-up">
         <h3 class="text-5xl font-black mb-12"> META ADS </h3>
         <div class="grid md:grid-cols-2 gap-10">
-          <!-- CONFIG SIMPLE -->
           <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20de%20Configuración%20Meta%20Ads" target="_blank" class="service-link">
             <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover h-full">
               <h4 class="text-3xl font-black mb-6 text-[#f3d847]"> Configuración Meta Ads </h4>
@@ -415,7 +304,6 @@
               <p class="meta-disclaimer"> *El valor corresponde únicamente a la configuración de campaña. El presupuesto publicitario es definido y financiado por el cliente. </p>
             </div>
           </a>
-          <!-- CONFIG VISUAL -->
           <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20de%20Meta%20Ads%20con%20desarrollo%20visual" target="_blank" class="service-link">
             <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover h-full">
               <h4 class="text-3xl font-black mb-6 text-[#f3d847]"> Meta Ads + Desarrollo Visual </h4>
@@ -427,7 +315,6 @@
         </div>
       </div>
 
-      <!-- CORPORATIVO -->
       <div class="mt-24 fade-up">
         <h3 class="text-5xl font-black mb-12"> TRABAJOS CORPORATIVOS </h3>
         <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10">
@@ -452,15 +339,12 @@
         </div>
       </div>
 
-      <!-- IA -->
       <section class="ia-section">
         <div class="grid ia-grid md:grid-cols-2 gap-14 items-center">
-          <!-- FOTO -->
           <div class="fade-up flex justify-center relative">
             <div class="ia-glow"></div>
             <img src="usamos IA.png" class="ia-image">
           </div>
-          <!-- TEXTO -->
           <div class="fade-up">
             <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6"> Tecnología </p>
             <h3 class="text-5xl font-black leading-[0.9] mb-8"> USAMOS <span class="ají">IA WENA WENA</span> </h3>
@@ -482,7 +366,6 @@
       <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.95] mb-8"> ¿LISTO PARA QUE<br> TU MARCA <span class="ají">QUEME?</span> </h2>
       <p class="text-zinc-400 text-lg mb-12 max-w-xl mx-auto"> Hablemos y armemos algo distinto. </p>
       
-      <!-- REDES SOCIALES -->
       <div class="flex gap-5 justify-center mb-10 social-row">
         <a href="https://www.instagram.com/agencia.pica/" target="_blank" class="social-btn bg-gradient-to-br from-pink-500 to-orange-400">
           <i class="fab fa-instagram"></i>
@@ -503,25 +386,17 @@
     © 2026 Ajiencia Pica • Santiago, Chile • Hecho con mucho ají 🌶️
   </footer>
 
-  <!-- BOTON FLOTANTE -->
+  <!-- BOTÓN WHATSAPP -->
   <a href="https://wa.me/56930638154" target="_blank" class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- GSAP -->
   <script>
     gsap.registerPlugin(ScrollTrigger);
     gsap.utils.toArray(".fade-up").forEach((el, i) => {
-      gsap.fromTo( el, 
+      gsap.fromTo(el, 
         { opacity:0, y:60 }, 
-        { 
-          opacity:1, 
-          y:0, 
-          duration:1, 
-          delay:i * 0.05, 
-          ease:"power3.out", 
-          scrollTrigger:{ trigger:el, start:"top 88%" } 
-        }
+        { opacity:1, y:0, duration:1, delay:i * 0.05, ease:"power3.out", scrollTrigger:{ trigger:el, start:"top 88%" } }
       );
     });
   </script>
