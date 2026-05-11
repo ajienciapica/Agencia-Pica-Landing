@@ -34,7 +34,7 @@
     .noise{
       position:absolute;
       inset:0;
-      opacity:.04;
+      opacity:.03;
       background-image:
       radial-gradient(#ffffff 1px, transparent 1px);
       background-size:22px 22px;
@@ -68,7 +68,7 @@
 
     .gif-divider{
       width:100%;
-      height:260px;
+      height:220px;
       object-fit:cover;
       display:block;
       opacity:.95;
@@ -79,6 +79,34 @@
       height:100%;
       text-decoration:none;
       color:white;
+    }
+
+    .ia-image-wrap{
+      position:relative;
+      border-radius:40px;
+      overflow:hidden;
+    }
+
+    .ia-image-wrap::before{
+      content:'';
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:#ac2517;
+      filter:blur(120px);
+      opacity:.45;
+      left:-100px;
+      bottom:-120px;
+      z-index:1;
+    }
+
+    .ia-image{
+      position:relative;
+      z-index:2;
+      width:100%;
+      border-radius:40px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,.08);
     }
 
     @media(max-width:768px){
@@ -121,18 +149,18 @@
       }
 
       .about-image-container{
-        min-height:650px !important;
+        min-height:520px !important;
       }
 
       .about-image{
-        width:125% !important;
-        left:-12% !important;
+        width:118% !important;
+        left:-9% !important;
         bottom:0 !important;
       }
 
       .about-text{
-        padding-top:30px;
-        padding-bottom:40px !important;
+        padding-top:10px !important;
+        padding-bottom:20px !important;
         padding-left:0 !important;
         text-align:center;
         justify-content:center !important;
@@ -144,11 +172,29 @@
       }
 
       .gif-divider{
-        height:160px;
+        height:120px;
       }
 
       .ia-grid{
         grid-template-columns:1fr !important;
+      }
+
+      section{
+        padding-top:80px !important;
+        padding-bottom:80px !important;
+      }
+
+      #sobre-mi{
+        padding-bottom:0 !important;
+      }
+
+      #servicios{
+        padding-top:70px !important;
+      }
+
+      #contacto{
+        padding-top:90px !important;
+        padding-bottom:90px !important;
       }
 
     }
@@ -191,7 +237,7 @@
   <div class="noise"></div>
   <div class="hero-glow"></div>
 
-  <div class="max-w-7xl mx-auto px-6 py-40 grid md:grid-cols-2 gap-20 items-center relative z-10">
+  <div class="max-w-7xl mx-auto px-6 py-32 md:py-40 grid md:grid-cols-2 gap-16 items-center relative z-10">
 
     <div class="mobile-center fade-up">
 
@@ -234,16 +280,16 @@
 </header>
 
 <!-- SOBRE MI -->
-<section id="sobre-mi" class="relative overflow-hidden bg-black">
+<section id="sobre-mi" class="relative overflow-hidden bg-black pt-16">
 
   <div class="noise"></div>
 
   <div class="absolute w-[700px] h-[700px] bg-[#ac2517] blur-[180px] opacity-20 left-[-200px] bottom-[-200px]"></div>
 
-  <div class="about-wrapper max-w-[1800px] mx-auto px-6 relative z-10 grid md:grid-cols-[1.2fr_.8fr] items-end min-h-[980px]">
+  <div class="about-wrapper max-w-[1800px] mx-auto px-6 relative z-10 grid md:grid-cols-[1.2fr_.8fr] items-end min-h-[900px]">
 
     <!-- IMAGEN -->
-    <div class="about-image-container relative fade-up h-[980px] flex items-end">
+    <div class="about-image-container relative fade-up h-[900px] flex items-end">
 
       <img
       src="bastian.png"
@@ -251,7 +297,7 @@
       class="about-image absolute
       left-[-40px]
       bottom-0
-      w-[980px]
+      w-[880px]
       max-w-none
       object-contain
       z-20
@@ -260,7 +306,7 @@
     </div>
 
     <!-- TEXTO -->
-    <div class="about-text fade-up relative z-30 pb-32 pl-20 xl:pl-32 flex justify-end">
+    <div class="about-text fade-up relative z-30 pb-28 pl-20 xl:pl-32 flex justify-end">
 
       <div class="max-w-[480px]">
 
@@ -286,12 +332,12 @@
 </section>
 
 <!-- GIF -->
-<section class="relative overflow-hidden">
+<section class="relative overflow-hidden py-0">
   <img src="banner agencia pica.gif" class="gif-divider">
 </section>
 
 <!-- SERVICIOS -->
-<section id="servicios" class="relative py-32 bg-zinc-950 overflow-hidden">
+<section id="servicios" class="relative py-24 bg-zinc-950 overflow-hidden">
 
   <div class="noise"></div>
 
@@ -305,6 +351,7 @@
       SERVICIOS CON <span class="ají">SABOR</span>
     </h2>
 
+    <!-- SERVICIOS PRINCIPALES -->
     <div class="grid md:grid-cols-2 gap-10">
 
       <!-- DISEÑO -->
@@ -491,127 +538,194 @@
       <div class="grid md:grid-cols-4 gap-8">
 
         <!-- BASICO -->
-        <a
-        href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20básico"
+        <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20básico"
         target="_blank"
         class="service-link">
 
-        <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-8 card-hover h-full">
-
-          <h4 class="text-3xl font-black mb-6">
-            Básico
-          </h4>
-
-          <span class="text-5xl font-black block mb-8">
-            80.000.-
-          </span>
-
-          <ul class="space-y-4 text-zinc-300">
-            <li>✔ 2 gráficas semanales</li>
-            <li>✔ Grilla semanal</li>
-            <li>✔ Ideal para comenzar</li>
-          </ul>
-
-        </div>
-        </a>
-
-        <!-- PRO -->
-        <a
-        href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20pro"
-        target="_blank"
-        class="service-link">
-
-        <div class="bg-gradient-to-b from-[#f3d847]/20 to-zinc-900 border border-[#f3d847] rounded-[40px] p-8 card-hover scale-[1.02] h-full">
-
-          <span class="inline-block bg-[#f3d847] text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
-            MÁS VENDIDO
-          </span>
-
-          <h4 class="text-3xl font-black mb-6">
-            Pro 🌶️
-          </h4>
-
-          <span class="text-5xl font-black text-[#f3d847] block mb-8">
-            119.000.-
-          </span>
-
-          <ul class="space-y-4 text-zinc-200">
-            <li>✔ 2 gráficas semanales</li>
-            <li>✔ 1 story semanal</li>
-            <li>✔ 2 reels mensuales</li>
-          </ul>
-
-        </div>
-        </a>
-
-        <!-- PICANTE -->
-        <a
-        href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20picante"
-        target="_blank"
-        class="service-link">
-
-        <div class="bg-gradient-to-b from-orange-500/20 to-zinc-900 border border-orange-500 rounded-[40px] p-8 card-hover scale-[1.03] h-full">
-
-          <span class="inline-block bg-orange-500 text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
-            FULL PICANTE 🔥
-          </span>
-
-          <h4 class="text-3xl font-black text-orange-400 mb-6">
-            Picante 🌶️
-          </h4>
-
-          <span class="text-5xl font-black text-orange-400 block mb-8">
-            189.990.-
-          </span>
-
-          <ul class="space-y-4 text-zinc-200">
-            <li>🔥 3 gráficas semanales</li>
-            <li>🔥 1 reel semanal</li>
-            <li>🔥 1 story semanal</li>
-            <li>🔥 Configuración Meta Ads</li>
-          </ul>
-
-        </div>
-        </a>
-
-        <!-- PERSONALIZADO -->
-        <a
-        href="https://wa.me/56930638154?text=Quiero%20cotizar%20un%20plan%20personalizado"
-        target="_blank"
-        class="service-link">
-
-        <div class="bg-zinc-900 border border-dashed border-white/20 rounded-[40px] p-8 card-hover h-full flex flex-col justify-between">
-
-          <div>
+          <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-8 card-hover h-full">
 
             <h4 class="text-3xl font-black mb-6">
-              Personalizado
+              Básico
             </h4>
 
-            <p class="text-zinc-400">
-              Armamos el plan que necesites.
-            </p>
+            <span class="text-5xl font-black block mb-8">
+              80.000.-
+            </span>
+
+            <ul class="space-y-4 text-zinc-300">
+              <li>✔ 2 gráficas semanales</li>
+              <li>✔ Grilla semanal</li>
+              <li>✔ Ideal para comenzar</li>
+            </ul>
 
           </div>
 
-          <span class="text-[#f3d847] font-bold mt-10">
-            Cotizar →
-          </span>
+        </a>
 
-        </div>
+        <!-- PRO -->
+        <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20pro"
+        target="_blank"
+        class="service-link">
+
+          <div class="bg-gradient-to-b from-[#f3d847]/20 to-zinc-900 border border-[#f3d847] rounded-[40px] p-8 card-hover h-full">
+
+            <span class="inline-block bg-[#f3d847] text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
+              MÁS VENDIDO
+            </span>
+
+            <h4 class="text-3xl font-black mb-6">
+              Pro 🌶️
+            </h4>
+
+            <span class="text-5xl font-black text-[#f3d847] block mb-8">
+              119.000.-
+            </span>
+
+            <ul class="space-y-4 text-zinc-200">
+              <li>✔ 2 gráficas semanales</li>
+              <li>✔ 1 story semanal</li>
+              <li>✔ 2 reels mensuales</li>
+            </ul>
+
+          </div>
+
+        </a>
+
+        <!-- PICANTE -->
+        <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20picante"
+        target="_blank"
+        class="service-link">
+
+          <div class="bg-gradient-to-b from-orange-500/20 to-zinc-900 border border-orange-500 rounded-[40px] p-8 card-hover h-full">
+
+            <span class="inline-block bg-orange-500 text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
+              FULL PICANTE 🔥
+            </span>
+
+            <h4 class="text-3xl font-black text-orange-400 mb-6">
+              Picante 🌶️
+            </h4>
+
+            <span class="text-5xl font-black text-orange-400 block mb-8">
+              189.990.-
+            </span>
+
+            <ul class="space-y-4 text-zinc-200">
+              <li>🔥 3 gráficas semanales</li>
+              <li>🔥 1 reel semanal</li>
+              <li>🔥 1 story semanal</li>
+              <li>🔥 Configuración Meta Ads</li>
+            </ul>
+
+          </div>
+
+        </a>
+
+        <!-- PERSONALIZADO -->
+        <a href="https://wa.me/56930638154?text=Quiero%20cotizar%20un%20plan%20personalizado"
+        target="_blank"
+        class="service-link">
+
+          <div class="bg-zinc-900 border border-dashed border-white/20 rounded-[40px] p-8 card-hover h-full flex flex-col justify-between">
+
+            <div>
+
+              <h4 class="text-3xl font-black mb-6">
+                Personalizado
+              </h4>
+
+              <p class="text-zinc-400">
+                Armamos el plan que necesites.
+              </p>
+
+            </div>
+
+            <span class="text-[#f3d847] font-bold mt-10">
+              Cotizar →
+            </span>
+
+          </div>
+
         </a>
 
       </div>
 
     </div>
 
-    <!-- IA -->
-    <section class="mt-32">
+    <!-- META ADS -->
+    <div class="mt-24 fade-up">
 
-      <div class="grid ia-grid md:grid-cols-2 gap-16 items-center">
+      <h3 class="text-5xl font-black mb-12">
+        META ADS
+      </h3>
+
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20sobre%20Meta%20Ads"
+        target="_blank"
+        class="service-link">
+
+          <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover h-full">
+
+            <h4 class="text-3xl font-black mb-6 text-[#f3d847]">
+              Configuración de Campaña
+            </h4>
+
+            <p class="text-zinc-400 leading-relaxed mb-8">
+              Configuración completa de campaña META ADS utilizando material entregado por el cliente.
+            </p>
+
+            <span class="text-5xl font-black">
+              39.990.-
+            </span>
+
+          </div>
+
+        </a>
+
+        <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20sobre%20Meta%20Ads%20con%20desarrollo%20visual"
+        target="_blank"
+        class="service-link">
+
+          <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover h-full">
+
+            <h4 class="text-3xl font-black mb-6 text-orange-400">
+              Meta Ads + Desarrollo Visual
+            </h4>
+
+            <p class="text-zinc-400 leading-relaxed mb-8">
+              Incluye hasta 2 gráficas programadas o edición de 1 reel publicitario.
+              El material de video debe ser entregado por el cliente.
+            </p>
+
+            <span class="text-5xl font-black text-orange-400">
+              54.990.-
+            </span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+      <p class="text-zinc-500 text-sm mt-6">
+        *El valor corresponde únicamente a la configuración de campaña.
+        El presupuesto publicitario es definido y pagado por el cliente.
+      </p>
+
+    </div>
+
+    <!-- IA -->
+    <section class="mt-28">
+
+      <div class="grid ia-grid md:grid-cols-2 gap-14 items-center">
 
         <div class="fade-up">
-          <img src="usamos IA.png" class="w-full rounded-[40px] border border-white/10">
+
+          <div class="ia-image-wrap">
+            <img src="usamos IA.png" class="ia-image">
+          </div>
+
         </div>
 
         <div class="fade-up">
@@ -633,8 +747,10 @@
           </p>
 
           <p class="text-zinc-400 text-lg leading-relaxed">
-            Contamos con <span class="text-white font-bold">
-            STOCK DE FOTOS LICENCIADAS Y PAGADAS*</span>
+            Contamos con
+            <span class="text-white font-bold">
+              STOCK DE FOTOS LICENCIADAS Y PAGADAS*
+            </span>
             con las que trabajamos el desarrollo gráfico
             de todos nuestros servicios.
           </p>
@@ -645,12 +761,16 @@
 
     </section>
 
+    <p class="text-zinc-500 text-sm mt-20">
+      IVA incluido*
+    </p>
+
   </div>
 
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" class="relative py-40 overflow-hidden">
+<section id="contacto" class="relative py-28 overflow-hidden">
 
   <div class="noise"></div>
 
