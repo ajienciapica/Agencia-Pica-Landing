@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Ajiencia Pica | Marketing que Pica 🔥</title>
 
@@ -100,6 +100,7 @@
 
       .about-wrapper{
         grid-template-columns:1fr !important;
+        min-height:auto !important;
       }
 
       .about-image-container{
@@ -113,10 +114,11 @@
       }
 
       .about-text{
-        padding-top:20px;
-        padding-bottom:0 !important;
+        padding-top:30px;
+        padding-bottom:40px !important;
         padding-left:0 !important;
         text-align:center;
+        justify-content:center !important;
       }
 
       .about-text p{
@@ -211,25 +213,22 @@
 
   <div class="noise"></div>
 
-  <!-- GLOW CORREGIDO -->
   <div class="absolute w-[700px] h-[700px] bg-[#ac2517] blur-[180px] opacity-25 left-[-180px] bottom-[-180px]"></div>
 
-  <div class="about-wrapper max-w-[1800px] mx-auto px-6 relative z-10 grid md:grid-cols-[1.1fr_.9fr] items-center">
+  <div class="about-wrapper max-w-[1800px] mx-auto px-6 relative z-10 grid md:grid-cols-[1.2fr_.8fr] items-end min-h-[980px]">
 
     <!-- IMAGEN -->
     <div class="about-image-container relative fade-up h-[980px] flex items-end">
 
-      <!-- SOMBRA CORREGIDA -->
       <div class="absolute bottom-0 left-0 w-full h-[180px] bg-gradient-to-t from-black via-black/70 to-transparent z-10"></div>
 
-      <!-- IMAGEN -->
       <img
       src="bastian.png"
       alt="Bastián Sanhueza"
       class="about-image absolute
-      left-[-80px]
+      left-[-120px]
       bottom-0
-      w-[1150px]
+      w-[1180px]
       max-w-none
       object-contain
       z-20
@@ -238,20 +237,24 @@
     </div>
 
     <!-- TEXTO -->
-    <div class="about-text fade-up relative z-20 md:pb-20 md:pl-10 xl:pl-24">
+    <div class="about-text fade-up relative z-30 pb-32 pl-20 xl:pl-32 flex justify-end">
 
-      <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6">
-        Fundador de Ajiencia Pica
-      </p>
+      <div class="max-w-[480px]">
 
-      <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.9] mb-8">
-        SOY <span class="ají">BASTIÁN SANHUEZA</span>
-      </h2>
+        <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6">
+          Fundador de Ajiencia Pica
+        </p>
 
-      <p class="text-zinc-400 text-lg leading-relaxed max-w-lg">
-        Egresado de Publicidad con una misión clara:
-        hacer que las marcas dejen de ser normales y empiecen a destacar.
-      </p>
+        <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.9] mb-8">
+          SOY <span class="ají">BASTIÁN SANHUEZA</span>
+        </h2>
+
+        <p class="text-zinc-400 text-lg leading-relaxed">
+          Egresado de Publicidad con una misión clara:
+          hacer que las marcas dejen de ser normales y empiecen a destacar.
+        </p>
+
+      </div>
 
     </div>
 
