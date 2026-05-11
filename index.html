@@ -85,6 +85,8 @@
       height:180px;
       object-fit:cover;
       display:block;
+      margin:0;
+      padding:0;
     }
 
     .cm-button{
@@ -129,57 +131,48 @@
       position:relative;
     }
 
-    /* HERO */
-
-    .hero-main{
-      gap:60px;
-      padding-top:120px;
-      padding-bottom:140px;
-    }
-
-    /* SOBRE MI */
-
+    /* DESKTOP */
     .about-section{
-      margin-top:-120px;
-      padding-top:0;
+      padding-top:40px;
       padding-bottom:0;
-      min-height:900px;
-      overflow:hidden;
+      min-height:760px;
     }
 
     .about-wrapper{
       display:grid;
       grid-template-columns:1.1fr .9fr;
       align-items:end;
-      min-height:900px;
+      min-height:760px;
       position:relative;
       z-index:2;
     }
 
     .about-image-wrap{
       position:relative;
-      height:900px;
+      height:760px;
       display:flex;
       align-items:flex-end;
     }
 
     .about-image{
       position:absolute;
-      left:-60px;
+      left:-30px;
       bottom:0;
-      width:920px;
+      width:760px;
       max-width:none;
       object-fit:contain;
     }
 
     .about-text{
-      padding-left:140px;
-      padding-bottom:170px;
+      padding-left:90px;
+      padding-bottom:120px;
       position:relative;
       z-index:3;
     }
 
-    /* SECCIONES */
+    .hero-main{
+      gap:30px;
+    }
 
     .services-section{
       padding-top:90px;
@@ -203,8 +196,11 @@
     }
 
     /* MOBILE */
-
     @media(max-width:768px){
+
+      body{
+        overflow-x:hidden;
+      }
 
       .hero-main{
         display:flex;
@@ -212,7 +208,7 @@
         justify-content:center;
         gap:20px;
         padding-top:120px;
-        padding-bottom:40px;
+        padding-bottom:60px;
       }
 
       .hero-title{
@@ -243,9 +239,8 @@
       }
 
       .about-section{
-        margin-top:0;
+        padding-top:10px;
         min-height:auto;
-        padding-top:20px;
       }
 
       .about-wrapper{
@@ -254,28 +249,41 @@
       }
 
       .about-image-wrap{
-        height:620px;
+        height:470px;
         display:flex;
         align-items:flex-end;
         justify-content:center;
-        overflow:hidden;
       }
 
       .about-image{
-        width:150%;
+        width:125%;
         left:auto;
-        bottom:-10px;
+        bottom:0;
         position:relative;
       }
 
       .about-text{
-        padding:0 0 60px 0;
+        padding:10px 0 50px 0;
         text-align:center;
       }
 
       .about-text p{
         margin-left:auto;
         margin-right:auto;
+      }
+
+      .services-section{
+        padding-top:70px;
+        padding-bottom:70px;
+      }
+
+      .contact-section{
+        padding-top:70px;
+        padding-bottom:70px;
+      }
+
+      .ia-section{
+        margin-top:70px;
       }
 
       .gif-divider{
@@ -303,11 +311,6 @@
       .ia-glow{
         width:300px;
         height:300px;
-      }
-
-      .contact-section{
-        padding-top:70px;
-        padding-bottom:120px;
       }
 
     }
@@ -400,7 +403,7 @@
 </header>
 
 <!-- SOBRE MI -->
-<section id="sobre-mi" class="about-section bg-black">
+<section id="sobre-mi" class="about-section overflow-hidden bg-black">
 
   <div class="noise"></div>
 
@@ -460,8 +463,10 @@
       SERVICIOS CON <span class="ají">SABOR</span>
     </h2>
 
+    <!-- PRIMER GRID -->
     <div class="grid md:grid-cols-2 gap-10">
 
+      <!-- DISEÑO -->
       <a
       href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20servicio%20Diseño%20de%20Marca"
       target="_blank"
@@ -469,9 +474,15 @@
 
         <div class="bg-zinc-900/80 border border-white/5 rounded-[40px] p-10 card-hover fade-up h-full">
 
-          <h3 class="text-3xl font-black text-[#f3d847] mb-10">
-            Diseño de Marca
-          </h3>
+          <div class="flex items-center justify-between mb-10">
+
+            <h3 class="text-3xl font-black text-[#f3d847]">
+              Diseño de Marca
+            </h3>
+
+            <i class="fa-solid fa-pepper-hot text-3xl text-[#f3d847]"></i>
+
+          </div>
 
           <div class="space-y-10">
 
@@ -510,6 +521,10 @@
                     Diseño de Logo + Variantes
                   </h4>
 
+                  <p class="text-zinc-400 mt-4 leading-relaxed">
+                    Identidad visual sólida y adaptable.
+                  </p>
+
                 </div>
 
                 <span class="service-price text-3xl font-black whitespace-nowrap">
@@ -526,6 +541,7 @@
 
       </a>
 
+      <!-- REDES -->
       <a
       href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20servicio%20Redes%20Sociales"
       target="_blank"
@@ -533,9 +549,15 @@
 
         <div class="bg-zinc-900/80 border border-white/5 rounded-[40px] p-10 card-hover fade-up h-full">
 
-          <h3 class="text-3xl font-black text-[#f3d847] mb-10">
-            Redes Sociales
-          </h3>
+          <div class="flex items-center justify-between mb-10">
+
+            <h3 class="text-3xl font-black text-[#f3d847]">
+              Redes Sociales
+            </h3>
+
+            <i class="fa-solid fa-mobile-screen text-3xl text-[#f3d847]"></i>
+
+          </div>
 
           <div class="space-y-10">
 
@@ -550,7 +572,8 @@
                   </h4>
 
                   <p class="text-zinc-400 mt-4 leading-relaxed">
-                    Facebook + Instagram + feed + 5 posteos.
+                    Creación y vinculación de Facebook +
+                    Instagram + diseño de feed + 5 posteos.
                   </p>
 
                 </div>
@@ -568,9 +591,15 @@
               <div class="service-row flex justify-between items-start gap-10">
 
                 <div>
+
                   <h4 class="text-2xl font-bold">
                     Generación de Gráfica
                   </h4>
+
+                  <p class="text-zinc-400 mt-4 leading-relaxed">
+                    Diseño gráfico para publicaciones.
+                  </p>
+
                 </div>
 
                 <span class="service-price text-3xl font-black whitespace-nowrap">
@@ -591,8 +620,8 @@
                     Edición de Reel
                   </h4>
 
-                  <p class="text-zinc-400 mt-4">
-                    Material entregado por cliente.
+                  <p class="text-zinc-400 mt-4 leading-relaxed">
+                    Material entregado por el cliente.
                   </p>
 
                 </div>
@@ -622,8 +651,11 @@
 
       <div class="grid md:grid-cols-4 gap-8">
 
-        <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20básico"
-        class="service-link" target="_blank">
+        <!-- BASICO -->
+        <a
+        href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20básico"
+        target="_blank"
+        class="service-link">
 
           <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-8 card-hover h-full">
 
@@ -638,16 +670,24 @@
             <ul class="space-y-4 text-zinc-300">
               <li>✔ 2 gráficas semanales</li>
               <li>✔ Grilla semanal</li>
+              <li>✔ Ideal para comenzar</li>
             </ul>
 
           </div>
 
         </a>
 
-        <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20pro"
-        class="service-link" target="_blank">
+        <!-- PRO -->
+        <a
+        href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20pro"
+        target="_blank"
+        class="service-link">
 
           <div class="bg-gradient-to-b from-[#f3d847]/20 to-zinc-900 border border-[#f3d847] rounded-[40px] p-8 card-hover h-full">
+
+            <span class="inline-block bg-[#f3d847] text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
+              MÁS VENDIDO
+            </span>
 
             <h4 class="text-3xl font-black mb-6">
               Pro 🌶️
@@ -667,13 +707,20 @@
 
         </a>
 
-        <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20picante"
-        class="service-link" target="_blank">
+        <!-- PICANTE -->
+        <a
+        href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20picante"
+        target="_blank"
+        class="service-link">
 
           <div class="bg-gradient-to-b from-orange-500/20 to-zinc-900 border border-orange-500 rounded-[40px] p-8 card-hover h-full">
 
+            <span class="inline-block bg-orange-500 text-black px-4 py-2 rounded-full text-xs font-bold mb-4">
+              FULL PICANTE 🔥
+            </span>
+
             <h4 class="text-3xl font-black text-orange-400 mb-6">
-              Picante 🌶️🔥
+              Picante 🌶️
             </h4>
 
             <span class="text-5xl font-black text-orange-400 block mb-8">
@@ -691,18 +738,29 @@
 
         </a>
 
-        <a href="https://wa.me/56930638154?text=Quiero%20cotizar%20un%20plan%20personalizado"
-        class="service-link" target="_blank">
+        <!-- PERSONALIZADO -->
+        <a
+        href="https://wa.me/56930638154?text=Quiero%20cotizar%20un%20plan%20personalizado"
+        target="_blank"
+        class="service-link">
 
-          <div class="bg-zinc-900 border border-dashed border-white/20 rounded-[40px] p-8 card-hover h-full">
+          <div class="bg-zinc-900 border border-dashed border-white/20 rounded-[40px] p-8 card-hover h-full flex flex-col justify-between">
 
-            <h4 class="text-3xl font-black mb-6">
-              Personalizado
-            </h4>
+            <div>
 
-            <p class="text-zinc-400">
-              Contáctanos para cotizar.
-            </p>
+              <h4 class="text-3xl font-black mb-6">
+                Personalizado
+              </h4>
+
+              <p class="text-zinc-400">
+                Armamos el plan que necesites.
+              </p>
+
+            </div>
+
+            <span class="text-[#f3d847] font-bold mt-10">
+              Cotizar →
+            </span>
 
           </div>
 
@@ -721,46 +779,106 @@
 
       <div class="grid md:grid-cols-2 gap-10">
 
-        <div class="bg-zinc-900 rounded-[40px] p-10 border border-white/5">
+        <!-- CONFIG SIMPLE -->
+        <a
+        href="https://wa.me/56930638154?text=Quiero%20saber%20más%20de%20Configuración%20Meta%20Ads"
+        target="_blank"
+        class="service-link">
 
-          <h4 class="text-3xl font-black text-[#f3d847] mb-6">
-            Configuración META ADS
-          </h4>
+          <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover h-full">
 
-          <p class="text-zinc-400 mb-8">
-            Con material entregado por cliente.
-          </p>
+            <h4 class="text-3xl font-black mb-6 text-[#f3d847]">
+              Configuración Meta Ads
+            </h4>
 
-          <span class="text-5xl font-black">
-            39.990.-
-          </span>
+            <p class="text-zinc-400 leading-relaxed mb-8">
+              Configuración de campaña META ADS
+              utilizando material entregado por cliente.
+            </p>
 
-          <p class="meta-disclaimer">
-            *El valor es por configuración.
-            El presupuesto publicitario corre por parte del cliente.
-          </p>
+            <span class="text-5xl font-black">
+              39.990.-
+            </span>
 
-        </div>
+            <p class="meta-disclaimer">
+              *El valor corresponde únicamente
+              a la configuración de campaña.
+              El presupuesto publicitario
+              es definido y financiado por el cliente.
+            </p>
 
-        <div class="bg-zinc-900 rounded-[40px] p-10 border border-white/5">
+          </div>
 
-          <h4 class="text-3xl font-black text-[#f3d847] mb-6">
-            META ADS + Desarrollo Visual
-          </h4>
+        </a>
 
-          <p class="text-zinc-400 mb-8">
-            Hasta 2 gráficas programadas
-            o edición de 1 ad reel.
-          </p>
+        <!-- CONFIG VISUAL -->
+        <a
+        href="https://wa.me/56930638154?text=Quiero%20saber%20más%20de%20Meta%20Ads%20con%20desarrollo%20visual"
+        target="_blank"
+        class="service-link">
 
-          <span class="text-5xl font-black">
-            54.990.-
-          </span>
+          <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover h-full">
 
-          <p class="meta-disclaimer">
-            *El valor es por configuración.
-            El presupuesto publicitario corre por parte del cliente.
-          </p>
+            <h4 class="text-3xl font-black mb-6 text-[#f3d847]">
+              Meta Ads + Desarrollo Visual
+            </h4>
+
+            <p class="text-zinc-400 leading-relaxed mb-8">
+              Incluye hasta 2 gráficas programadas
+              o edición de 1 ad reel.
+              El material de video debe ser
+              entregado por cliente.
+            </p>
+
+            <span class="text-5xl font-black">
+              54.990.-
+            </span>
+
+            <p class="meta-disclaimer">
+              *El valor corresponde únicamente
+              a la configuración y desarrollo visual.
+              El presupuesto publicitario
+              es definido y financiado por el cliente.
+            </p>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- CORPORATIVO -->
+    <div class="mt-24 fade-up">
+
+      <h3 class="text-5xl font-black mb-12">
+        TRABAJOS CORPORATIVOS
+      </h3>
+
+      <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10">
+
+        <div class="space-y-8">
+
+          <div class="service-row flex justify-between gap-10 border-b border-white/10 pb-8">
+            <span class="text-xl">Tarjeta de presentación o negocio</span>
+            <span class="font-black text-2xl">19.000.-</span>
+          </div>
+
+          <div class="service-row flex justify-between gap-10 border-b border-white/10 pb-8">
+            <span class="text-xl">Firma de Correo</span>
+            <span class="font-black text-2xl">19.000.-</span>
+          </div>
+
+          <div class="service-row flex justify-between gap-10 border-b border-white/10 pb-8">
+            <span class="text-xl">Folletos / Brochure</span>
+            <span class="font-black text-2xl">24.990.- a 49.990.-</span>
+          </div>
+
+          <div class="service-row flex justify-between gap-10">
+            <span class="text-xl">Diseño de Pendón</span>
+            <span class="font-black text-2xl">19.990.- a 24.990.-</span>
+          </div>
 
         </div>
 
@@ -773,6 +891,7 @@
 
       <div class="grid ia-grid md:grid-cols-2 gap-14 items-center">
 
+        <!-- FOTO -->
         <div class="fade-up flex justify-center relative">
 
           <div class="ia-glow"></div>
@@ -781,21 +900,32 @@
 
         </div>
 
+        <!-- TEXTO -->
         <div class="fade-up">
+
+          <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6">
+            Tecnología
+          </p>
 
           <h3 class="text-5xl font-black leading-[0.9] mb-8">
             USAMOS <span class="ají">IA WENA WENA</span>
           </h3>
 
           <p class="text-zinc-300 text-lg leading-relaxed mb-8">
-            Utilizamos inteligencia artificial
-            para edición de imágenes y reels
-            si el cliente lo desea.
+            En la medida que el cliente lo quiera,
+            utilizamos inteligencia artificial para
+            edición de imágenes y reels, aportando
+            contenido potente de marca incluso cuando
+            el cliente no puede generarlo directamente.
           </p>
 
           <p class="text-zinc-400 text-lg leading-relaxed">
-            Contamos con STOCK DE FOTOS
-            LICENCIADAS Y PAGADAS*.
+            Contamos con
+            <span class="font-bold text-white">
+              STOCK DE FOTOS LICENCIADAS Y PAGADAS*
+            </span>
+            con las que trabajamos el desarrollo gráfico
+            de todos nuestros servicios.
           </p>
 
         </div>
@@ -837,6 +967,7 @@
     class="mobile-btn inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition hover:scale-105">
 
       HABLAR POR WHATSAPP
+      <i class="fa-solid fa-arrow-right"></i>
 
     </a>
 
@@ -844,12 +975,14 @@
 
 </section>
 
+<!-- FOOTER -->
 <footer class="border-t border-white/5 py-12 text-center text-sm text-zinc-500">
 
   © 2026 Ajiencia Pica • Santiago, Chile • Hecho con mucho ají 🌶️
 
 </footer>
 
+<!-- BOTON -->
 <a href="https://wa.me/56930638154"
 target="_blank"
 class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50">
@@ -858,6 +991,7 @@ class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-full flex items-cen
 
 </a>
 
+<!-- GSAP -->
 <script>
 
 gsap.registerPlugin(ScrollTrigger);
