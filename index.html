@@ -413,11 +413,11 @@
         </a>
       </div>
 
-      <!-- FORMULARIO DE CONTACTO -->
+      <!-- FORMULARIO DE CONTACTO (con registro de Gmail) -->
       <div class="max-w-lg mx-auto">
-        <form action="https://formsubmit.co/ajenciapica@gmail.com" method="POST" class="contact-form">
-          <input type="text" name="nombre" placeholder="Tu nombre" required>
-          <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <form action="https://formsubmit.co/ajenciapica@gmail.com" method="POST" class="contact-form" id="contactForm">
+          <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+          <input type="email" name="email" id="gmailField" placeholder="Tu correo Gmail (obligatorio)" required>
           <input type="tel" name="telefono" placeholder="Tu WhatsApp o teléfono">
           <textarea name="mensaje" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
           
@@ -456,6 +456,16 @@
         { opacity:0, y:60 }, 
         { opacity:1, y:0, duration:1, delay:i * 0.05, ease:"power3.out", scrollTrigger:{ trigger:el, start:"top 88%" } }
       );
+    });
+
+    // Validación simple para que pida Gmail
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      const email = document.getElementById('gmailField').value;
+      if (!email.toLowerCase().includes('@gmail.com')) {
+        alert('Por favor usa una dirección de correo Gmail (@gmail.com)');
+        e.preventDefault();
+        return false;
+      }
     });
   </script>
 </body>
