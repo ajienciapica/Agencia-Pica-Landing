@@ -69,7 +69,39 @@
       font-size:1.4rem; transition:.3s ease; border:1px solid rgba(255,255,255,.08);
     }
     .social-btn:hover{ transform:translateY(-5px) scale(1.05); }
-    .social-row{ gap:16px; justify-content:center; }
+    .social-row{ gap:16px; justify-content:center; flex-wrap:wrap; }
+
+    /* FORMULARIO */
+    .contact-form input, .contact-form textarea {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      border-radius: 999px;
+      padding: 14px 20px;
+      width: 100%;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .contact-form textarea {
+      border-radius: 24px;
+      min-height: 120px;
+      resize: vertical;
+    }
+    .contact-form button {
+      background:#ac2517;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+    }
+    .contact-form button:hover {
+      background:#f3d847;
+      color: black;
+    }
 
     /* ==================== MOBILE ==================== */
     @media(max-width:768px){
@@ -80,19 +112,28 @@
       .mobile-center{ text-align:center; }
       .mobile-btn{ justify-content:center; }
 
-      /* CAMBIO SOLO EN MOBILE: Sin foto + nuevo texto */
+      /* IMAGEN BASTIÁN EN MOBILE */
       .about-section{ padding-top:20px; min-height:auto; }
       .about-wrapper{ grid-template-columns:1fr; min-height:auto; }
-      .about-image-wrap{ display:none; }
-      .about-text{ 
-        padding:40px 15px 60px 15px; 
-        text-align:center; 
+      .about-image-wrap{ 
+        height:580px; 
+        display:flex; 
+        align-items:center; 
+        justify-content:center; 
+        overflow:hidden; 
+        padding:20px 0;
       }
-      .about-text p:last-child {
-        font-size: 1.1rem;
-        line-height: 1.5;
+      .about-image{ 
+        position:relative; 
+        width:100%; 
+        max-width:460px; 
+        height:auto; 
+        object-fit:contain; 
+        left:auto; 
+        bottom:auto; 
       }
 
+      .about-text{ padding:25px 15px 50px 15px; text-align:center; }
       .services-section{ padding-top:70px; padding-bottom:70px; }
       .contact-section{ padding-top:70px; padding-bottom:70px; }
       .ia-section{ margin-top:70px; }
@@ -356,18 +397,45 @@
       <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.95] mb-8"> ¿LISTO PARA QUE<br> TU MARCA <span class="ají">QUEME?</span> </h2>
       <p class="text-zinc-400 text-lg mb-12 max-w-xl mx-auto"> Hablemos y armemos algo distinto. </p>
       
-      <div class="flex gap-5 justify-center mb-10 social-row">
+      <!-- REDES SOCIALES -->
+      <div class="flex gap-5 justify-center mb-12 social-row">
         <a href="https://www.instagram.com/agencia.pica/" target="_blank" class="social-btn bg-gradient-to-br from-pink-500 to-orange-400">
           <i class="fab fa-instagram"></i>
         </a>
         <a href="https://www.facebook.com/profile.php?id=61589374511198" target="_blank" class="social-btn bg-blue-600">
           <i class="fab fa-facebook-f"></i>
         </a>
+        <a href="https://www.behance.net/bastinsanhueza1" target="_blank" class="social-btn bg-[#1769ff]">
+          <i class="fab fa-behance"></i>
+        </a>
+        <a href="https://www.threads.net/@agencia.pica" target="_blank" class="social-btn bg-black border border-white/30">
+          <i class="fab fa-threads"></i>
+        </a>
       </div>
 
-      <a href="https://wa.me/56930638154" target="_blank" class="mobile-btn inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition hover:scale-105">
-        HABLAR POR WHATSAPP <i class="fa-solid fa-arrow-right"></i>
-      </a>
+      <!-- FORMULARIO DE CONTACTO -->
+      <div class="max-w-lg mx-auto">
+        <form action="https://formsubmit.co/ajenciapica@gmail.com" method="POST" class="contact-form">
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <input type="email" name="email" placeholder="Tu correo electrónico" required>
+          <input type="tel" name="telefono" placeholder="Tu WhatsApp o teléfono">
+          <textarea name="mensaje" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+          
+          <!-- Configuración FormSubmit -->
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde Ajiencia Pica">
+          <input type="hidden" name="_next" value="https://tu-sitio.com/gracias.html">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <button type="submit">ENVIAR MENSAJE</button>
+        </form>
+      </div>
+
+      <div class="mt-10">
+        <a href="https://wa.me/56930638154" target="_blank" class="mobile-btn inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition hover:scale-105">
+          O HABLA POR WHATSAPP <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
   </section>
 
