@@ -4,6 +4,10 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ajiencia Pica | Marketing que Pica 🔥</title>
+  
+  <!-- FAVICON (icono en la pestaña del navegador) -->
+  <link rel="icon" href="Icono_Rojo.png" type="image/png">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
@@ -70,38 +74,6 @@
     }
     .social-btn:hover{ transform:translateY(-5px) scale(1.05); }
     .social-row{ gap:16px; justify-content:center; flex-wrap:wrap; }
-
-    /* FORMULARIO */
-    .contact-form input, .contact-form textarea {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: white;
-      border-radius: 999px;
-      padding: 14px 20px;
-      width: 100%;
-      margin-bottom: 12px;
-      font-size: 1rem;
-    }
-    .contact-form textarea {
-      border-radius: 24px;
-      min-height: 120px;
-      resize: vertical;
-    }
-    .contact-form button {
-      background:#ac2517;
-      color: white;
-      padding: 14px 32px;
-      border-radius: 999px;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      width: 100%;
-    }
-    .contact-form button:hover {
-      background:#f3d847;
-      color: black;
-    }
 
     /* ==================== MOBILE ==================== */
     @media(max-width:768px){
@@ -317,20 +289,21 @@
         </div>
       </div>
 
+      <!-- META ADS CON TÍTULOS EN AZUL FACEBOOK -->
       <div class="mt-24 fade-up">
-        <h3 class="text-5xl font-black mb-12"> META ADS </h3>
+        <h3 class="text-5xl font-black mb-12" style="color:#1877F2;"> META ADS </h3>
         <div class="grid md:grid-cols-2 gap-10">
           <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20de%20Configuración%20Meta%20Ads" target="_blank" class="service-link">
-            <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover h-full">
-              <h4 class="text-3xl font-black mb-6 text-[#f3d847]"> Configuración Meta Ads </h4>
+            <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover fade-up h-full">
+              <h4 class="text-3xl font-black mb-6" style="color:#1877F2;"> Configuración Meta Ads </h4>
               <p class="text-zinc-400 leading-relaxed mb-8"> Configuración de campaña META ADS utilizando material entregado por cliente. </p>
               <span class="text-5xl font-black"> 39.990.- </span>
               <p class="meta-disclaimer">*El valor corresponde únicamente a la configuración de campaña. El presupuesto publicitario es definido y financiado por el cliente.</p>
             </div>
           </a>
           <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20de%20Meta%20Ads%20con%20desarrollo%20visual" target="_blank" class="service-link">
-            <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover h-full">
-              <h4 class="text-3xl font-black mb-6 text-[#f3d847]"> Meta Ads + Desarrollo Visual </h4>
+            <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover fade-up h-full">
+              <h4 class="text-3xl font-black mb-6" style="color:#1877F2;"> Meta Ads + Desarrollo Visual </h4>
               <p class="text-zinc-400 leading-relaxed mb-8"> Incluye hasta 2 gráficas programadas o edición de 1 ad reel. El material de video debe ser entregado por cliente. </p>
               <span class="text-5xl font-black"> 54.990.- </span>
               <p class="meta-disclaimer">*El valor corresponde únicamente a la configuración y desarrollo visual. El presupuesto publicitario es definido y financiado por el cliente.</p>
@@ -390,6 +363,7 @@
       <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.95] mb-8"> ¿LISTO PARA QUE<br> TU MARCA <span class="ají">QUEME?</span> </h2>
       <p class="text-zinc-400 text-lg mb-12 max-w-xl mx-auto"> Hablemos y armemos algo distinto. </p>
       
+      <!-- REDES SOCIALES -->
       <div class="flex gap-5 justify-center mb-12 social-row">
         <a href="https://www.instagram.com/agencia.pica/" target="_blank" class="social-btn bg-gradient-to-br from-pink-500 to-orange-400">
           <i class="fab fa-instagram"></i>
@@ -405,23 +379,13 @@
         </a>
       </div>
 
-      <div class="max-w-lg mx-auto">
-        <form action="https://formsubmit.co/ajenciapica@gmail.com" method="POST" class="contact-form">
-          <input type="text" name="nombre" placeholder="Tu nombre" required>
-          <input type="email" name="email" placeholder="Tu correo electrónico" required>
-          <input type="tel" name="telefono" placeholder="Tu WhatsApp o teléfono">
-          <textarea name="mensaje" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
-          
-          <input type="hidden" name="_subject" value="Nuevo mensaje desde Ajiencia Pica">
-          <input type="hidden" name="_next" value="https://tu-sitio.com/gracias.html">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
+      <!-- BOTÓN CORREO ELECTRÓNICO -->
+      <a href="mailto:ajenciapica@gmail.com?subject=Contacto%20desde%20Ajiencia%20Pica%20Web" 
+         class="inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition hover:scale-105 rounded-full mb-8">
+        ✉️ ENVIAR CORREO ELECTRÓNICO
+      </a>
 
-          <button type="submit">ENVIAR MENSAJE</button>
-        </form>
-      </div>
-
-      <div class="mt-10">
+      <div>
         <a href="https://wa.me/56930638154" target="_blank" class="mobile-btn inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition hover:scale-105">
           O HABLA POR WHATSAPP <i class="fa-solid fa-arrow-right"></i>
         </a>
