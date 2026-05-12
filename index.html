@@ -80,28 +80,36 @@
       .mobile-center{ text-align:center; }
       .mobile-btn{ justify-content:center; }
 
-      /* IMAGEN BASTIÁN EN MOBILE - ESPACIO REDUCIDO */
-      .about-section{ padding-top:10px; min-height:auto; }
-      .about-wrapper{ grid-template-columns:1fr; min-height:auto; }
+      /* IMAGEN BASTIÁN EN MOBILE - CORREGIDO (sin solapamiento) */
+      .about-section{ padding-top:20px; min-height:auto; }
+      .about-wrapper{ 
+        grid-template-columns:1fr; 
+        min-height:auto; 
+        display:flex; 
+        flex-direction:column; 
+      }
       .about-image-wrap{ 
-        height:520px; 
+        height:480px; 
         display:flex; 
         align-items:flex-end; 
         justify-content:center; 
         overflow:hidden; 
-        padding-bottom:10px;
+        padding-bottom:0;
       }
       .about-image{ 
         position:relative; 
         width:100%; 
-        max-width:440px; 
+        max-width:420px; 
         height:auto; 
         object-fit:contain; 
-        left:auto; 
-        bottom:auto; 
       }
 
-      .about-text{ padding:15px 15px 30px 15px; text-align:center; }
+      .about-text{ 
+        padding:20px 15px 40px 15px; 
+        text-align:center; 
+        position:relative; 
+        z-index:3; 
+      }
       .services-section{ padding-top:70px; padding-bottom:70px; }
       .contact-section{ padding-top:70px; padding-bottom:70px; }
       .ia-section{ margin-top:70px; }
