@@ -112,28 +112,15 @@
       .mobile-center{ text-align:center; }
       .mobile-btn{ justify-content:center; }
 
-      /* IMAGEN BASTIÁN EN MOBILE */
-      .about-section{ padding-top:20px; min-height:auto; }
+      /* ELIMINAR FOTO EN MOBILE */
+      .about-image-wrap { display: none !important; }
+      .about-section{ padding-top:30px; min-height:auto; }
       .about-wrapper{ grid-template-columns:1fr; min-height:auto; }
-      .about-image-wrap{ 
-        height:580px; 
-        display:flex; 
-        align-items:center; 
-        justify-content:center; 
-        overflow:hidden; 
-        padding:20px 0;
-      }
-      .about-image{ 
-        position:relative; 
-        width:100%; 
-        max-width:460px; 
-        height:auto; 
-        object-fit:contain; 
-        left:auto; 
-        bottom:auto; 
+      .about-text{ 
+        padding: 20px 15px 60px 15px; 
+        text-align:center; 
       }
 
-      .about-text{ padding:25px 15px 50px 15px; text-align:center; }
       .services-section{ padding-top:70px; padding-bottom:70px; }
       .contact-section{ padding-top:70px; padding-bottom:70px; }
       .ia-section{ margin-top:70px; }
@@ -141,11 +128,10 @@
       .service-row{ flex-direction:column; gap:20px; }
       .ia-grid{ grid-template-columns:1fr !important; gap:40px !important; }
 
-      /* FIX PARA TÍTULO CORPORATIVOS */
-      .services-section h3.text-5xl {
-        font-size: 2.25rem !important;
-        line-height: 1.1 !important;
-        word-break: break-word;
+      /* FIX TÍTULO CORPORATIVOS */
+      .services-section h3.text-5xl.font-black {
+        font-size: 2.4rem !important;
+        line-height: 1.05 !important;
       }
     }
   </style>
@@ -353,7 +339,6 @@
         </div>
       </div>
 
-      <!-- TRABAJOS CORPORATIVOS -->
       <div class="mt-24 fade-up">
         <h3 class="text-5xl font-black mb-12"> TRABAJOS CORPORATIVOS </h3>
         <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10">
@@ -405,7 +390,6 @@
       <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.95] mb-8"> ¿LISTO PARA QUE<br> TU MARCA <span class="ají">QUEME?</span> </h2>
       <p class="text-zinc-400 text-lg mb-12 max-w-xl mx-auto"> Hablemos y armemos algo distinto. </p>
       
-      <!-- REDES SOCIALES -->
       <div class="flex gap-5 justify-center mb-12 social-row">
         <a href="https://www.instagram.com/agencia.pica/" target="_blank" class="social-btn bg-gradient-to-br from-pink-500 to-orange-400">
           <i class="fab fa-instagram"></i>
@@ -421,7 +405,6 @@
         </a>
       </div>
 
-      <!-- FORMULARIO DE CONTACTO -->
       <div class="max-w-lg mx-auto">
         <form action="https://formsubmit.co/ajenciapica@gmail.com" method="POST" class="contact-form">
           <input type="text" name="nombre" placeholder="Tu nombre" required>
