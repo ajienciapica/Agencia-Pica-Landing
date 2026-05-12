@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ajiencia Pica | Marketing que Pica 🔥</title>
-  
-  <!-- FAVICON (icono en la pestaña del navegador) -->
   <link rel="icon" href="Icono_Rojo.png" type="image/png">
-
+  <title>Ajiencia Pica | Marketing que Pica 🔥</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
@@ -54,7 +51,7 @@
     .ia-image{ position:relative; z-index:2; width:100%; max-width:620px; object-fit:contain; }
     section{ position:relative; }
 
-    /* ==================== DESKTOP ==================== */
+    /* DESKTOP */
     .about-section{ padding-top:40px; padding-bottom:0; min-height:860px; }
     .about-wrapper{ display:grid; grid-template-columns:1.2fr .8fr; align-items:end; min-height:860px; position:relative; z-index:2; }
     .about-image-wrap{ position:relative; height:860px; display:flex; align-items:flex-end; }
@@ -78,18 +75,28 @@
     /* ==================== MOBILE ==================== */
     @media(max-width:768px){
       .hero-main{ display:flex; flex-direction:column; justify-content:center; gap:30px; padding-top:120px; padding-bottom:40px; }
-      .hero-title{ font-size:4rem !important; line-height:.9 !important; }
+      .hero-title{ 
+        font-size:3.1rem !important; 
+        line-height:0.9 !important; 
+      }
       .section-title{ font-size:3rem !important; line-height:.95 !important; }
       .hero-logo{ max-width:360px !important; }
       .mobile-center{ text-align:center; }
       .mobile-btn{ justify-content:center; }
 
-      /* ELIMINAR FOTO EN MOBILE */
-      .about-image-wrap { display: none !important; }
-      .about-section{ padding-top:30px; min-height:auto; }
-      .about-wrapper{ grid-template-columns:1fr; min-height:auto; }
+      /* IMAGEN BASTIÁN OCULTA EN MOBILE */
+      .about-section{ 
+        padding-top:30px; 
+        padding-bottom:30px; 
+        min-height:auto; 
+      }
+      .about-image-wrap{ display: none !important; }
+      .about-wrapper{ 
+        grid-template-columns:1fr; 
+        min-height:auto; 
+      }
       .about-text{ 
-        padding: 20px 15px 60px 15px; 
+        padding:20px 15px 40px 15px; 
         text-align:center; 
       }
 
@@ -99,12 +106,6 @@
       .gif-divider{ height:140px; object-fit:cover; object-position:center; }
       .service-row{ flex-direction:column; gap:20px; }
       .ia-grid{ grid-template-columns:1fr !important; gap:40px !important; }
-
-      /* FIX TÍTULO CORPORATIVOS */
-      .services-section h3.text-5xl.font-black {
-        font-size: 2.4rem !important;
-        line-height: 1.05 !important;
-      }
     }
   </style>
 </head>
@@ -289,21 +290,20 @@
         </div>
       </div>
 
-      <!-- META ADS CON TÍTULOS EN AZUL FACEBOOK -->
       <div class="mt-24 fade-up">
-        <h3 class="text-5xl font-black mb-12" style="color:#1877F2;"> META ADS </h3>
+        <h3 class="text-5xl font-black mb-12"> META ADS </h3>
         <div class="grid md:grid-cols-2 gap-10">
           <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20de%20Configuración%20Meta%20Ads" target="_blank" class="service-link">
-            <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover fade-up h-full">
-              <h4 class="text-3xl font-black mb-6" style="color:#1877F2;"> Configuración Meta Ads </h4>
+            <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover h-full">
+              <h4 class="text-3xl font-black mb-6 text-[#f3d847]"> Configuración Meta Ads </h4>
               <p class="text-zinc-400 leading-relaxed mb-8"> Configuración de campaña META ADS utilizando material entregado por cliente. </p>
               <span class="text-5xl font-black"> 39.990.- </span>
               <p class="meta-disclaimer">*El valor corresponde únicamente a la configuración de campaña. El presupuesto publicitario es definido y financiado por el cliente.</p>
             </div>
           </a>
           <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20de%20Meta%20Ads%20con%20desarrollo%20visual" target="_blank" class="service-link">
-            <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover fade-up h-full">
-              <h4 class="text-3xl font-black mb-6" style="color:#1877F2;"> Meta Ads + Desarrollo Visual </h4>
+            <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover h-full">
+              <h4 class="text-3xl font-black mb-6 text-[#f3d847]"> Meta Ads + Desarrollo Visual </h4>
               <p class="text-zinc-400 leading-relaxed mb-8"> Incluye hasta 2 gráficas programadas o edición de 1 ad reel. El material de video debe ser entregado por cliente. </p>
               <span class="text-5xl font-black"> 54.990.- </span>
               <p class="meta-disclaimer">*El valor corresponde únicamente a la configuración y desarrollo visual. El presupuesto publicitario es definido y financiado por el cliente.</p>
@@ -363,7 +363,6 @@
       <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.95] mb-8"> ¿LISTO PARA QUE<br> TU MARCA <span class="ají">QUEME?</span> </h2>
       <p class="text-zinc-400 text-lg mb-12 max-w-xl mx-auto"> Hablemos y armemos algo distinto. </p>
       
-      <!-- REDES SOCIALES -->
       <div class="flex gap-5 justify-center mb-12 social-row">
         <a href="https://www.instagram.com/agencia.pica/" target="_blank" class="social-btn bg-gradient-to-br from-pink-500 to-orange-400">
           <i class="fab fa-instagram"></i>
@@ -379,15 +378,18 @@
         </a>
       </div>
 
-      <!-- BOTÓN CORREO ELECTRÓNICO -->
-      <a href="mailto:ajenciapica@gmail.com?subject=Contacto%20desde%20Ajiencia%20Pica%20Web" 
-         class="inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition hover:scale-105 rounded-full mb-8">
-        ✉️ ENVIAR CORREO ELECTRÓNICO
+      <a href="mailto:ajenciapica@gmail.com?subject=Quiero%20hablar%20sobre%20mi%20proyecto&body=Hola%20Ajiencia%20Pica%2C%0A%0AMe%20gustar%C3%ADa%20consultar%20sobre..." 
+         class="inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition hover:scale-105 rounded-full">
+        ✉️ ESCRIBIR POR GMAIL
       </a>
 
-      <div>
-        <a href="https://wa.me/56930638154" target="_blank" class="mobile-btn inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition hover:scale-105">
-          O HABLA POR WHATSAPP <i class="fa-solid fa-arrow-right"></i>
+      <div class="mt-8 text-sm text-zinc-500">
+        O también puedes escribirnos por WhatsApp
+      </div>
+
+      <div class="mt-6">
+        <a href="https://wa.me/56930638154" target="_blank" class="mobile-btn inline-flex items-center gap-4 bg-[#25D366] hover:bg-[#1EBE5E] px-10 py-6 text-xl font-bold transition hover:scale-105 rounded-full">
+          <i class="fab fa-whatsapp"></i> WHATSAPP
         </a>
       </div>
     </div>
@@ -398,7 +400,7 @@
     © 2026 Ajiencia Pica • Santiago, Chile • Hecho con mucho ají 🌶️
   </footer>
 
-  <!-- BOTÓN WHATSAPP -->
+  <!-- BOTÓN WHATSAPP FLOTANTE -->
   <a href="https://wa.me/56930638154" target="_blank" class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50">
     <i class="fab fa-whatsapp"></i>
   </a>
