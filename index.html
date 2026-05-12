@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" href="Icono_Rojo.png" type="image/png">
   <title>Ajiencia Pica | Marketing que Pica 🔥</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
@@ -51,7 +50,7 @@
     .ia-image{ position:relative; z-index:2; width:100%; max-width:620px; object-fit:contain; }
     section{ position:relative; }
 
-    /* DESKTOP */
+    /* ==================== DESKTOP ==================== */
     .about-section{ padding-top:40px; padding-bottom:0; min-height:860px; }
     .about-wrapper{ display:grid; grid-template-columns:1.2fr .8fr; align-items:end; min-height:860px; position:relative; z-index:2; }
     .about-image-wrap{ position:relative; height:860px; display:flex; align-items:flex-end; }
@@ -72,40 +71,82 @@
     .social-btn:hover{ transform:translateY(-5px) scale(1.05); }
     .social-row{ gap:16px; justify-content:center; flex-wrap:wrap; }
 
+    /* FORMULARIO */
+    .contact-form input, .contact-form textarea {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      border-radius: 999px;
+      padding: 14px 20px;
+      width: 100%;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .contact-form textarea {
+      border-radius: 24px;
+      min-height: 120px;
+      resize: vertical;
+    }
+    .contact-form button {
+      background:#ac2517;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+    }
+    .contact-form button:hover {
+      background:#f3d847;
+      color: black;
+    }
+
     /* ==================== MOBILE ==================== */
     @media(max-width:768px){
       .hero-main{ display:flex; flex-direction:column; justify-content:center; gap:30px; padding-top:120px; padding-bottom:40px; }
-      .hero-title{ 
-        font-size:3.4rem !important; 
-        line-height:0.85 !important; 
-      }
+      .hero-title{ font-size:4rem !important; line-height:.9 !important; }
       .section-title{ font-size:3rem !important; line-height:.95 !important; }
       .hero-logo{ max-width:360px !important; }
       .mobile-center{ text-align:center; }
       .mobile-btn{ justify-content:center; }
 
-      /* ELIMINAMOS COMPLETAMENTE EL ESPACIO DE LA IMAGEN EN MOBILE */
-      .about-section{ 
-        padding-top:30px; 
-        padding-bottom:30px; 
-        min-height:auto; 
+      /* IMAGEN BASTIÁN EN MOBILE */
+      .about-section{ padding-top:20px; min-height:auto; }
+      .about-wrapper{ grid-template-columns:1fr; min-height:auto; }
+      .about-image-wrap{ 
+        height:580px; 
+        display:flex; 
+        align-items:center; 
+        justify-content:center; 
+        overflow:hidden; 
+        padding:20px 0;
       }
-      .about-image-wrap{ display: none !important; }
-      .about-wrapper{ 
-        grid-template-columns:1fr; 
-        min-height:auto; 
-      }
-      .about-text{ 
-        padding:20px 15px 40px 15px; 
-        text-align:center; 
+      .about-image{ 
+        position:relative; 
+        width:100%; 
+        max-width:460px; 
+        height:auto; 
+        object-fit:contain; 
+        left:auto; 
+        bottom:auto; 
       }
 
+      .about-text{ padding:25px 15px 50px 15px; text-align:center; }
       .services-section{ padding-top:70px; padding-bottom:70px; }
       .contact-section{ padding-top:70px; padding-bottom:70px; }
       .ia-section{ margin-top:70px; }
       .gif-divider{ height:140px; object-fit:cover; object-position:center; }
       .service-row{ flex-direction:column; gap:20px; }
       .ia-grid{ grid-template-columns:1fr !important; gap:40px !important; }
+
+      /* FIX PARA TÍTULO CORPORATIVOS */
+      .services-section h3.text-5xl {
+        font-size: 2.25rem !important;
+        line-height: 1.1 !important;
+        word-break: break-word;
+      }
     }
   </style>
 </head>
@@ -312,6 +353,7 @@
         </div>
       </div>
 
+      <!-- TRABAJOS CORPORATIVOS -->
       <div class="mt-24 fade-up">
         <h3 class="text-5xl font-black mb-12"> TRABAJOS CORPORATIVOS </h3>
         <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10">
@@ -363,6 +405,7 @@
       <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.95] mb-8"> ¿LISTO PARA QUE<br> TU MARCA <span class="ají">QUEME?</span> </h2>
       <p class="text-zinc-400 text-lg mb-12 max-w-xl mx-auto"> Hablemos y armemos algo distinto. </p>
       
+      <!-- REDES SOCIALES -->
       <div class="flex gap-5 justify-center mb-12 social-row">
         <a href="https://www.instagram.com/agencia.pica/" target="_blank" class="social-btn bg-gradient-to-br from-pink-500 to-orange-400">
           <i class="fab fa-instagram"></i>
@@ -378,18 +421,26 @@
         </a>
       </div>
 
-      <a href="mailto:ajenciapica@gmail.com?subject=Quiero%20hablar%20sobre%20mi%20proyecto&body=Hola%20Ajiencia%20Pica%2C%0A%0AMe%20gustar%C3%ADa%20consultar%20sobre..." 
-         class="inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition hover:scale-105 rounded-full">
-        ✉️ ESCRIBIR POR GMAIL
-      </a>
+      <!-- FORMULARIO DE CONTACTO -->
+      <div class="max-w-lg mx-auto">
+        <form action="https://formsubmit.co/ajenciapica@gmail.com" method="POST" class="contact-form">
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <input type="email" name="email" placeholder="Tu correo electrónico" required>
+          <input type="tel" name="telefono" placeholder="Tu WhatsApp o teléfono">
+          <textarea name="mensaje" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+          
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde Ajiencia Pica">
+          <input type="hidden" name="_next" value="https://tu-sitio.com/gracias.html">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
 
-      <div class="mt-8 text-sm text-zinc-500">
-        O también puedes escribirnos por WhatsApp
+          <button type="submit">ENVIAR MENSAJE</button>
+        </form>
       </div>
 
-      <div class="mt-6">
-        <a href="https://wa.me/56930638154" target="_blank" class="mobile-btn inline-flex items-center gap-4 bg-green-600 hover:bg-green-500 px-10 py-6 text-xl font-bold transition hover:scale-105 rounded-full">
-          <i class="fab fa-whatsapp"></i> WHATSAPP
+      <div class="mt-10">
+        <a href="https://wa.me/56930638154" target="_blank" class="mobile-btn inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition hover:scale-105">
+          O HABLA POR WHATSAPP <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -400,7 +451,7 @@
     © 2026 Ajiencia Pica • Santiago, Chile • Hecho con mucho ají 🌶️
   </footer>
 
-  <!-- BOTÓN WHATSAPP FLOTANTE -->
+  <!-- BOTÓN WHATSAPP -->
   <a href="https://wa.me/56930638154" target="_blank" class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50">
     <i class="fab fa-whatsapp"></i>
   </a>
