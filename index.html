@@ -50,7 +50,7 @@
     .ia-image{ position:relative; z-index:2; width:100%; max-width:620px; object-fit:contain; }
     section{ position:relative; }
 
-    /* DESKTOP */
+    /* ==================== DESKTOP ==================== */
     .about-section{ padding-top:40px; padding-bottom:0; min-height:860px; }
     .about-wrapper{ display:grid; grid-template-columns:1.2fr .8fr; align-items:end; min-height:860px; position:relative; z-index:2; }
     .about-image-wrap{ position:relative; height:860px; display:flex; align-items:flex-end; }
@@ -80,26 +80,28 @@
       .mobile-center{ text-align:center; }
       .mobile-btn{ justify-content:center; }
 
-      /* IMAGEN BASTIÁN EN MOBILE - CORREGIDO (sin flotar) */
-      .about-section{ padding-top:30px; min-height:auto; }
+      /* IMAGEN BASTIÁN EN MOBILE - MEJORADA */
+      .about-section{ padding-top:20px; min-height:auto; }
       .about-wrapper{ grid-template-columns:1fr; min-height:auto; }
       .about-image-wrap{ 
-        height:460px; 
+        height:580px; 
         display:flex; 
         align-items:center; 
         justify-content:center; 
         overflow:hidden; 
-        padding-bottom:20px;
+        padding:20px 0;
       }
       .about-image{ 
         position:relative; 
         width:100%; 
-        max-width:380px; 
+        max-width:460px; 
         height:auto; 
         object-fit:contain; 
+        left:auto; 
+        bottom:auto; 
       }
 
-      .about-text{ padding:20px 15px 50px 15px; text-align:center; }
+      .about-text{ padding:25px 15px 50px 15px; text-align:center; }
       .services-section{ padding-top:70px; padding-bottom:70px; }
       .contact-section{ padding-top:70px; padding-bottom:70px; }
       .ia-section{ margin-top:70px; }
@@ -239,7 +241,6 @@
         </a>
       </div>
 
-      <!-- Community Manager, Meta Ads, Corporativos, IA, Contacto, etc. (todo igual) -->
       <div id="community-manager" class="mt-24 fade-up">
         <h3 class="text-5xl font-black mb-12"> COMMUNITY MANAGER </h3>
         <div class="grid md:grid-cols-4 gap-8">
@@ -290,8 +291,6 @@
           </a>
         </div>
       </div>
-
-      <!-- Resto de secciones (Meta Ads, Corporativos, IA, Contacto) se mantienen iguales que antes -->
 
       <div class="mt-24 fade-up">
         <h3 class="text-5xl font-black mb-12"> META ADS </h3>
