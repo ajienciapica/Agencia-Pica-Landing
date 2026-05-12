@@ -80,28 +80,19 @@
       .mobile-center{ text-align:center; }
       .mobile-btn{ justify-content:center; }
 
-      /* IMAGEN BASTIÁN EN MOBILE - MEJORADA */
+      /* CAMBIO SOLO EN MOBILE: Sin foto + nuevo texto */
       .about-section{ padding-top:20px; min-height:auto; }
       .about-wrapper{ grid-template-columns:1fr; min-height:auto; }
-      .about-image-wrap{ 
-        height:580px; 
-        display:flex; 
-        align-items:center; 
-        justify-content:center; 
-        overflow:hidden; 
-        padding:20px 0;
+      .about-image-wrap{ display:none; }
+      .about-text{ 
+        padding:40px 15px 60px 15px; 
+        text-align:center; 
       }
-      .about-image{ 
-        position:relative; 
-        width:100%; 
-        max-width:460px; 
-        height:auto; 
-        object-fit:contain; 
-        left:auto; 
-        bottom:auto; 
+      .about-text p:last-child {
+        font-size: 1.1rem;
+        line-height: 1.5;
       }
 
-      .about-text{ padding:25px 15px 50px 15px; text-align:center; }
       .services-section{ padding-top:70px; padding-bottom:70px; }
       .contact-section{ padding-top:70px; padding-bottom:70px; }
       .ia-section{ margin-top:70px; }
