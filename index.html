@@ -214,6 +214,10 @@
     .ad-videos figure{ margin:0; display:flex; flex-direction:column; gap:8px; }
     .ad-videos video{ width:100%; height:auto; border-radius:12px; background:#000; box-shadow:0 10px 30px rgba(0,0,0,.14); }
     .ad-videos figcaption{ font-size:.85rem; color:#4a4a45; }
+    .carrusel.vertical img{ width:min(30%, 300px); aspect-ratio:800 / 1133; }
+    .portadas{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px; max-width:520px; justify-self:end; }
+    .portadas img{ width:100%; height:auto; border-radius:12px; box-shadow:0 14px 34px rgba(0,0,0,.18); }
+    .portadas img:last-child{ transform:translateY(28px); }
     .cliente-reels{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px; align-items:start; }
     .cliente-reels.uno{ grid-template-columns:minmax(0, 440px); justify-content:center; }
     .cliente-reels .embed{ min-height:0; background:transparent; border:0; padding:0; border-radius:12px; }
@@ -364,6 +368,8 @@
       .ad-videos{ grid-template-columns:1fr; }
       .ad-videos figure:last-child{ max-width:280px; }
       .carrusel img{ width:86%; }
+      .carrusel.vertical img{ width:62%; }
+      .portadas{ justify-self:start; }
       .pieza-flechas{ display:none; }
       .hero-indice{ grid-template-columns:repeat(2, minmax(0,1fr)); }
       .redes-grid{ grid-template-columns:1fr; }
@@ -488,7 +494,7 @@
         <div class="cab">
           <p class="kicker rv">Clientes con los que trabajamos</p>
           <h2 class="t rv">Marcas que <b class="r">sazonamos</b></h2>
-          <p class="rv">ARVI, ARVI Happy, Club de Trading e Inversapiens: reels, redes, sitios web, piezas comerciales, miniaturas y anuncios.</p>
+          <p class="rv">ARVI, ARVI Happy, Club de Trading, Inversapiens y Altos Emunah: reels, redes, sitios web, piezas comerciales, miniaturas y anuncios.</p>
         </div>
 
         <article class="cliente rv">
@@ -597,6 +603,56 @@
                 <figure><video controls playsinline preload="none" poster="assets/trading/masterclass-vertical.webp" width="720" height="1280"><source src="assets/trading/masterclass-vertical.mp4" type="video/mp4"></video><figcaption>Vertical 9:16 · Reels y Stories</figcaption></figure>
               </div>
             </div>
+          </div>
+        </article>
+        <article class="cliente rv">
+          <div class="cliente-info">
+            <h3>Altos Emunah<span>Centro de eventos en La Pintana</span></h3>
+            <p>Centro de eventos rodeado de áreas verdes, con casona, terraza, pérgola y piscina para hasta 200 personas. Diseñamos sus cotizaciones 2026 para matrimonios y cenas bailables de gala.</p>
+            <div class="hicimos chip-txt"><span>Cotización Matrimonios 2026</span><span>Cotización Cena Bailable 2026</span><span>Diseño editorial</span></div>
+          </div>
+          <div class="portadas">
+            <img src="assets/emunah/matrimonios-1.webp" alt="Portada de la cotización Matrimonios 2026 de Altos Emunah" width="800" height="1133" loading="lazy">
+            <img src="assets/emunah/gala-1.webp" alt="Portada de la cotización Cena Bailable 2026 de Altos Emunah" width="800" height="1133" loading="lazy">
+          </div>
+          <div class="piezas">
+            <h4 class="piezas-tit">Piezas que diseñamos para Altos Emunah</h4>
+          <div class="pieza">
+            <div class="pieza-cab">
+              <div><h4>Matrimonios 2026</h4><p>Cotización · Diseño editorial</p></div>
+              <div class="pieza-flechas">
+                <button type="button" data-g="galMatrimonios" data-d="-1" aria-label="Página anterior de Matrimonios 2026"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                <button type="button" data-g="galMatrimonios" data-d="1" aria-label="Página siguiente de Matrimonios 2026"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <p class="pieza-desc">Cotización en tonos cálidos para parejas que buscan dónde casarse: espacios, menú, servicio incluido y condiciones.</p>
+            <div class="carrusel vertical" id="galMatrimonios" tabindex="0" aria-label="Páginas de Matrimonios 2026">
+                <img src="assets/emunah/matrimonios-1.webp" alt="Matrimonios 2026: Portada" width="800" height="1133" loading="lazy">
+                <img src="assets/emunah/matrimonios-2.webp" alt="Matrimonios 2026: Nosotros y espacios" width="800" height="1133" loading="lazy">
+                <img src="assets/emunah/matrimonios-3.webp" alt="Matrimonios 2026: Cóctel de bienvenida" width="800" height="1133" loading="lazy">
+                <img src="assets/emunah/matrimonios-4.webp" alt="Matrimonios 2026: La cena" width="800" height="1133" loading="lazy">
+                <img src="assets/emunah/matrimonios-5.webp" alt="Matrimonios 2026: Acompañamientos y buffet de postres" width="800" height="1133" loading="lazy">
+                <img src="assets/emunah/matrimonios-6.webp" alt="Matrimonios 2026: El servicio incluye" width="800" height="1133" loading="lazy">
+            </div>
+          </div>
+          <div class="pieza">
+            <div class="pieza-cab">
+              <div><h4>Cena Bailable 2026</h4><p>Cotización para galas · Diseño editorial</p></div>
+              <div class="pieza-flechas">
+                <button type="button" data-g="galGala" data-d="-1" aria-label="Página anterior de Cena Bailable 2026"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                <button type="button" data-g="galGala" data-d="1" aria-label="Página siguiente de Cena Bailable 2026"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <p class="pieza-desc">Versión nocturna y elegante pensada para galas de colegios: la misma información con una estética de fiesta.</p>
+            <div class="carrusel vertical" id="galGala" tabindex="0" aria-label="Páginas de Cena Bailable 2026">
+                <img src="assets/emunah/gala-1.webp" alt="Cena Bailable 2026: Portada" width="800" height="1133" loading="lazy">
+                <img src="assets/emunah/gala-2.webp" alt="Cena Bailable 2026: Nosotros y espacios" width="800" height="1133" loading="lazy">
+                <img src="assets/emunah/gala-3.webp" alt="Cena Bailable 2026: Cóctel de bienvenida" width="800" height="1133" loading="lazy">
+                <img src="assets/emunah/gala-4.webp" alt="Cena Bailable 2026: La cena" width="800" height="1133" loading="lazy">
+                <img src="assets/emunah/gala-5.webp" alt="Cena Bailable 2026: Acompañamientos y buffet de postres" width="800" height="1133" loading="lazy">
+                <img src="assets/emunah/gala-6.webp" alt="Cena Bailable 2026: El servicio incluye" width="800" height="1133" loading="lazy">
+            </div>
+          </div>
           </div>
         </article>
       </div>
