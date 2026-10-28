@@ -190,6 +190,17 @@
     .cliente-dato{ display:flex; align-items:baseline; gap:10px; }
     .cliente-dato strong{ font-family:var(--display); font-weight:800; font-size:2.6rem; line-height:1; font-variant-numeric:tabular-nums; }
     .cliente-links{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+    .piezas{ grid-column:1 / -1; display:flex; flex-direction:column; gap:40px; padding-top:40px; border-top:1px solid var(--linea-clara); }
+    .piezas-tit{ font-family:var(--display); font-weight:800; font-size:clamp(1.8rem, 3vw, 2.4rem); text-transform:uppercase; line-height:1; }
+    .pieza-cab{ display:flex; justify-content:space-between; align-items:flex-end; gap:16px; }
+    .pieza h4{ font-family:var(--display); font-weight:800; font-size:1.7rem; text-transform:uppercase; line-height:1; }
+    .pieza-cab p{ color:var(--rojo); font-family:var(--display); font-weight:600; letter-spacing:.04em; text-transform:uppercase; margin-top:6px; }
+    .pieza-desc{ color:#3a3a36; max-width:640px; margin:12px 0 18px; }
+    .pieza-flechas{ display:flex; gap:8px; }
+    .pieza-flechas button{ width:48px; height:48px; border-radius:50%; border:1.5px solid var(--negro); display:flex; align-items:center; justify-content:center; transition:background .2s, color .2s; }
+    .pieza-flechas button:hover{ background:var(--negro); color:var(--blanco); }
+    .carrusel{ display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; padding-bottom:12px; scrollbar-width:thin; }
+    .carrusel img{ flex:0 0 min(78%, 720px); height:auto; aspect-ratio:1400 / 788; object-fit:cover; scroll-snap-align:start; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.12); }
     .cliente-reels{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px; align-items:start; }
     .cliente-reels.uno{ grid-template-columns:minmax(0, 440px); justify-content:center; }
     .cliente-reels .embed{ min-height:0; background:transparent; border:0; padding:0; border-radius:12px; }
@@ -337,6 +348,8 @@
       .stat{ padding:34px 18px; }
       .seccion{ padding:84px 0; }
       .cliente-reels{ grid-template-columns:1fr; }
+      .carrusel img{ flex-basis:88%; }
+      .pieza-flechas{ display:none; }
       .hero-indice{ grid-template-columns:repeat(2, minmax(0,1fr)); }
       .redes-grid{ grid-template-columns:1fr; }
       .sobre-grid{ grid-template-columns:1fr; }
@@ -467,7 +480,7 @@
           <div class="cliente-info">
             <h3>ARVI.cl<span>Juegos mecánicos y sustentables</span></h3>
             <p>Empresa chilena que fabrica y arrienda juegos mecánicos modulares, remolcables y sustentables para municipios, colegios, empresas y ferias.</p>
-            <div class="hicimos chip-txt"><span>Reels</span><span>Gestión de Instagram</span><span>Sitio web con catálogo y cotizador</span></div>
+            <div class="hicimos chip-txt"><span>Reels</span><span>Gestión de Instagram</span><span>Sitio web con catálogo y cotizador</span><span>Catálogo 2026</span><span>Propuestas comerciales</span></div>
             <p class="cliente-dato"><strong>9.123</strong> seguidores en Instagram</p>
             <div class="cliente-links">
               <a class="pill pill-n" href="https://arvi-cl.github.io/" target="_blank" rel="noopener"><i class="fa-solid fa-globe" aria-hidden="true"></i> Ver sitio web</a>
@@ -476,6 +489,49 @@
           </div>
           <div class="cliente-reels uno">
             <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DduFBpGvAI0/" data-instgrm-version="14" style="max-width:540px; min-width:280px; width:100%; background:#fff; border:0; margin:0;"><div class="embed-fallback"><i class="fab fa-instagram" aria-hidden="true" style="color:#000"></i><a class="pill pill-n" target="_blank" rel="noopener" href="https://www.instagram.com/p/DduFBpGvAI0/">Ver en Instagram</a></div></blockquote></div>
+          </div>
+                  <div class="piezas">
+            <h4 class="piezas-tit">Piezas que diseñamos para ARVI</h4>
+          <div class="pieza">
+            <div class="pieza-cab">
+              <div><h4>Catálogo 2026</h4><p>35 páginas · Diseño editorial</p></div>
+              <div class="pieza-flechas">
+                <button type="button" data-g="galCatalogo" data-d="-1" aria-label="Página anterior de Catálogo 2026"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                <button type="button" data-g="galCatalogo" data-d="1" aria-label="Página siguiente de Catálogo 2026"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <p class="pieza-desc">Catálogo comercial con las 31 atracciones de ARVI: fichas técnicas, capacidad, seguridad y contacto, para enviar a municipios, colegios y empresas.</p>
+            <div class="carrusel" id="galCatalogo" tabindex="0" aria-label="Páginas de Catálogo 2026">
+                <img src="assets/arvi/catalogo-01.webp" alt="Portada del catálogo ARVI 2026" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/catalogo-02.webp" alt="Somos ARVI" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/catalogo-03.webp" alt="Entretenimiento responsable" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/catalogo-06.webp" alt="Encuentra tu juego" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/catalogo-08.webp" alt="Rueda Chicago" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/catalogo-09.webp" alt="Barco Pirata" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/catalogo-12.webp" alt="Sillitas Voladoras" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/catalogo-15.webp" alt="Cine 9D" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/catalogo-17.webp" alt="Stand Feria Americana" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/catalogo-33.webp" alt="Próximos juegos sustentables" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/catalogo-35.webp" alt="Contacto ARVI" width="1400" height="788" loading="lazy">
+            </div>
+          </div>
+          <div class="pieza">
+            <div class="pieza-cab">
+              <div><h4>Propuesta Papudo</h4><p>5 páginas · Presentación comercial</p></div>
+              <div class="pieza-flechas">
+                <button type="button" data-g="galPapudo" data-d="-1" aria-label="Página anterior de Propuesta Papudo"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                <button type="button" data-g="galPapudo" data-d="1" aria-label="Página siguiente de Propuesta Papudo"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <p class="pieza-desc">Presentación para proponer un parque de juegos familiares en Papudo, pensada para complementar la oferta turística de la comuna.</p>
+            <div class="carrusel" id="galPapudo" tabindex="0" aria-label="Páginas de Propuesta Papudo">
+                <img src="assets/arvi/papudo-1.webp" alt="Portada de la propuesta para Papudo" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/papudo-2.webp" alt="Experiencia para los más pequeños" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/papudo-3.webp" alt="Proyecto" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/papudo-4.webp" alt="Activar un nuevo espacio para Papudo" width="1400" height="788" loading="lazy">
+                <img src="assets/arvi/papudo-5.webp" alt="Contacto" width="1400" height="788" loading="lazy">
+            </div>
+          </div>
           </div>
         </article>
 
@@ -725,6 +781,15 @@
     burger.addEventListener('click', function(){ setMenu(!document.body.classList.contains('menu-abierto')); });
     document.querySelectorAll('#menu a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+
+    // Carruseles de piezas
+    document.querySelectorAll('.pieza-flechas button').forEach(function(b){
+      b.addEventListener('click', function(){
+        var c = document.getElementById(b.dataset.g);
+        var paso = c.querySelector('img').getBoundingClientRect().width + 16;
+        c.scrollBy({ left: paso * Number(b.dataset.d), behavior:'smooth' });
+      });
+    });
 
     // Cargar TikTok e Instagram solo cuando la sección se acerca
     var embedsCargados = false;
