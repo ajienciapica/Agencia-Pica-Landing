@@ -1,429 +1,676 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" href="Icono_Rojo.png" type="image/png">
-  <title>Ajiencia Pica | Marketing que Pica 🔥</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajiencia Pica | Agencia de marketing y diseño en Santiago</title>
+  <meta name="description" content="Agencia creativa en Santiago de Chile. Diseño de marca, community manager, contenido para redes sociales y campañas Meta Ads con precios claros. Marketing que pica.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://ajienciapica.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:site_name" content="Ajiencia Pica">
+  <meta property="og:title" content="Ajiencia Pica | Marketing que pica">
+  <meta property="og:description" content="¿Tu marca es fome? La sazonamos. Branding, redes sociales y Meta Ads en Santiago de Chile.">
+  <meta property="og:url" content="https://ajienciapica.com/">
+  <meta property="og:image" content="https://ajienciapica.com/assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Ajiencia Pica",
+    "slogan": "Marketing que pica",
+    "url": "https://ajienciapica.com/",
+    "logo": "https://ajienciapica.com/assets/isotipo-rojo.webp",
+    "telephone": "+56930638154",
+    "founder": { "@type": "Person", "name": "Bastián Sanhueza" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL" },
+    "areaServed": "CL",
+    "sameAs": [
+      "https://www.instagram.com/agencia.pica/",
+      "https://www.facebook.com/profile.php?id=61589374511198",
+      "https://www.behance.net/bastinsanhueza1",
+      "https://www.threads.net/@agencia.pica"
+    ]
+  }
+  </script>
+
   <style>
-    *{ margin:0; padding:0; box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{ 
-      font-family:'Inter',system-ui,sans-serif; 
-      background:#000; 
-      overflow-x:hidden; 
-      color:white; 
-      cursor:url('Cursor%20de%20Pica.png'), auto; 
+    :root{
+      --rojo:#ac2517;
+      --rojo-claro:#e04a37;
+      --amarillo:#f3d847;
+      --negro:#0b0b0b;
+      --negro-2:#141414;
+      --negro-3:#1c1c1c;
+      --hueso:#f4f4f2;
+      --gris:#a3a3a0;
+      --gris-2:#6f6f6c;
+      --linea:rgba(244,244,242,.1);
+      --display:'Archivo', 'Arial Black', system-ui, sans-serif;
+      --texto:'Inter', system-ui, -apple-system, sans-serif;
+      --radio:28px;
+      --ancho:1240px;
     }
-    .ají{ color:#f3d847; }
-    .noise{ 
-      position:absolute; 
-      inset:0; 
-      opacity:.03; 
-      background-image:radial-gradient(#ffffff 1px, transparent 1px); 
-      background-size:22px 22px; 
-      pointer-events:none; 
+    *,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; scroll-padding-top:88px; overflow-x:clip; }
+    body{
+      font-family:var(--texto);
+      background:var(--negro);
+      color:var(--hueso);
+      line-height:1.6;
+      overflow-x:clip;
+      -webkit-font-smoothing:antialiased;
+      cursor:url('Cursor%20de%20Pica.png') 8 8, auto;
     }
-    .hero-glow{ 
-      position:absolute; 
-      width:700px; 
-      height:700px; 
-      background:#ac2517; 
-      filter:blur(180px); 
-      opacity:.35; 
-      top:-250px; 
-      left:-250px; 
-      pointer-events:none; 
+    a, button{ cursor:url('Cursor%20de%20Pica.png') 8 8, pointer; }
+    img, video{ display:block; max-width:100%; }
+    a{ color:inherit; text-decoration:none; }
+    :focus-visible{ outline:3px solid var(--amarillo); outline-offset:3px; border-radius:6px; }
+    .wrap{ max-width:var(--ancho); margin:0 auto; padding:0 24px; }
+    .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+    /* ---------- Tipografía ---------- */
+    .display{ font-family:var(--display); font-weight:900; font-stretch:112%; letter-spacing:-.035em; line-height:.9; text-transform:uppercase; }
+    .eyebrow{ display:inline-flex; align-items:center; gap:10px; font-size:.78rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--gris); }
+    .eyebrow::before{ content:""; width:28px; height:2px; background:var(--amarillo); }
+    .aji{ color:var(--amarillo); }
+    .h-seccion{ font-size:clamp(2.6rem, 6.4vw, 5.6rem); }
+    .lead{ font-size:clamp(1.05rem, 1.4vw, 1.25rem); color:var(--gris); max-width:560px; }
+
+    /* ---------- Botones ---------- */
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:52px; padding:0 28px; border-radius:999px; font-weight:700; font-size:.98rem; letter-spacing:.01em; border:1.5px solid transparent; transition:transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease; }
+    .btn:hover{ transform:translateY(-2px); }
+    .btn-amarillo{ background:var(--amarillo); color:var(--negro); }
+    .btn-amarillo:hover{ background:var(--hueso); }
+    .btn-rojo{ background:var(--rojo); color:var(--hueso); }
+    .btn-rojo:hover{ background:var(--amarillo); color:var(--negro); }
+    .btn-linea{ border-color:rgba(244,244,242,.35); color:var(--hueso); }
+    .btn-linea:hover{ border-color:var(--hueso); background:var(--hueso); color:var(--negro); }
+    .btn-negro{ background:var(--negro); color:var(--hueso); }
+    .btn-negro:hover{ background:var(--amarillo); color:var(--negro); }
+    .btn i{ transition:transform .25s ease; }
+    .btn:hover i.fa-arrow-right{ transform:translateX(4px); }
+
+    /* ---------- Nav ---------- */
+    .nav{ position:fixed; inset:0 0 auto 0; z-index:50; transition:background .3s ease, border-color .3s ease; border-bottom:1px solid transparent; }
+    .nav.scrolled{ background:rgba(11,11,11,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-color:var(--linea); }
+    .nav-in{ display:flex; align-items:center; justify-content:space-between; gap:24px; height:80px; }
+    .nav-logo{ display:flex; align-items:center; gap:12px; font-family:var(--display); font-weight:900; font-stretch:112%; font-size:1.15rem; letter-spacing:-.02em; text-transform:uppercase; }
+    .nav-logo img{ width:42px; height:42px; }
+    .nav-links{ display:flex; align-items:center; gap:34px; font-size:.92rem; font-weight:500; }
+    .nav-links a:not(.btn){ color:#d4d4d1; position:relative; padding:6px 0; }
+    .nav-links a:not(.btn)::after{ content:""; position:absolute; left:0; bottom:0; width:100%; height:2px; background:var(--amarillo); transform:scaleX(0); transform-origin:left; transition:transform .25s ease; }
+    .nav-links a:not(.btn):hover{ color:var(--hueso); }
+    .nav-links a:not(.btn):hover::after{ transform:scaleX(1); }
+    .nav-links .btn{ min-height:44px; padding:0 22px; font-size:.9rem; }
+    .nav-toggle{ display:none; width:48px; height:48px; border-radius:50%; border:1px solid var(--linea); background:transparent; color:var(--hueso); font-size:1.1rem; }
+
+    /* ---------- Hero ---------- */
+    .hero{ position:relative; min-height:100vh; min-height:100svh; display:flex; align-items:center; padding:130px 0 80px; overflow:hidden; }
+    .grano{ position:absolute; inset:0; opacity:.04; background-image:radial-gradient(#fff 1px, transparent 1px); background-size:22px 22px; pointer-events:none; }
+    .glow{ position:absolute; border-radius:50%; background:var(--rojo); filter:blur(160px); pointer-events:none; }
+    .hero .glow-1{ width:720px; height:720px; top:-280px; left:-260px; opacity:.35; }
+    .hero .glow-2{ width:520px; height:520px; bottom:-220px; right:-120px; opacity:.28; }
+    .hero-grid{ position:relative; z-index:2; display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center; }
+    .hero h1{ font-size:clamp(3.4rem, 9.6vw, 8.6rem); margin:28px 0 30px; }
+    .hero h1 .linea{ display:block; }
+    .hero-ctas{ display:flex; flex-wrap:wrap; gap:14px; margin-top:40px; }
+    .hero-visual{ position:relative; display:flex; justify-content:center; align-items:center; }
+    .hero-visual .logo{ position:relative; z-index:2; width:100%; max-width:540px; transition:transform .7s ease; }
+    .hero-visual:hover .logo{ transform:rotate(-3deg) scale(1.03); }
+    .sello{ position:absolute; z-index:3; right:2%; bottom:6%; width:150px; height:150px; }
+    .sello svg{ width:100%; height:100%; animation:girar 18s linear infinite; }
+    .sello .centro{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:1.6rem; color:var(--negro); }
+    .sello .centro span{ width:60px; height:60px; border-radius:50%; background:var(--amarillo); display:flex; align-items:center; justify-content:center; }
+    @keyframes girar{ to{ transform:rotate(360deg); } }
+    .hero-datos{ position:relative; z-index:2; display:flex; flex-wrap:wrap; gap:12px 32px; margin-top:56px; padding-top:28px; border-top:1px solid var(--linea); font-size:.9rem; color:var(--gris); }
+    .hero-datos span{ display:inline-flex; align-items:center; gap:10px; }
+    .hero-datos i{ color:var(--amarillo); }
+
+    /* ---------- Cinta ---------- */
+    .cinta{ background:var(--amarillo); color:var(--negro); overflow:hidden; padding:18px 0; transform:rotate(-1.2deg); margin:0 -20px; position:relative; z-index:3; }
+    .cinta-track{ display:flex; gap:40px; width:max-content; animation:cinta 32s linear infinite; font-family:var(--display); font-weight:900; font-stretch:112%; text-transform:uppercase; font-size:clamp(1.2rem, 2.2vw, 1.8rem); letter-spacing:-.01em; white-space:nowrap; }
+    .cinta-track span{ display:inline-flex; align-items:center; gap:40px; }
+    .cinta-track i{ color:var(--rojo); font-size:.8em; }
+    @keyframes cinta{ to{ transform:translateX(-50%); } }
+
+    /* ---------- Secciones ---------- */
+    .seccion{ position:relative; padding:140px 0; }
+    .cabecera{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:28px; margin-bottom:64px; }
+    .cabecera h2{ margin-top:22px; }
+    .num{ font-family:var(--display); font-weight:800; color:var(--amarillo); }
+
+    /* ---------- Servicios ---------- */
+    .servicios{ background:var(--negro-2); }
+    .serv-grid{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:24px; }
+    .serv{ position:relative; display:flex; flex-direction:column; background:var(--negro-3); border:1px solid var(--linea); border-radius:var(--radio); padding:40px; transition:border-color .3s ease, transform .3s ease; overflow:hidden; }
+    .serv:hover{ border-color:rgba(243,216,71,.55); transform:translateY(-4px); }
+    .serv-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:32px; }
+    .serv-top .tag{ font-size:.78rem; font-weight:600; letter-spacing:.18em; color:var(--gris-2); }
+    .serv h3{ font-size:clamp(1.9rem, 3vw, 2.5rem); margin-top:12px; }
+    .serv-ico{ flex:none; width:56px; height:56px; border-radius:16px; background:rgba(172,37,23,.18); color:var(--amarillo); display:flex; align-items:center; justify-content:center; font-size:1.3rem; }
+    .item{ display:grid; grid-template-columns:1fr auto; gap:6px 24px; padding:22px 0; border-top:1px solid var(--linea); }
+    .item h4{ font-size:1.12rem; font-weight:700; }
+    .item p{ grid-column:1 / -1; color:var(--gris); font-size:.95rem; max-width:440px; }
+    .precio{ font-family:var(--display); font-weight:800; font-size:1.45rem; letter-spacing:-.02em; white-space:nowrap; }
+    .precio small{ font-family:var(--texto); font-weight:500; font-size:.78rem; color:var(--gris); letter-spacing:0; margin-right:6px; }
+    .serv-link{ margin-top:auto; padding-top:28px; display:inline-flex; align-items:center; gap:10px; font-weight:700; color:var(--amarillo); min-height:44px; }
+    .serv-link i{ transition:transform .25s ease; }
+    .serv-link:hover i{ transform:translateX(5px); }
+    .nota{ margin-top:16px; font-size:.82rem; color:var(--gris-2); line-height:1.5; }
+    .iva{ margin-top:28px; font-size:.88rem; color:var(--gris-2); display:flex; align-items:center; gap:8px; }
+
+    /* ---------- Banner video ---------- */
+    .banner{ display:block; width:100%; height:200px; object-fit:cover; }
+
+    /* ---------- Planes ---------- */
+    .planes-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px; align-items:stretch; }
+    .plan{ position:relative; display:flex; flex-direction:column; gap:28px; border:1px solid var(--linea); border-radius:var(--radio); padding:40px 34px; background:var(--negro-2); transition:transform .3s ease, border-color .3s ease; }
+    .plan:hover{ transform:translateY(-6px); border-color:rgba(244,244,242,.3); }
+    .plan-nombre{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .plan-nombre h3{ font-size:1.7rem; }
+    .picor{ display:flex; gap:6px; font-size:1.05rem; color:rgba(244,244,242,.18); }
+    .picor .on{ color:var(--rojo-claro); }
+    .plan-precio{ font-family:var(--display); font-weight:900; font-stretch:112%; font-size:clamp(2.6rem, 4vw, 3.4rem); letter-spacing:-.04em; line-height:1; }
+    .plan-precio span{ font-family:var(--texto); font-weight:500; font-size:.95rem; letter-spacing:0; color:var(--gris); margin-left:4px; }
+    .plan-desc{ color:var(--gris); font-size:.95rem; margin-top:10px; }
+    .plan ul{ list-style:none; display:flex; flex-direction:column; gap:14px; padding-top:26px; border-top:1px solid var(--linea); }
+    .plan li{ display:flex; gap:12px; align-items:flex-start; font-size:1rem; }
+    .plan li i{ color:var(--amarillo); margin-top:5px; font-size:.85rem; }
+    .plan .btn{ margin-top:auto; width:100%; }
+    .plan.destacado{ background:var(--amarillo); color:var(--negro); border-color:var(--amarillo); transform:translateY(-14px); }
+    .plan.destacado:hover{ transform:translateY(-20px); border-color:var(--amarillo); }
+    .plan.destacado .plan-precio span, .plan.destacado .plan-desc{ color:#3b3a33; }
+    .plan.destacado ul{ border-color:rgba(11,11,11,.15); }
+    .plan.destacado li i{ color:var(--rojo); }
+    .plan.destacado .picor{ color:rgba(11,11,11,.18); }
+    .plan.destacado .picor .on{ color:var(--rojo); }
+    .badge{ position:absolute; top:-15px; left:34px; background:var(--rojo); color:var(--hueso); font-size:.74rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:8px 14px; border-radius:999px; }
+    .plan.picante{ background:linear-gradient(180deg, rgba(172,37,23,.35) 0%, var(--negro-2) 55%); border-color:rgba(224,74,55,.5); }
+    .plan.picante .badge{ background:var(--hueso); color:var(--rojo); }
+    .a-medida{ margin-top:24px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:20px; border:1.5px dashed rgba(244,244,242,.25); border-radius:var(--radio); padding:30px 36px; }
+    .a-medida h3{ font-size:1.6rem; }
+    .a-medida p{ color:var(--gris); margin-top:4px; }
+
+    /* ---------- Proceso ---------- */
+    .proceso{ border-top:1px solid var(--linea); }
+    .pasos{ list-style:none; display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:24px; counter-reset:paso; }
+    .paso{ padding-top:28px; border-top:2px solid var(--rojo); }
+    .paso .num{ font-size:1.1rem; }
+    .paso h3{ font-size:1.25rem; font-weight:700; margin:14px 0 8px; }
+    .paso p{ color:var(--gris); font-size:.97rem; }
+
+    /* ---------- Sobre mí ---------- */
+    .sobre{ background:var(--negro-2); overflow:hidden; padding-bottom:0; }
+    .sobre-grid{ position:relative; z-index:2; display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:end; }
+    .sobre-img{ position:relative; align-self:end; }
+    .sobre-img img{ width:100%; max-width:760px; filter:drop-shadow(0 40px 90px rgba(0,0,0,.8)); }
+    .sobre-txt{ padding-bottom:140px; }
+    .sobre-txt h2{ font-size:clamp(2.6rem, 5.6vw, 5rem); margin:22px 0 28px; }
+    .sobre-txt p{ color:var(--gris); font-size:1.12rem; max-width:480px; }
+    .sobre-txt p + p{ margin-top:16px; }
+    .herramientas{ display:flex; flex-wrap:wrap; gap:8px; margin:30px 0 36px; }
+    .herramientas span{ font-size:.85rem; font-weight:500; padding:8px 14px; border-radius:999px; border:1px solid var(--linea); color:#d4d4d1; }
+    .sobre .glow{ width:700px; height:700px; left:-260px; bottom:-300px; opacity:.22; }
+
+    /* ---------- IA ---------- */
+    .ia-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:64px; align-items:center; }
+    .ia-img{ position:relative; display:flex; justify-content:center; }
+    .ia-img .glow{ width:420px; height:420px; opacity:.35; filter:blur(130px); }
+    .ia-img img{ position:relative; z-index:2; width:100%; max-width:540px; }
+    .ia-txt h2{ font-size:clamp(2.4rem, 5vw, 4.4rem); margin:22px 0 26px; }
+    .ia-txt > p{ color:var(--gris); font-size:1.1rem; max-width:540px; }
+    .ia-puntos{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px; margin-top:36px; }
+    .ia-punto{ background:var(--negro-2); border:1px solid var(--linea); border-radius:20px; padding:24px; }
+    .ia-punto i{ color:var(--amarillo); font-size:1.2rem; }
+    .ia-punto h3{ font-size:1.05rem; font-weight:700; margin:14px 0 6px; }
+    .ia-punto p{ color:var(--gris); font-size:.92rem; line-height:1.5; }
+
+    /* ---------- Contacto ---------- */
+    .contacto{ background:var(--rojo); overflow:hidden; text-align:center; }
+    .contacto .isotipo{ width:96px; height:96px; margin:0 auto 34px; border-radius:50%; box-shadow:0 0 0 6px rgba(244,244,242,.12); }
+    .contacto h2{ font-size:clamp(3rem, 8.4vw, 7.4rem); }
+    .contacto .lead{ color:rgba(244,244,242,.85); margin:28px auto 0; }
+    .contacto-ctas{ display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin-top:44px; }
+    .contacto .btn-linea{ border-color:rgba(244,244,242,.55); }
+    .redes{ display:flex; justify-content:center; gap:12px; margin-top:52px; }
+    .redes a{ width:52px; height:52px; border-radius:50%; border:1px solid rgba(244,244,242,.4); display:flex; align-items:center; justify-content:center; font-size:1.15rem; transition:background .25s ease, color .25s ease, transform .25s ease; }
+    .redes a:hover{ background:var(--hueso); color:var(--rojo); transform:translateY(-3px); }
+    .contacto .grano{ opacity:.06; }
+
+    /* ---------- Footer ---------- */
+    .footer{ padding:40px 0; border-top:1px solid var(--linea); }
+    .footer-in{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:18px; font-size:.88rem; color:var(--gris-2); }
+    .footer-in nav{ display:flex; flex-wrap:wrap; gap:24px; }
+    .footer-in nav a{ color:var(--gris); }
+    .footer-in nav a:hover{ color:var(--amarillo); }
+
+    /* ---------- WhatsApp flotante ---------- */
+    .wa-float{ position:fixed; right:22px; bottom:22px; z-index:60; width:60px; height:60px; border-radius:50%; background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.9rem; box-shadow:0 12px 32px rgba(0,0,0,.45); transition:transform .25s ease; }
+    .wa-float:hover{ transform:scale(1.08); }
+
+    /* ---------- Animaciones (solo si hay JS) ---------- */
+    .js .reveal{ opacity:0; transform:translateY(40px); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:1024px){
+      .planes-grid{ grid-template-columns:1fr; max-width:560px; margin:0 auto; }
+      .plan.destacado, .plan.destacado:hover{ transform:none; }
+      .pasos{ grid-template-columns:repeat(2, minmax(0,1fr)); row-gap:44px; }
+      .ia-grid{ grid-template-columns:1fr; gap:40px; }
+      .ia-img img{ max-width:420px; }
     }
-    .fade-up{ opacity:0; transform:translateY(60px); }
-    .card-hover{ transition:all .35s ease; }
-    .card-hover:hover{ transform:translateY(-8px); border-color:#f3d847; }
-    .service-link{ text-decoration:none; color:white; display:block; height:100%; }
-    .gif-divider{ width:100%; height:220px; object-fit:cover; display:block; margin:0; padding:0; }
-    .cm-button{ background:#ac2517; padding:12px 20px; border-radius:999px; font-size:.85rem; font-weight:700; border:1px solid rgba(255,255,255,.08); transition:.3s ease; }
-    .cm-button:hover{ background:#f3d847; color:black; }
-    .about-image{ filter:drop-shadow(0 40px 120px rgba(0,0,0,.95)); }
-    .ia-glow{ position:absolute; width:450px; height:450px; background:#ac2517; filter:blur(140px); opacity:.35; z-index:1; pointer-events:none; }
-    .ia-image{ position:relative; z-index:2; width:100%; max-width:620px; object-fit:contain; }
-    section{ position:relative; }
-
-    /* DESKTOP */
-    .about-section{ padding-top:40px; padding-bottom:0; min-height:860px; }
-    .about-wrapper{ display:grid; grid-template-columns:1.2fr .8fr; align-items:end; min-height:860px; position:relative; z-index:2; }
-    .about-image-wrap{ position:relative; height:860px; display:flex; align-items:flex-end; }
-    .about-image{ position:absolute; left:-80px; bottom:0; width:980px; max-width:none; object-fit:contain; }
-    .about-text{ padding-left:30px; padding-bottom:180px; position:relative; z-index:3; }
-
-    .hero-main{ gap:30px; }
-    .services-section{ padding-top:90px; padding-bottom:90px; }
-    .contact-section{ padding-top:90px; padding-bottom:90px; }
-    .ia-section{ margin-top:90px; }
-    .meta-disclaimer{ color:#71717a; font-size:.8rem; margin-top:14px; line-height:1.5; }
-
-    /* SOCIAL BUTTONS */
-    .social-btn{
-      width:58px; height:58px; border-radius:999px; display:flex; align-items:center; justify-content:center;
-      font-size:1.4rem; transition:.3s ease; border:1px solid rgba(255,255,255,.08);
+    @media (max-width:860px){
+      .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+      .nav-links{ position:fixed; inset:80px 0 auto 0; flex-direction:column; align-items:stretch; gap:0; padding:12px 24px 28px; background:rgba(11,11,11,.97); border-bottom:1px solid var(--linea); transform:translateY(-12px); opacity:0; visibility:hidden; transition:all .25s ease; }
+      .nav-links.abierto{ transform:none; opacity:1; visibility:visible; }
+      .nav-links a:not(.btn){ padding:16px 0; border-bottom:1px solid var(--linea); font-size:1.05rem; }
+      .nav-links a:not(.btn)::after{ display:none; }
+      .nav-links .btn{ margin-top:20px; min-height:52px; }
+      .hero{ padding-top:120px; text-align:center; }
+      .hero-grid{ grid-template-columns:1fr; gap:24px; }
+      .hero .eyebrow{ justify-content:center; }
+      .hero .lead{ margin:0 auto; }
+      .hero-ctas, .hero-datos{ justify-content:center; }
+      .hero-visual .logo{ max-width:260px; }
+      .sello{ width:104px; height:104px; right:8%; bottom:0; }
+      .sello .centro span{ width:42px; height:42px; font-size:1.1rem; }
+      .seccion{ padding:96px 0; }
+      .serv-grid{ grid-template-columns:1fr; }
+      .serv{ padding:30px 24px; }
+      .sobre-grid{ grid-template-columns:1fr; }
+      .sobre-txt{ padding-bottom:0; text-align:center; }
+      .sobre-txt p{ margin-left:auto; margin-right:auto; }
+      .sobre-txt .eyebrow, .herramientas{ justify-content:center; }
+      .sobre-img{ order:2; margin-top:40px; }
+      .sobre-img img{ margin:0 auto; }
+      .banner{ height:130px; }
     }
-    .social-btn:hover{ transform:translateY(-5px) scale(1.05); }
-    .social-row{ gap:16px; justify-content:center; flex-wrap:wrap; }
-
-    /* ==================== MOBILE ==================== */
-    @media(max-width:768px){
-      .hero-main{ display:flex; flex-direction:column; justify-content:center; gap:30px; padding-top:120px; padding-bottom:40px; }
-      .hero-title{ 
-        font-size:3.1rem !important; 
-        line-height:0.9 !important; 
-      }
-
-      /* FIX TITULARES MOBILE */
-      .section-title{ 
-        font-size:2.4rem !important; 
-        line-height:1 !important;
-        word-break:break-word;
-      }
-
-      .hero-logo{ max-width:360px !important; }
-      .mobile-center{ text-align:center; }
-      .mobile-btn{ justify-content:center; }
-
-      /* IMAGEN BASTIÁN OCULTA EN MOBILE */
-      .about-section{ 
-        padding-top:30px; 
-        padding-bottom:30px; 
-        min-height:auto; 
-      }
-      .about-image-wrap{ display: none !important; }
-      .about-wrapper{ 
-        grid-template-columns:1fr; 
-        min-height:auto; 
-      }
-      .about-text{ 
-        padding:20px 15px 40px 15px; 
-        text-align:center; 
-      }
-
-      /* TRABAJOS CORPORATIVOS MÁS PEQUEÑO EN MOBILE */
-      .service-row { font-size: 1rem !important; }
-      .service-row span { font-size: 1.05rem !important; }
-
-      .services-section{ padding-top:70px; padding-bottom:70px; }
-      .contact-section{ padding-top:70px; padding-bottom:70px; }
-      .ia-section{ margin-top:70px; }
-      .gif-divider{ height:140px; object-fit:cover; object-position:center; }
-      .service-row{ flex-direction:column; gap:20px; }
-      .ia-grid{ grid-template-columns:1fr !important; gap:40px !important; }
+    @media (max-width:560px){
+      .pasos{ grid-template-columns:1fr; }
+      .ia-puntos{ grid-template-columns:1fr; }
+      .item{ grid-template-columns:1fr; }
+      .item .precio{ order:-1; }
+      .hero-ctas .btn, .contacto-ctas .btn{ width:100%; }
+      .a-medida{ padding:26px 24px; }
+      .wa-float{ width:54px; height:54px; font-size:1.7rem; right:16px; bottom:16px; }
+    }
+    @media (prefers-reduced-motion:reduce){
+      *, *::before, *::after{ animation:none !important; transition:none !important; }
+      html{ scroll-behavior:auto; }
+      .js .reveal{ opacity:1; transform:none; }
     }
   </style>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-lg border-b border-white/10 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <img src="Icono_Rojo.png" class="h-10"/>
-      <div class="hidden md:flex gap-10 items-center text-sm">
-        <a href="#servicios" class="hover:text-[#f3d847] transition"> Servicios </a>
-        <a href="#community-manager" class="cm-button"> Community Manager 🌶️🔥 </a>
-        <a href="#sobre-mi" class="hover:text-[#f3d847] transition"> Sobre mí </a>
-        <a href="#contacto" class="hover:text-[#f3d847] transition"> Contacto </a>
-      </div>
-    </div>
-  </nav>
+  <a href="#contenido" class="sr-only">Saltar al contenido</a>
 
-  <!-- HERO -->
-  <header class="relative min-h-screen overflow-hidden flex items-center">
-    <div class="noise"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-main max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center relative z-10">
-      <div class="mobile-center fade-up">
-        <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6"> Agencia Creativa • Marketing • Diseño </p>
-        <h1 class="hero-title text-6xl md:text-8xl font-black leading-[0.9]"> MARKETING QUE<br> <span class="ají">PICA</span> </h1>
-        <p class="mt-8 text-zinc-400 text-lg leading-relaxed max-w-md"> Tu marca es fome? Nosotros la sazonamos, la hacemos destacar y la convertimos en algo imposible de ignorar. </p>
-        <a href="#servicios" class="mobile-btn inline-flex items-center gap-4 mt-10 border border-white px-8 py-4 hover:bg-white hover:text-black transition"> VER SERVICIOS <i class="fa-solid fa-arrow-right"></i> </a>
-      </div>
-      <div class="relative flex justify-center fade-up">
-        <div class="absolute w-[420px] h-[420px] bg-[#ac2517] blur-[140px] opacity-30"></div>
-        <img src="Logo%20Negativo.png" class="hero-logo relative z-10 w-full max-w-[560px] hover:scale-105 transition duration-700">
-      </div>
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="wrap nav-in">
+      <a href="#inicio" class="nav-logo" aria-label="Ajiencia Pica, ir al inicio">
+        <img src="assets/icono-rojo.webp" alt="" width="42" height="42">
+        <span>Ajiencia Pica</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#planes">Community Manager</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="https://www.behance.net/bastinsanhueza1" target="_blank" rel="noopener">Portafolio</a>
+        <a href="https://wa.me/56930638154?text=Hola%20Ajiencia%20Pica%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener" class="btn btn-amarillo">Cotizar proyecto</a>
+      </nav>
     </div>
   </header>
 
-  <!-- SOBRE MI -->
-  <section id="sobre-mi" class="about-section overflow-hidden bg-black">
-    <div class="noise"></div>
-    <div class="absolute w-[700px] h-[700px] bg-[#ac2517] blur-[180px] opacity-20 left-[-250px] bottom-[-250px]"></div>
-    <div class="about-wrapper max-w-[1800px] mx-auto px-6">
-      <div class="about-image-wrap fade-up">
-        <img src="bastian.png" class="about-image">
+  <main id="contenido">
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="grano"></div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow reveal">Agencia creativa · Santiago, Chile</p>
+            <h1 class="display reveal">
+              <span class="linea">Marketing</span>
+              <span class="linea">que <span class="aji">pica</span></span>
+            </h1>
+            <p class="lead reveal">¿Tu marca es fome? Nosotros la sazonamos, la hacemos destacar y la convertimos en algo imposible de ignorar.</p>
+            <div class="hero-ctas reveal">
+              <a href="https://wa.me/56930638154?text=Hola%20Ajiencia%20Pica%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener" class="btn btn-amarillo">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotiza por WhatsApp
+              </a>
+              <a href="#servicios" class="btn btn-linea">Ver servicios y precios <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="hero-visual reveal">
+            <img class="logo" src="assets/logo-negativo.webp" alt="Logo de Ajiencia Pica" width="1100" height="1100" fetchpriority="high">
+            <div class="sello" aria-hidden="true">
+              <svg viewBox="0 0 200 200">
+                <defs><path id="circulo" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"></path></defs>
+                <circle cx="100" cy="100" r="98" fill="#ac2517"></circle>
+                <text font-family="Archivo, Arial Black, sans-serif" font-weight="800" font-size="19" letter-spacing="4.2" fill="#f4f4f2">
+                  <textPath href="#circulo">HECHO CON MUCHO AJÍ • MARKETING QUE PICA • </textPath>
+                </text>
+              </svg>
+              <div class="centro"><span><i class="fa-solid fa-pepper-hot"></i></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-datos reveal">
+          <span><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Branding</span>
+          <span><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Redes sociales</span>
+          <span><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Meta Ads</span>
+          <span><i class="fa-solid fa-tag" aria-hidden="true"></i> Precios claros, IVA incluido</span>
+        </div>
       </div>
-      <div class="about-text fade-up">
-        <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6"> Fundador de Ajiencia Pica </p>
-        <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.9] mb-8"> SOY <span class="ají">BASTIÁN SANHUEZA</span> </h2>
-        <p class="text-zinc-400 text-lg leading-relaxed max-w-[480px]"> Egresado de Publicidad con una misión clara: hacer que las marcas dejen de ser normales y empiecen a destacar. </p>
+    </section>
+
+    <!-- CINTA -->
+    <div class="cinta" aria-hidden="true">
+      <div class="cinta-track">
+        <span>Diseño de marca <i class="fa-solid fa-pepper-hot"></i></span>
+        <span>Community manager <i class="fa-solid fa-pepper-hot"></i></span>
+        <span>Meta Ads <i class="fa-solid fa-pepper-hot"></i></span>
+        <span>Edición de reels <i class="fa-solid fa-pepper-hot"></i></span>
+        <span>Gráfica corporativa <i class="fa-solid fa-pepper-hot"></i></span>
+        <span>Diseño de marca <i class="fa-solid fa-pepper-hot"></i></span>
+        <span>Community manager <i class="fa-solid fa-pepper-hot"></i></span>
+        <span>Meta Ads <i class="fa-solid fa-pepper-hot"></i></span>
+        <span>Edición de reels <i class="fa-solid fa-pepper-hot"></i></span>
+        <span>Gráfica corporativa <i class="fa-solid fa-pepper-hot"></i></span>
       </div>
     </div>
-  </section>
 
-  <!-- GIF -->
-  <section class="py-0 overflow-hidden">
-    <img src="banner agencia pica.gif" class="gif-divider">
-  </section>
-
-  <!-- SERVICIOS -->
-  <section id="servicios" class="services-section bg-zinc-950 overflow-hidden">
-    <div class="noise"></div>
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6 fade-up"> Servicios </p>
-      <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.9] mb-20 fade-up"> SERVICIOS CON <span class="ají">SABOR</span> </h2>
-
-      <div class="grid md:grid-cols-2 gap-10">
-        <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20servicio%20Diseño%20de%20Marca" target="_blank" class="service-link">
-          <div class="bg-zinc-900/80 border border-white/5 rounded-[40px] p-10 card-hover fade-up h-full">
-            <div class="flex items-center justify-between mb-10">
-              <h3 class="text-3xl font-black text-[#f3d847]"> Diseño de Marca </h3>
-              <i class="fa-solid fa-pepper-hot text-3xl text-[#f3d847]"></i>
-            </div>
-            <div class="space-y-10">
-              <div class="border-b border-white/10 pb-10">
-                <div class="service-row flex justify-between items-start gap-10">
-                  <div>
-                    <h4 class="text-2xl font-bold"> Diseño de Marca Completo </h4>
-                    <p class="text-zinc-400 mt-4 leading-relaxed"> Variantes de logo + manual tono y estilo + elementos gráficos + hasta 5 aplicaciones. </p>
-                  </div>
-                  <span class="service-price text-3xl font-black whitespace-nowrap"> 119.000.- </span>
-                </div>
-              </div>
-              <div>
-                <div class="service-row flex justify-between items-start gap-10">
-                  <div>
-                    <h4 class="text-2xl font-bold"> Diseño de Logo + Variantes </h4>
-                    <p class="text-zinc-400 mt-4 leading-relaxed"> Identidad visual sólida y adaptable. </p>
-                  </div>
-                  <span class="service-price text-3xl font-black whitespace-nowrap"> 49.990.- </span>
-                </div>
-              </div>
-            </div>
+    <!-- SERVICIOS -->
+    <section class="seccion servicios" id="servicios">
+      <div class="grano"></div>
+      <div class="wrap">
+        <div class="cabecera">
+          <div>
+            <p class="eyebrow reveal"><span class="num">01</span> Servicios</p>
+            <h2 class="display h-seccion reveal">Servicios<br>con <span class="aji">sabor</span></h2>
           </div>
-        </a>
+          <p class="lead reveal">Todo con precio a la vista. Elige un servicio puntual o arma un plan mensual a la medida de tu marca.</p>
+        </div>
 
-        <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20servicio%20Redes%20Sociales" target="_blank" class="service-link">
-          <div class="bg-zinc-900/80 border border-white/5 rounded-[40px] p-10 card-hover fade-up h-full">
-            <div class="flex items-center justify-between mb-10">
-              <h3 class="text-3xl font-black text-[#f3d847]"> Redes Sociales </h3>
-              <i class="fa-solid fa-mobile-screen text-3xl text-[#f3d847]"></i>
+        <div class="serv-grid">
+          <article class="serv reveal">
+            <div class="serv-top">
+              <div><span class="tag">BRANDING</span><h3 class="display">Diseño de marca</h3></div>
+              <span class="serv-ico"><i class="fa-solid fa-pepper-hot" aria-hidden="true"></i></span>
             </div>
-            <div class="space-y-10">
-              <div class="border-b border-white/10 pb-10">
-                <div class="service-row flex justify-between items-start gap-10">
-                  <div>
-                    <h4 class="text-2xl font-bold"> Starter Pack Picante </h4>
-                    <p class="text-zinc-400 mt-4 leading-relaxed"> Creación y vinculación de Facebook + Instagram + diseño de feed + 5 posteos. </p>
-                  </div>
-                  <span class="service-price text-3xl font-black whitespace-nowrap"> 49.990.- </span>
-                </div>
-              </div>
-              <div class="border-b border-white/10 pb-10">
-                <div class="service-row flex justify-between items-start gap-10">
-                  <div>
-                    <h4 class="text-2xl font-bold"> Generación de Gráfica </h4>
-                    <p class="text-zinc-400 mt-4 leading-relaxed"> Diseño gráfico para publicaciones. </p>
-                  </div>
-                  <span class="service-price text-3xl font-black whitespace-nowrap"> 14.990.- </span>
-                </div>
-              </div>
-              <div>
-                <div class="service-row flex justify-between items-start gap-10">
-                  <div>
-                    <h4 class="text-2xl font-bold"> Edición de Reel </h4>
-                    <p class="text-zinc-400 mt-4 leading-relaxed"> Material entregado por el cliente. </p>
-                  </div>
-                  <span class="service-price text-3xl font-black whitespace-nowrap"> 24.990.- </span>
-                </div>
-              </div>
+            <div class="item"><h4>Diseño de marca completo</h4><span class="precio">$119.000</span><p>Variantes de logo, manual de tono y estilo, elementos gráficos y hasta 5 aplicaciones.</p></div>
+            <div class="item"><h4>Logo + variantes</h4><span class="precio">$49.990</span><p>Identidad visual sólida y adaptable.</p></div>
+            <a class="serv-link" href="https://wa.me/56930638154?text=Quiero%20saber%20m%C3%A1s%20del%20servicio%20Dise%C3%B1o%20de%20Marca" target="_blank" rel="noopener">Consultar por branding <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="serv reveal">
+            <div class="serv-top">
+              <div><span class="tag">CONTENIDO</span><h3 class="display">Redes sociales</h3></div>
+              <span class="serv-ico"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i></span>
             </div>
-          </div>
-        </a>
+            <div class="item"><h4>Starter Pack Picante</h4><span class="precio">$49.990</span><p>Creación y vinculación de Facebook e Instagram, diseño de feed y 5 posteos.</p></div>
+            <div class="item"><h4>Generación de gráfica</h4><span class="precio">$14.990</span><p>Diseño gráfico para publicaciones.</p></div>
+            <div class="item"><h4>Edición de reel</h4><span class="precio">$24.990</span><p>Con material entregado por el cliente.</p></div>
+            <a class="serv-link" href="https://wa.me/56930638154?text=Quiero%20saber%20m%C3%A1s%20del%20servicio%20Redes%20Sociales" target="_blank" rel="noopener">Consultar por redes <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="serv reveal">
+            <div class="serv-top">
+              <div><span class="tag">PUBLICIDAD</span><h3 class="display">Meta Ads</h3></div>
+              <span class="serv-ico"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></span>
+            </div>
+            <div class="item"><h4>Configuración de campaña</h4><span class="precio">$39.990</span><p>Campaña en Meta Ads utilizando material entregado por el cliente.</p></div>
+            <div class="item"><h4>Meta Ads + desarrollo visual</h4><span class="precio">$54.990</span><p>Incluye hasta 2 gráficas programadas o edición de 1 ad reel. El video lo entrega el cliente.</p></div>
+            <p class="nota">*Los valores corresponden a configuración y desarrollo visual. El presupuesto publicitario lo define y financia el cliente.</p>
+            <a class="serv-link" href="https://wa.me/56930638154?text=Quiero%20saber%20m%C3%A1s%20de%20Meta%20Ads" target="_blank" rel="noopener">Consultar por Meta Ads <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="serv reveal">
+            <div class="serv-top">
+              <div><span class="tag">EMPRESAS</span><h3 class="display">Corporativo</h3></div>
+              <span class="serv-ico"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
+            </div>
+            <div class="item"><h4>Tarjeta de presentación</h4><span class="precio">$19.000</span></div>
+            <div class="item"><h4>Firma de correo</h4><span class="precio">$19.000</span></div>
+            <div class="item"><h4>Folleto / brochure</h4><span class="precio"><small>desde</small>$24.990</span></div>
+            <div class="item"><h4>Diseño de pendón</h4><span class="precio"><small>desde</small>$19.990</span></div>
+            <a class="serv-link" href="https://wa.me/56930638154?text=Quiero%20cotizar%20un%20trabajo%20corporativo" target="_blank" rel="noopener">Cotizar trabajo corporativo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+        </div>
+        <p class="iva reveal"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Todos los precios incluyen IVA.</p>
       </div>
+    </section>
 
-      <div id="community-manager" class="mt-24 fade-up">
-        <h3 class="text-5xl font-black mb-12"> COMMUNITY MANAGER </h3>
-        <div class="grid md:grid-cols-4 gap-8">
-          <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20básico" target="_blank" class="service-link">
-            <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-8 card-hover h-full">
-              <h4 class="text-3xl font-black mb-6"> Básico </h4>
-              <span class="text-5xl font-black block mb-8"> 80.000.- </span>
-              <ul class="space-y-4 text-zinc-300">
-                <li>✔ 2 gráficas semanales</li>
-                <li>✔ Grilla semanal</li>
-                <li>✔ Ideal para comenzar</li>
-              </ul>
-            </div>
-          </a>
-          <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20pro" target="_blank" class="service-link">
-            <div class="bg-gradient-to-b from-[#f3d847]/20 to-zinc-900 border border-[#f3d847] rounded-[40px] p-8 card-hover h-full">
-              <span class="inline-block bg-[#f3d847] text-black px-4 py-2 rounded-full text-xs font-bold mb-4"> MÁS VENDIDO </span>
-              <h4 class="text-3xl font-black mb-6"> Pro 🌶️ </h4>
-              <span class="text-5xl font-black text-[#f3d847] block mb-8"> 119.000.- </span>
-              <ul class="space-y-4 text-zinc-200">
-                <li>✔ 2 gráficas semanales</li>
-                <li>✔ 1 story semanal</li>
-                <li>✔ 2 reels mensuales</li>
-              </ul>
-            </div>
-          </a>
-          <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20del%20plan%20picante" target="_blank" class="service-link">
-            <div class="bg-gradient-to-b from-orange-500/20 to-zinc-900 border border-orange-500 rounded-[40px] p-8 card-hover h-full">
-              <span class="inline-block bg-orange-500 text-black px-4 py-2 rounded-full text-xs font-bold mb-4"> FULL PICANTE 🔥 </span>
-              <h4 class="text-3xl font-black text-orange-400 mb-6"> Picante 🌶️ </h4>
-              <span class="text-5xl font-black text-orange-400 block mb-8"> 189.990.- </span>
-              <ul class="space-y-4 text-zinc-200">
-                <li>🔥 3 gráficas semanales</li>
-                <li>🔥 1 reel semanal</li>
-                <li>🔥 1 story semanal</li>
-                <li class="text-[#1769ff] font-bold">🔥 Configuración Meta Ads</li>
-              </ul>
-            </div>
-          </a>
-          <a href="https://wa.me/56930638154?text=Quiero%20cotizar%20un%20plan%20personalizado" target="_blank" class="service-link">
-            <div class="bg-zinc-900 border border-dashed border-white/20 rounded-[40px] p-8 card-hover h-full flex flex-col justify-between">
-              <div>
-                <h4 class="text-3xl font-black mb-6"> Personalizado </h4>
-                <p class="text-zinc-400"> Armamos el plan que necesites. </p>
+    <!-- BANNER -->
+    <video class="banner" autoplay muted loop playsinline preload="metadata" poster="assets/banner-poster.webp" aria-hidden="true">
+      <source src="assets/banner.mp4" type="video/mp4">
+    </video>
+
+    <!-- PLANES -->
+    <section class="seccion" id="planes">
+      <div class="wrap">
+        <div class="cabecera">
+          <div>
+            <p class="eyebrow reveal"><span class="num">02</span> Community Manager</p>
+            <h2 class="display h-seccion reveal">Elige tu nivel<br>de <span class="aji">picante</span></h2>
+          </div>
+          <p class="lead reveal">Planes mensuales para que tu marca publique constante, se vea profesional y tú no tengas que pensar qué subir.</p>
+        </div>
+
+        <div class="planes-grid">
+          <article class="plan reveal">
+            <div>
+              <div class="plan-nombre">
+                <h3 class="display">Básico</h3>
+                <span class="picor" aria-label="Nivel de picante 1 de 3"><i class="fa-solid fa-pepper-hot on"></i><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
               </div>
-              <span class="text-[#f3d847] font-bold mt-10"> Cotizar → </span>
+              <p class="plan-desc">Ideal para comenzar.</p>
             </div>
-          </a>
+            <p class="plan-precio">$80.000<span>/mes</span></p>
+            <ul>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i>2 gráficas semanales</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i>Grilla semanal</li>
+            </ul>
+            <a href="https://wa.me/56930638154?text=Quiero%20saber%20m%C3%A1s%20del%20plan%20b%C3%A1sico" target="_blank" rel="noopener" class="btn btn-linea">Quiero el Básico</a>
+          </article>
+
+          <article class="plan destacado reveal">
+            <span class="badge">Más vendido</span>
+            <div>
+              <div class="plan-nombre">
+                <h3 class="display">Pro</h3>
+                <span class="picor" aria-label="Nivel de picante 2 de 3"><i class="fa-solid fa-pepper-hot on"></i><i class="fa-solid fa-pepper-hot on"></i><i class="fa-solid fa-pepper-hot"></i></span>
+              </div>
+              <p class="plan-desc">Presencia constante, con video.</p>
+            </div>
+            <p class="plan-precio">$119.000<span>/mes</span></p>
+            <ul>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i>2 gráficas semanales</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i>1 story semanal</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i>2 reels mensuales</li>
+            </ul>
+            <a href="https://wa.me/56930638154?text=Quiero%20saber%20m%C3%A1s%20del%20plan%20pro" target="_blank" rel="noopener" class="btn btn-negro">Quiero el Pro</a>
+          </article>
+
+          <article class="plan picante reveal">
+            <span class="badge">Full picante</span>
+            <div>
+              <div class="plan-nombre">
+                <h3 class="display">Picante</h3>
+                <span class="picor" aria-label="Nivel de picante 3 de 3"><i class="fa-solid fa-pepper-hot on"></i><i class="fa-solid fa-pepper-hot on"></i><i class="fa-solid fa-pepper-hot on"></i></span>
+              </div>
+              <p class="plan-desc">Contenido + publicidad pagada.</p>
+            </div>
+            <p class="plan-precio">$189.990<span>/mes</span></p>
+            <ul>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i>3 gráficas semanales</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i>1 reel semanal</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i>1 story semanal</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i>Configuración de Meta Ads</li>
+            </ul>
+            <a href="https://wa.me/56930638154?text=Quiero%20saber%20m%C3%A1s%20del%20plan%20picante" target="_blank" rel="noopener" class="btn btn-rojo">Quiero el Picante</a>
+          </article>
+        </div>
+
+        <div class="a-medida reveal">
+          <div>
+            <h3 class="display">¿Necesitas otra receta?</h3>
+            <p>Armamos un plan personalizado según tus objetivos y presupuesto.</p>
+          </div>
+          <a href="https://wa.me/56930638154?text=Quiero%20cotizar%20un%20plan%20personalizado" target="_blank" rel="noopener" class="btn btn-amarillo">Cotizar plan a medida <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
+    </section>
 
-      <div class="mt-24 fade-up">
-        <h3 class="text-5xl font-black mb-12"> META ADS </h3>
-        <div class="grid md:grid-cols-2 gap-10">
-          <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20de%20Configuración%20Meta%20Ads" target="_blank" class="service-link">
-            <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover h-full">
-              <h4 class="text-3xl font-black mb-6 text-[#1769ff]"> Configuración Meta Ads </h4>
-              <p class="text-zinc-400 leading-relaxed mb-8"> Configuración de campaña META ADS utilizando material entregado por cliente. </p>
-              <span class="text-5xl font-black"> 39.990.- </span>
-              <p class="meta-disclaimer">*El valor corresponde únicamente a la configuración de campaña. El presupuesto publicitario es definido y financiado por el cliente.</p>
-            </div>
-          </a>
-          <a href="https://wa.me/56930638154?text=Quiero%20saber%20más%20de%20Meta%20Ads%20con%20desarrollo%20visual" target="_blank" class="service-link">
-            <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10 card-hover h-full">
-              <h4 class="text-3xl font-black mb-6 text-[#1769ff]"> Meta Ads + Desarrollo Visual </h4>
-              <p class="text-zinc-400 leading-relaxed mb-8"> Incluye hasta 2 gráficas programadas o edición de 1 ad reel. El material de video debe ser entregado por cliente. </p>
-              <span class="text-5xl font-black"> 54.990.- </span>
-              <p class="meta-disclaimer">*El valor corresponde únicamente a la configuración y desarrollo visual. El presupuesto publicitario es definido y financiado por el cliente.</p>
-            </div>
-          </a>
+    <!-- PROCESO -->
+    <section class="seccion proceso">
+      <div class="wrap">
+        <div class="cabecera">
+          <div>
+            <p class="eyebrow reveal"><span class="num">03</span> Cómo trabajamos</p>
+            <h2 class="display h-seccion reveal">Simple, directo<br>y <span class="aji">sin vueltas</span></h2>
+          </div>
         </div>
+        <ol class="pasos">
+          <li class="paso reveal"><span class="num">01</span><h3>Conversamos</h3><p>Nos cuentas de tu marca y lo que necesitas por WhatsApp o correo.</p></li>
+          <li class="paso reveal"><span class="num">02</span><h3>Propuesta clara</h3><p>Te recomendamos el servicio o plan que calza, con precio cerrado.</p></li>
+          <li class="paso reveal"><span class="num">03</span><h3>Creamos</h3><p>Diseñamos, ajustamos contigo y dejamos todo listo para publicar.</p></li>
+          <li class="paso reveal"><span class="num">04</span><h3>Tu marca pica</h3><p>Contenido constante y con identidad, hecho para destacar.</p></li>
+        </ol>
       </div>
+    </section>
 
-      <div class="mt-24 fade-up">
-        <h3 class="section-title text-5xl font-black mb-12"> TRABAJOS CORPORATIVOS </h3>
-        <div class="bg-zinc-900 border border-white/5 rounded-[40px] p-10">
-          <div class="space-y-8">
-            <div class="service-row flex justify-between gap-10 border-b border-white/10 pb-8">
-              <span class="text-xl">Tarjeta de presentación o negocio</span>
-              <span class="font-black text-2xl">19.000.-</span>
+    <!-- SOBRE MÍ -->
+    <section class="seccion sobre" id="sobre-mi">
+      <div class="grano"></div>
+      <div class="glow"></div>
+      <div class="wrap">
+        <div class="sobre-grid">
+          <div class="sobre-img reveal">
+            <img src="assets/bastian.webp" alt="Bastián Sanhueza, fundador de Ajiencia Pica, con su notebook" width="1600" height="1364" loading="lazy">
+          </div>
+          <div class="sobre-txt">
+            <p class="eyebrow reveal"><span class="num">04</span> Fundador</p>
+            <h2 class="display reveal">Soy <span class="aji">Bastián Sanhueza</span></h2>
+            <p class="reveal">Egresado de Publicidad con una misión clara: hacer que las marcas dejen de ser normales y empiecen a destacar.</p>
+            <p class="reveal">En Ajiencia Pica trabajas directo conmigo, desde la idea hasta el último post.</p>
+            <div class="herramientas reveal" aria-label="Herramientas">
+              <span>Photoshop</span><span>Illustrator</span><span>Premiere</span><span>CapCut</span><span>Canva</span>
             </div>
-            <div class="service-row flex justify-between gap-10 border-b border-white/10 pb-8">
-              <span class="text-xl">Firma de Correo</span>
-              <span class="font-black text-2xl">19.000.-</span>
-            </div>
-            <div class="service-row flex justify-between gap-10 border-b border-white/10 pb-8">
-              <span class="text-xl">Folletos / Brochure</span>
-              <span class="font-black text-2xl">24.990.- a 49.990.-</span>
-            </div>
-            <div class="service-row flex justify-between gap-10">
-              <span class="text-xl">Diseño de Pendón</span>
-              <span class="font-black text-2xl">19.990.- a 24.990.-</span>
-            </div>
+            <a href="https://www.behance.net/bastinsanhueza1" target="_blank" rel="noopener" class="btn btn-linea reveal"><i class="fab fa-behance" aria-hidden="true"></i> Ver portafolio en Behance</a>
           </div>
         </div>
       </div>
+    </section>
 
-      <section class="ia-section">
-        <div class="grid ia-grid md:grid-cols-2 gap-14 items-center">
-          <div class="fade-up flex justify-center relative">
-            <div class="ia-glow"></div>
-            <img src="usamos IA.png" class="ia-image">
+    <!-- IA -->
+    <section class="seccion">
+      <div class="wrap">
+        <div class="ia-grid">
+          <div class="ia-img reveal">
+            <div class="glow"></div>
+            <img src="assets/usamos-ia.webp" alt="Ají animado con un celular rodeado de íconos de herramientas de IA y likes" width="1000" height="1000" loading="lazy">
           </div>
-          <div class="fade-up">
-            <p class="uppercase tracking-[0.3em] text-zinc-500 text-sm mb-6"> Tecnología </p>
-            <h3 class="text-5xl font-black leading-[0.9] mb-8"> USAMOS <span class="ají">IA WENA WENA</span> </h3>
-            <p class="text-zinc-300 text-lg leading-relaxed mb-8"> En la medida que el cliente lo quiera, utilizamos inteligencia artificial para edición de imágenes y reels, aportando contenido potente de marca incluso cuando el cliente no puede generarlo directamente. </p>
-            <p class="text-zinc-400 text-lg leading-relaxed"> Contamos con <span class="font-bold text-white"> STOCK DE FOTOS LICENCIADAS Y PAGADAS* </span> con las que trabajamos el desarrollo gráfico de todos nuestros servicios. </p>
+          <div class="ia-txt">
+            <p class="eyebrow reveal"><span class="num">05</span> Tecnología</p>
+            <h2 class="display reveal">Usamos IA<br><span class="aji">wena wena</span></h2>
+            <p class="reveal">En la medida que el cliente lo quiera, utilizamos inteligencia artificial para edición de imágenes y reels, aportando contenido potente de marca incluso cuando el cliente no puede generarlo directamente.</p>
+            <div class="ia-puntos">
+              <div class="ia-punto reveal"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><h3>Edición con IA</h3><p>Imágenes y reels, solo si tú lo autorizas.</p></div>
+              <div class="ia-punto reveal"><i class="fa-solid fa-images" aria-hidden="true"></i><h3>Fotos licenciadas</h3><p>Stock pagado y con licencia en todos nuestros servicios.</p></div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <p class="text-zinc-500 text-sm mt-20"> IVA incluido* </p>
+    <!-- CONTACTO -->
+    <section class="seccion contacto" id="contacto">
+      <div class="grano"></div>
+      <div class="wrap">
+        <img class="isotipo reveal" src="assets/isotipo-rojo.webp" alt="" width="96" height="96" >
+        <h2 class="display reveal">¿Listo para que<br>tu marca <span class="aji">queme?</span></h2>
+        <p class="lead reveal">Hablemos y armemos algo distinto. Te respondemos directo, sin formularios eternos.</p>
+        <div class="contacto-ctas reveal">
+          <a href="https://wa.me/56930638154?text=Hola%20Ajiencia%20Pica%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener" class="btn btn-amarillo"><i class="fab fa-whatsapp" aria-hidden="true"></i> Escribir por WhatsApp</a>
+          <a href="mailto:ajienciapica@gmail.com?subject=Quiero%20hablar%20sobre%20mi%20proyecto&amp;body=Hola%20Ajiencia%20Pica%2C%0A%0AMe%20gustar%C3%ADa%20consultar%20sobre..." class="btn btn-linea"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Escribir por correo</a>
+        </div>
+        <div class="redes reveal">
+          <a href="https://www.instagram.com/agencia.pica/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61589374511198" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.behance.net/bastinsanhueza1" target="_blank" rel="noopener" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a>
+          <a href="https://www.threads.net/@agencia.pica" target="_blank" rel="noopener" aria-label="Threads"><i class="fab fa-threads" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-in">
+      <span>© 2026 Ajiencia Pica · Santiago, Chile · Hecho con mucho ají</span>
+      <nav aria-label="Pie de página">
+        <a href="#servicios">Servicios</a>
+        <a href="#planes">Planes</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="contact-section overflow-hidden">
-    <div class="noise"></div>
-    <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-up">
-      <img src="Isotipo%20Rojo.png" class="mx-auto h-24 mb-10">
-      <h2 class="section-title text-5xl md:text-7xl font-black leading-[0.95] mb-8"> ¿LISTO PARA QUE<br> TU MARCA <span class="ají">QUEME?</span> </h2>
-      <p class="text-zinc-400 text-lg mb-12 max-w-xl mx-auto"> Hablemos y armemos algo distinto. </p>
-      
-      <div class="flex gap-5 justify-center mb-12 social-row">
-        <a href="https://www.instagram.com/agencia.pica/" target="_blank" class="social-btn bg-gradient-to-br from-pink-500 to-orange-400">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61589374511198" target="_blank" class="social-btn bg-blue-600">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.behance.net/bastinsanhueza1" target="_blank" class="social-btn bg-[#1769ff]">
-          <i class="fab fa-behance"></i>
-        </a>
-        <a href="https://www.threads.net/@agencia.pica" target="_blank" class="social-btn bg-black border border-white/30">
-          <i class="fab fa-threads"></i>
-        </a>
-      </div>
-
-      <a href="mailto:ajenciapica@gmail.com?subject=Quiero%20hablar%20sobre%20mi%20proyecto&body=Hola%20Ajiencia%20Pica%2C%0A%0AMe%20gustar%C3%ADa%20consultar%20sobre..." 
-         class="inline-flex items-center gap-4 bg-[#ac2517] hover:bg-[#f3d847] hover:text-black px-10 py-6 text-xl font-bold transition hover:scale-105 rounded-full">
-        ✉️ ESCRIBIR POR GMAIL
-      </a>
-
-      <div class="mt-8 text-sm text-zinc-500">
-        O también puedes escribirnos por WhatsApp
-      </div>
-
-      <div class="mt-6">
-        <a href="https://wa.me/56930638154" target="_blank" class="mobile-btn inline-flex items-center gap-4 bg-[#25D366] hover:bg-[#1EBE5E] px-10 py-6 text-xl font-bold transition hover:scale-105 rounded-full">
-          <i class="fab fa-whatsapp"></i> WHATSAPP
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-white/5 py-12 text-center text-sm text-zinc-500">
-    © 2026 Ajiencia Pica • Santiago, Chile • Hecho con mucho ají 🌶️
   </footer>
 
-  <!-- BOTÓN WHATSAPP FLOTANTE -->
-  <a href="https://wa.me/56930638154" target="_blank" class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <a href="https://wa.me/56930638154" target="_blank" rel="noopener" class="wa-float" aria-label="Escríbenos por WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script>
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray(".fade-up").forEach((el, i) => {
-      gsap.fromTo(el, 
-        { opacity:0, y:60 }, 
-        { opacity:1, y:0, duration:1, delay:i * 0.05, ease:"power3.out", scrollTrigger:{ trigger:el, start:"top 88%" } }
-      );
+    // Nav con fondo al hacer scroll
+    var nav = document.getElementById('nav');
+    function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 20); }
+    window.addEventListener('scroll', onScroll, { passive:true }); onScroll();
+
+    // Menú móvil
+    var toggle = document.getElementById('navToggle'), links = document.getElementById('navLinks');
+    function cerrar(){ links.classList.remove('abierto'); toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Abrir menú'); toggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>'; }
+    toggle.addEventListener('click', function(){
+      var abierto = links.classList.toggle('abierto');
+      toggle.setAttribute('aria-expanded', abierto);
+      toggle.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+      toggle.innerHTML = abierto ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
     });
+    links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', cerrar); });
+
+    // Animaciones de entrada (si GSAP no carga, todo queda visible)
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (window.gsap && window.ScrollTrigger && !reduce) {
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.batch('.reveal', {
+        start: 'top 90%',
+        once: true,
+        onEnter: function(els){ gsap.to(els, { opacity:1, y:0, duration:.9, ease:'power3.out', stagger:.08 }); }
+      });
+    } else {
+      document.documentElement.classList.remove('js');
+    }
   </script>
 </body>
 </html>
