@@ -130,17 +130,32 @@
     .menu-abierto{ overflow:hidden; }
 
     /* ---------- Hero ---------- */
-    .hero{ position:relative; min-height:100vh; min-height:100svh; display:flex; flex-direction:column; justify-content:center; text-align:center; padding:150px 0 calc(var(--curva) + 40px); overflow:hidden; }
-    .hero .kicker{ color:var(--blanco); margin-bottom:22px; }
-    .hero h1{ font-size:clamp(3.2rem, 8.2vw, 7.4rem); }
-    .hero-sub{ max-width:620px; margin:30px auto 0; color:#cfcfcb; font-size:clamp(1.02rem, 1.4vw, 1.2rem); }
-    .hero-ctas{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:38px; }
-    .hero-glow{ position:absolute; z-index:0; width:60vw; height:60vw; max-width:900px; max-height:900px; left:50%; top:30%; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(172,37,23,.45), transparent 62%); pointer-events:none; }
+    .hero{ position:relative; min-height:100vh; min-height:100svh; display:flex; align-items:center; padding:140px 0 110px; overflow:hidden; }
+    .hero-grid{ position:relative; z-index:2; display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr); gap:56px; align-items:center; }
+    .hero .kicker{ display:inline-flex; align-items:center; gap:12px; color:var(--amarillo); margin-bottom:26px; }
+    .hero .kicker::before{ content:""; width:36px; height:2px; background:var(--amarillo); }
+    .hero h1{ font-size:clamp(3.4rem, 8vw, 7.8rem); line-height:.88; }
+    .hero-sub{ max-width:560px; margin-top:30px; color:#cfcfcb; font-size:clamp(1.02rem, 1.4vw, 1.2rem); }
+    .hero-ctas{ display:flex; flex-wrap:wrap; gap:12px; margin-top:38px; }
+    .hero-glow{ position:absolute; z-index:0; width:900px; height:900px; right:-260px; top:50%; transform:translateY(-50%); background:radial-gradient(circle, rgba(172,37,23,.38), transparent 62%); pointer-events:none; }
+    .sello{ position:relative; width:100%; max-width:440px; aspect-ratio:1; margin-left:auto; }
+    .sello-aro{ position:absolute; inset:0; animation:girar 22s linear infinite; }
+    .sello-centro{ position:absolute; inset:17%; border-radius:50%; background:var(--rojo); display:flex; align-items:center; justify-content:center; box-shadow:0 30px 80px rgba(172,37,23,.45); }
+    .sello-centro img{ width:78%; height:auto; }
+    .hero-indice{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); margin-top:72px; border-top:1px solid rgba(255,255,255,.18); }
+    .hero-indice a{ padding:18px 16px 0 0; display:flex; gap:10px; align-items:baseline; font-family:var(--display); font-weight:600; font-size:1.15rem; text-transform:uppercase; color:#d8d8d4; transition:color .2s; }
+    .hero-indice a:hover{ color:var(--amarillo); }
+    .hero-indice small{ font-weight:400; font-size:.8rem; color:var(--amarillo); }
+
+    /* Cinta amarilla inclinada */
+    .cinta{ position:relative; z-index:4; background:var(--amarillo); color:var(--negro); overflow:hidden; padding:16px 0; transform:rotate(-1.6deg); margin:-24px -20px 0; }
+    .cinta-track{ display:flex; gap:36px; width:max-content; animation:cinta 34s linear infinite; font-family:var(--display); font-weight:800; font-size:clamp(1.3rem, 2.4vw, 2rem); text-transform:uppercase; white-space:nowrap; }
+    .cinta-track span{ display:inline-flex; align-items:center; gap:36px; }
+    .cinta-track i{ color:var(--rojo); font-size:.8em; }
+    @keyframes cinta{ to{ transform:translateX(-50%); } }
 
     /* Curva hacia sección clara */
     .arco{ position:relative; z-index:3; margin-top:calc(var(--curva) * -1); border-radius:50% 50% 0 0 / var(--curva) var(--curva) 0 0; }
-    .arco-baja{ position:absolute; left:50%; top:calc(var(--curva) * .38); transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; font-family:var(--display); font-weight:600; font-size:.9rem; letter-spacing:.08em; text-transform:uppercase; line-height:1.1; text-align:center; }
-    .arco-baja img{ width:58px; height:58px; animation:girar 14s linear infinite; }
     @keyframes girar{ to{ transform:rotate(360deg); } }
 
     .claro{ background:var(--hueso); color:var(--negro); }
@@ -148,7 +163,7 @@
     .seccion{ position:relative; padding:120px 0; }
 
     /* ---------- Declaración ---------- */
-    .declaracion{ padding-top:calc(var(--curva) + 40px); }
+    .declaracion{ padding-top:140px; }
     .declaracion .t{ font-size:clamp(2.2rem, 5vw, 4.4rem); max-width:1100px; }
     .servicios-chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:44px; }
     .servicios-chips a{ border:1.5px solid var(--negro); border-radius:999px; padding:10px 20px; transition:background .2s, color .2s; }
@@ -164,22 +179,21 @@
     .oscuro .cab p{ color:#cfcfcb; }
     .claro .cab p{ color:#3a3a36; }
 
-    .filtros{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px 34px; margin-bottom:48px; }
-    .filtros button{ font-family:var(--display); font-weight:600; font-size:1.1rem; letter-spacing:.03em; text-transform:uppercase; padding:6px 0; border-bottom:2px solid transparent; color:var(--gris-osc); min-height:44px; }
-    .filtros button sup{ font-size:.65em; margin-left:3px; }
-    .filtros button[aria-pressed="true"]{ color:var(--negro); border-color:var(--negro); }
-    .filtros button:hover{ color:var(--negro); }
-
-    .proyectos{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px; }
-    .proy{ display:block; }
-    .proy[hidden]{ display:none; }
-    .proy-img{ position:relative; overflow:hidden; aspect-ratio:808 / 632; background:#ddd; }
-    .proy-img img{ width:100%; height:100%; object-fit:cover; transition:transform .7s cubic-bezier(.2,.7,.2,1); }
-    .proy:hover .proy-img img{ transform:scale(1.06); }
-    .proy-info{ position:absolute; left:0; right:0; bottom:0; padding:60px 20px 18px; background:linear-gradient(to top, rgba(0,0,0,.82), transparent); color:var(--blanco); }
-    .proy-info h3{ font-family:var(--display); font-style:italic; font-weight:800; font-size:clamp(1.5rem, 2.2vw, 2rem); text-transform:uppercase; line-height:1; }
-    .proy-info p{ margin-top:8px; display:inline-block; background:rgba(0,0,0,.7); padding:5px 9px; }
-    .ver-mas{ display:flex; justify-content:center; margin-top:48px; }
+    .cliente{ display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:48px; padding:56px 0; border-top:1.5px solid var(--negro); }
+    .cliente:last-of-type{ border-bottom:1.5px solid var(--negro); }
+    .cliente-info{ display:flex; flex-direction:column; gap:18px; }
+    .cliente-info h3{ font-family:var(--display); font-weight:800; font-size:clamp(2.8rem, 5vw, 4.4rem); text-transform:uppercase; line-height:.9; }
+    .cliente-info h3 span{ display:block; font-weight:300; font-size:.42em; margin-top:8px; color:var(--rojo); }
+    .cliente-info > p{ color:#3a3a36; max-width:460px; }
+    .hicimos{ display:flex; flex-wrap:wrap; gap:8px; }
+    .hicimos span{ border:1.5px solid var(--negro); border-radius:999px; padding:7px 14px; }
+    .cliente-dato{ display:flex; align-items:baseline; gap:10px; }
+    .cliente-dato strong{ font-family:var(--display); font-weight:800; font-size:2.6rem; line-height:1; font-variant-numeric:tabular-nums; }
+    .cliente-links{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+    .cliente-reels{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px; align-items:start; }
+    .cliente-reels.uno{ grid-template-columns:minmax(0, 440px); justify-content:center; }
+    .cliente-reels .embed{ min-height:0; background:transparent; border:0; padding:0; border-radius:12px; }
+    .cliente-reels .embed-fallback{ color:#4a4a45; }
 
     /* ---------- Redes ---------- */
     .oscuro{ background:var(--negro); color:var(--blanco); }
@@ -198,12 +212,13 @@
     /* ---------- Viral ---------- */
     .viral{ background:var(--negro); padding-top:40px; }
     .viral .cab h2{ font-size:clamp(2.6rem, 6.2vw, 5.4rem); }
-    .stats{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); border-top:1px solid var(--linea-osc); border-bottom:1px solid var(--linea-osc); }
-    .stat{ padding:54px 20px; text-align:center; border-right:1px solid var(--linea-osc); }
+    .stats{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); background:var(--rojo); border-radius:28px; overflow:hidden; }
+    .stat{ padding:50px 28px; text-align:left; border-right:1px solid rgba(255,255,255,.22); }
     .stat:last-child{ border-right:0; }
-    .stat:nth-child(even){ background:var(--hueso); color:var(--negro); }
+    .stat:first-child{ background:var(--amarillo); color:var(--negro); }
     .stat strong{ display:block; font-family:var(--display); font-weight:800; font-size:clamp(3rem, 6vw, 5.2rem); line-height:1; letter-spacing:-.01em; font-variant-numeric:tabular-nums; }
-    .stat span{ display:block; margin-top:10px; font-weight:500; }
+    .stat span{ display:block; margin-top:12px; font-weight:500; }
+    .stat i{ display:block; font-size:1.2rem; margin-bottom:22px; opacity:.85; }
     .viral-pie{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:18px; margin-top:28px; color:var(--gris); font-size:.95rem; }
     .banner{ width:100%; height:clamp(110px, 14vw, 210px); object-fit:cover; }
 
@@ -252,13 +267,15 @@
     .medida p{ color:var(--gris); }
 
     /* ---------- Sobre ---------- */
-    .sobre{ overflow:hidden; padding-bottom:0; }
-    .sobre-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:end; }
-    .sobre-img img{ width:100%; height:auto; }
-    .sobre-txt{ padding-bottom:110px; }
-    .sobre-txt h2{ font-size:clamp(3rem, 6vw, 5.4rem); margin:14px 0 26px; }
-    .sobre-txt p{ color:#3a3a36; max-width:500px; }
+    .sobre-grid{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:56px; align-items:start; }
+    .sobre h2{ font-size:clamp(3.2rem, 7vw, 6.4rem); margin:14px 0 26px; }
+    .portafolio{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:18px; margin-top:34px; padding:26px; background:var(--negro); color:var(--blanco); border-radius:18px; max-width:500px; }
+    .portafolio h3{ font-family:var(--display); font-weight:800; font-size:1.6rem; text-transform:uppercase; line-height:1; }
+    .portafolio p{ color:#cfcfcb; font-size:.92rem; margin-top:6px; max-width:260px; }
+    .sobre-txt p{ color:#3a3a36; max-width:520px; font-size:1.1rem; }
     .sobre-txt p + p{ margin-top:14px; }
+    .sobre-txt .portafolio p{ color:#cfcfcb; font-size:.92rem; margin-top:6px; }
+    .sobre-txt .ia p{ color:#4a4a45; font-size:.92rem; margin-top:4px; }
     .herr{ display:flex; flex-wrap:wrap; gap:8px; margin:28px 0 34px; }
     .herr span{ border:1px solid rgba(0,0,0,.25); border-radius:999px; padding:6px 14px; font-size:.9rem; }
     .ia{ display:flex; gap:18px; align-items:center; margin-top:34px; padding:18px; background:var(--blanco); border-radius:16px; max-width:500px; }
@@ -294,14 +311,14 @@
 
     /* ---------- Responsive ---------- */
     @media (max-width:1024px){
-      .proyectos{ grid-template-columns:repeat(2, minmax(0,1fr)); }
       .planes{ grid-template-columns:1fr; }
       .plan{ border-right:0; border-bottom:1px solid var(--linea-osc); }
       .stats{ grid-template-columns:repeat(2, minmax(0,1fr)); }
       .stat:nth-child(2){ border-right:0; }
-      .stat:nth-child(-n+2){ border-bottom:1px solid var(--linea-osc); }
-      .stat:nth-child(even){ background:transparent; color:inherit; }
-      .stat:nth-child(2), .stat:nth-child(3){ background:var(--hueso); color:var(--negro); }
+      .stat:nth-child(-n+2){ border-bottom:1px solid rgba(255,255,255,.22); }
+      .cliente{ grid-template-columns:1fr; }
+      .hero-grid{ grid-template-columns:1fr; }
+      .sello{ max-width:300px; margin:0; }
       .grupo{ grid-template-columns:1fr; }
     }
     @media (max-width:760px){
@@ -315,15 +332,14 @@
       .marca img{ width:38px; height:38px; }
       .hero{ padding-top:120px; }
       .hero h1{ font-size:clamp(2.7rem, 12.5vw, 3.6rem); }
-      .hero h1 br{ display:none; }
-      .hero .kicker{ font-size:.9rem; }
-      .seccion.declaracion{ padding-top:200px; }
+      .hero .kicker{ font-size:.95rem; }
+      .seccion.declaracion{ padding-top:110px; }
+      .stat{ padding:34px 18px; }
       .seccion{ padding:84px 0; }
-      .proyectos{ grid-template-columns:1fr; }
+      .cliente-reels{ grid-template-columns:1fr; }
+      .hero-indice{ grid-template-columns:repeat(2, minmax(0,1fr)); }
       .redes-grid{ grid-template-columns:1fr; }
       .sobre-grid{ grid-template-columns:1fr; }
-      .sobre-txt{ padding-bottom:0; }
-      .sobre-img{ order:2; margin-top:30px; }
       .fila{ grid-template-columns:1fr auto; }
       .fila .flecha{ display:none; }
       .fila h4{ font-size:1.3rem; }
@@ -363,7 +379,7 @@
 
   <div class="menu" id="menu">
     <nav aria-label="Principal">
-      <a href="#proyectos">Proyectos <small>12</small></a>
+      <a href="#clientes">Clientes</a>
       <a href="#redes">Redes sociales</a>
       <a href="#viral">Clips virales</a>
       <a href="#servicios">Servicios</a>
@@ -383,22 +399,46 @@
 
     <!-- HERO -->
     <section class="hero" id="inicio">
-      <div class="grilla" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="wrap">
-        <p class="kicker rv">Agencia de marketing y diseño · Santiago de Chile</p>
-        <h1 class="t rv"><b>Marketing</b> que <b class="y">pica</b><br>para marcas que no<br>quieren ser <b>fomes.</b></h1>
-        <p class="hero-sub rv">Branding, gestión de redes sociales, clips que se vuelven virales y campañas en Meta Ads. Sazonamos tu marca para que sea imposible de ignorar.</p>
-        <div class="hero-ctas rv">
-          <a class="pill pill-y" href="https://wa.me/56930638154?text=Hola%20Ajiencia%20Pica%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> Cotiza por WhatsApp</a>
-          <a class="pill pill-b" href="#proyectos">Ver proyectos</a>
+        <div class="hero-grid">
+          <div>
+            <p class="kicker rv">Agencia creativa · Santiago de Chile</p>
+            <h1 class="t rv"><b>Marketing</b><br>que <b class="y">pica.</b><br>Marcas que<br>dejan de ser <b>fomes.</b></h1>
+            <p class="hero-sub rv">Branding, gestión de redes sociales, clips que se vuelven virales y campañas en Meta Ads. Sazonamos tu marca para que sea imposible de ignorar.</p>
+            <div class="hero-ctas rv">
+              <a class="pill pill-y" href="https://wa.me/56930638154?text=Hola%20Ajiencia%20Pica%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> Cotiza por WhatsApp</a>
+              <a class="pill pill-b" href="#clientes">Ver clientes</a>
+            </div>
+          </div>
+          <div class="sello rv" aria-hidden="true">
+            <svg class="sello-aro" viewBox="0 0 200 200">
+              <defs><path id="aro" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"></path></defs>
+              <text font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="600" font-size="13.5" letter-spacing="3.4" fill="#f4f4f2">
+                <textPath href="#aro" textLength="548" lengthAdjust="spacing">MARKETING QUE PICA ✱ HECHO CON MUCHO AJÍ ✱ SANTIAGO DE CHILE ✱ </textPath>
+              </text>
+            </svg>
+            <div class="sello-centro"><img src="assets/logo-negativo.webp" alt="" width="1400" height="1400"></div>
+          </div>
         </div>
+        <nav class="hero-indice rv" aria-label="Lo que hacemos">
+          <a href="#servicios"><small>01</small>Branding</a>
+          <a href="#redes"><small>02</small>Redes sociales</a>
+          <a href="#viral"><small>03</small>Clips virales</a>
+          <a href="#servicios"><small>04</small>Meta Ads</a>
+        </nav>
       </div>
     </section>
 
+    <div class="cinta" aria-hidden="true">
+      <div class="cinta-track">
+        <span>Diseño de marca <i class="fa-solid fa-pepper-hot"></i></span><span>Community manager <i class="fa-solid fa-pepper-hot"></i></span><span>Reels que se vuelven virales <i class="fa-solid fa-pepper-hot"></i></span><span>Meta Ads <i class="fa-solid fa-pepper-hot"></i></span><span>Sitios web <i class="fa-solid fa-pepper-hot"></i></span>
+        <span>Diseño de marca <i class="fa-solid fa-pepper-hot"></i></span><span>Community manager <i class="fa-solid fa-pepper-hot"></i></span><span>Reels que se vuelven virales <i class="fa-solid fa-pepper-hot"></i></span><span>Meta Ads <i class="fa-solid fa-pepper-hot"></i></span><span>Sitios web <i class="fa-solid fa-pepper-hot"></i></span>
+      </div>
+    </div>
+
     <!-- DECLARACIÓN -->
-    <section class="claro arco declaracion seccion">
-      <div class="arco-baja" aria-hidden="true"><img src="assets/isotipo-rojo.webp" alt="" width="58" height="58">Sigue<br>bajando</div>
+    <section class="claro declaracion seccion">
       <div class="grilla" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="wrap">
         <p class="t rv">Sazonamos marcas con <b>diseño</b>, <b>contenido</b> y <b>publicidad</b> para que dejen de ser normales y empiecen a <b class="r">destacar.</b></p>
@@ -406,78 +446,55 @@
           <a href="#servicios">Diseño de marca</a>
           <a href="#redes">Gestión de redes</a>
           <a href="#viral">Clips virales</a>
+          <a href="#clientes">Sitios web</a>
           <a href="#servicios">Meta Ads</a>
           <a href="#servicios">Gráfica corporativa</a>
         </div>
       </div>
     </section>
 
-    <!-- PROYECTOS -->
-    <section class="claro seccion antes-arco" id="proyectos" style="padding-top:20px">
+    <!-- CLIENTES -->
+    <section class="claro seccion antes-arco" id="clientes" style="padding-top:20px">
       <div class="grilla" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="wrap">
         <div class="cab">
-          <p class="kicker rv">Portafolio de Bastián Sanhueza</p>
-          <h2 class="t rv"><b>Proyectos</b></h2>
-        </div>
-        <div class="filtros rv" role="group" aria-label="Filtrar proyectos">
-          <button type="button" data-f="todos" aria-pressed="true">Todos<sup>12</sup></button>
-          <button type="button" data-f="redes" aria-pressed="false">Redes sociales<sup>4</sup></button>
-          <button type="button" data-f="marca" aria-pressed="false">Identidad de marca<sup>3</sup></button>
-          <button type="button" data-f="otros" aria-pressed="false">Otros proyectos<sup>5</sup></button>
+          <p class="kicker rv">Clientes con los que trabajamos</p>
+          <h2 class="t rv"><b>ARVI</b> y <b class="r">ARVI Happy</b></h2>
+          <p class="rv">Dos marcas de la misma familia: les hacemos reels, gestionamos sus redes y desarrollamos sus sitios web.</p>
         </div>
 
-        <div class="proyectos" id="gridProyectos">
-          <a class="proy rv" data-c="redes" href="https://www.behance.net/gallery/248957943/Tu-Ejecutiva-Consalud-By-Wembii" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/a26de6248957943.Y3JvcCwzOTk1LDMxMjUsMTg3LDA.png" alt="Tu Ejecutiva Consalud" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>Tu Ejecutiva Consalud</h3><p class="chip-txt">Redes sociales · Wembii</p></div></div>
-          </a>
-          <a class="proy rv" data-c="redes" href="https://www.behance.net/gallery/248953701/SmartDrink-By-Wembii" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/092b5f248953701.Y3JvcCwzOTk1LDMxMjUsMTg3LDA.png" alt="SmartDrink" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>SmartDrink</h3><p class="chip-txt">Redes sociales · Wembii</p></div></div>
-          </a>
-          <a class="proy rv" data-c="redes" href="https://www.behance.net/gallery/246718649/Rayenco-Pizzeria-by-Wembii" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/9b7692246718649.Y3JvcCwxMjc4LDEwMDAsNjAsMA.png" alt="Rayenco Pizzería" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>Rayenco Pizzería</h3><p class="chip-txt">Redes sociales · Wembii</p></div></div>
-          </a>
-          <a class="proy rv" data-c="redes" href="https://www.behance.net/gallery/246716909/Escuela-Mi-Mundo-en-Movimiento-by-Wembii" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/2485e5246716909.Y3JvcCwzOTk1LDMxMjUsMTg3LDA.png" alt="Escuela Mi Mundo en Movimiento" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>Escuela Mi Mundo en Movimiento</h3><p class="chip-txt">Redes sociales · Wembii</p></div></div>
-          </a>
-          <a class="proy rv" data-c="marca" href="https://www.behance.net/gallery/233841223/NutrisContigo-Diseno-de-Logo" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/9c1385233841223.Y3JvcCwzODM1LDMwMDAsMTA0NCww.png" alt="NutrisContigo" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>NutrisContigo</h3><p class="chip-txt">Diseño de logo</p></div></div>
-          </a>
-          <a class="proy rv" data-c="marca" href="https://www.behance.net/gallery/232152961/Ajiencia-Pica-Agencia-de-Marketing" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/9f34f0232152961.Y3JvcCw5NTgsNzUwLDIyNyww.jpg" alt="Ajiencia Pica" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>Ajiencia Pica</h3><p class="chip-txt">Identidad de marca</p></div></div>
-          </a>
-          <a class="proy rv" data-c="marca" href="https://www.behance.net/gallery/184722299/Identidad-de-marca-Sala-Master" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/4ea6db184722299.Y3JvcCwzOTk1LDMxMjUsOTE5LDA.png" alt="Sala Master" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>Sala Master</h3><p class="chip-txt">Identidad de marca</p></div></div>
-          </a>
-          <a class="proy rv" data-c="otros" href="https://www.behance.net/gallery/172382645/GAMEPAL-APP" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/c58518172382645.Y3JvcCwxMDEzLDc5Miw0NTMsMTQy.jpg" alt="GamePal App" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>GamePal App</h3><p class="chip-txt">Diseño de app</p></div></div>
-          </a>
-          <a class="proy rv" data-c="otros" href="https://www.behance.net/gallery/207622435/RITA-LIRA" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/fa2246207622435.Y3JvcCwxMDA3LDc4OCwxOTcsMA.png" alt="Rita Lira" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>Rita Lira</h3><p class="chip-txt">Diseño</p></div></div>
-          </a>
-          <a class="proy rv" data-c="otros" href="https://www.behance.net/gallery/181047795/PARASIDERS-Game-Design" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/27c2b4181047795.66b57aa154af5.png" alt="Parasiders" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>Parasiders</h3><p class="chip-txt">Game design</p></div></div>
-          </a>
-          <a class="proy rv" data-c="otros" href="https://www.behance.net/gallery/179957403/AFE-El-placer-de-lo-natural" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/b1246a179957403.651190d2089bc.png" alt="AFE, el placer de lo natural" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>AFE</h3><p class="chip-txt">Campaña</p></div></div>
-          </a>
-          <a class="proy rv" data-c="otros" href="https://www.behance.net/gallery/168271539/Drink-Like-a-Fighter" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/210b95168271539.Y3JvcCw4MDgsNjMyLDAsMA.jpg" alt="Drink Like a Fighter" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>Drink Like a Fighter</h3><p class="chip-txt">Diseño</p></div></div>
-          </a>
-        </div>
-        <div class="ver-mas rv"><a class="pill pill-n" href="https://www.behance.net/bastinsanhueza1" target="_blank" rel="noopener"><i class="fab fa-behance" aria-hidden="true"></i> Ver portafolio completo en Behance</a></div>
+        <article class="cliente rv">
+          <div class="cliente-info">
+            <h3>ARVI.cl<span>Juegos mecánicos y sustentables</span></h3>
+            <p>Empresa chilena que fabrica y arrienda juegos mecánicos modulares, remolcables y sustentables para municipios, colegios, empresas y ferias.</p>
+            <div class="hicimos chip-txt"><span>Reels</span><span>Gestión de Instagram</span><span>Sitio web con catálogo y cotizador</span></div>
+            <p class="cliente-dato"><strong>9.123</strong> seguidores en Instagram</p>
+            <div class="cliente-links">
+              <a class="pill pill-n" href="https://arvi-cl.github.io/" target="_blank" rel="noopener"><i class="fa-solid fa-globe" aria-hidden="true"></i> Ver sitio web</a>
+              <a class="pill pill-b" href="https://www.instagram.com/arvi.cl/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i> @arvi.cl</a>
+            </div>
+          </div>
+          <div class="cliente-reels uno">
+            <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DduFBpGvAI0/" data-instgrm-version="14" style="max-width:540px; min-width:280px; width:100%; background:#fff; border:0; margin:0;"><div class="embed-fallback"><i class="fab fa-instagram" aria-hidden="true" style="color:#000"></i><a class="pill pill-n" target="_blank" rel="noopener" href="https://www.instagram.com/p/DduFBpGvAI0/">Ver en Instagram</a></div></blockquote></div>
+          </div>
+        </article>
+
+        <article class="cliente rv">
+          <div class="cliente-info">
+            <h3>ARVI Happy<span>Salón de cumpleaños en El Bosque</span></h3>
+            <p>Salón diseñado para celebrar a niños y niñas de hasta 10 años, con laberinto, piscina de pelotas y juegos.</p>
+            <div class="hicimos chip-txt"><span>Reels</span><span>Gestión de Instagram</span><span>Sitio web con calendario</span><span>Encuesta de reseñas</span></div>
+            <p class="cliente-dato"><strong>640</strong> seguidores en Instagram</p>
+            <div class="cliente-links">
+              <a class="pill pill-n" href="https://arvi-cl.github.io/happy/" target="_blank" rel="noopener"><i class="fa-solid fa-globe" aria-hidden="true"></i> Ver sitio web</a>
+              <a class="pill pill-b" href="https://www.instagram.com/arvihappy/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i> @arvihappy</a>
+            </div>
+          </div>
+          <div class="cliente-reels">
+            <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DdW0e6FBeIf/" data-instgrm-version="14" style="max-width:540px; min-width:280px; width:100%; background:#fff; border:0; margin:0;"><div class="embed-fallback"><i class="fab fa-instagram" aria-hidden="true" style="color:#000"></i><a class="pill pill-n" target="_blank" rel="noopener" href="https://www.instagram.com/reel/DdW0e6FBeIf/">Ver el reel</a></div></blockquote></div>
+            <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DewohuHBQg7/" data-instgrm-version="14" style="max-width:540px; min-width:280px; width:100%; background:#fff; border:0; margin:0;"><div class="embed-fallback"><i class="fab fa-instagram" aria-hidden="true" style="color:#000"></i><a class="pill pill-n" target="_blank" rel="noopener" href="https://www.instagram.com/reel/DewohuHBQg7/">Ver el reel</a></div></blockquote></div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -525,10 +542,10 @@
           <h2 class="t rv">Hicimos clips que<br><b class="y">la rompieron</b> en <b>viralidad</b></h2>
         </div>
         <div class="stats rv">
-          <div class="stat"><strong>27,4K</strong><span>Me gusta</span></div>
-          <div class="stat"><strong>5.276</strong><span>Veces compartido</span></div>
-          <div class="stat"><strong>3.668</strong><span>Guardados</span></div>
-          <div class="stat"><strong>449</strong><span>Comentarios</span></div>
+          <div class="stat"><i class="fa-solid fa-heart" aria-hidden="true"></i><strong>27,4K</strong><span>Me gusta</span></div>
+          <div class="stat"><i class="fa-solid fa-share" aria-hidden="true"></i><strong>5.276</strong><span>Veces compartido</span></div>
+          <div class="stat"><i class="fa-solid fa-bookmark" aria-hidden="true"></i><strong>3.668</strong><span>Guardados</span></div>
+          <div class="stat"><i class="fa-solid fa-comment" aria-hidden="true"></i><strong>449</strong><span>Comentarios</span></div>
         </div>
         <div class="viral-pie rv">
           <span>Cifras públicas del clip en TikTok, octubre de 2026.</span>
@@ -639,14 +656,18 @@
       <div class="grilla" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="wrap">
         <div class="sobre-grid">
-          <div class="sobre-img rv"><img src="assets/bastian.webp" alt="Bastián Sanhueza, fundador de Ajiencia Pica, con su notebook" width="2200" height="1875" loading="lazy"></div>
-          <div class="sobre-txt">
+          <div>
             <p class="kicker rv" style="color:var(--gris-osc)">Fundador de Ajiencia Pica</p>
             <h2 class="t rv">Soy <b>Bastián</b><br><b class="r">Sanhueza</b></h2>
+            <div class="herr rv" aria-label="Herramientas"><span>Photoshop</span><span>Illustrator</span><span>Premiere</span><span>CapCut</span><span>Canva</span></div>
+          </div>
+          <div class="sobre-txt">
             <p class="rv">Egresado de Publicidad con una misión clara: hacer que las marcas dejen de ser normales y empiecen a destacar.</p>
             <p class="rv">En Ajiencia Pica trabajas directo conmigo, desde la idea hasta el último post.</p>
-            <div class="herr rv" aria-label="Herramientas"><span>Photoshop</span><span>Illustrator</span><span>Premiere</span><span>CapCut</span><span>Canva</span></div>
-            <a class="pill pill-n rv" href="https://www.behance.net/bastinsanhueza1" target="_blank" rel="noopener"><i class="fab fa-behance" aria-hidden="true"></i> Mi portafolio</a>
+            <div class="portafolio rv">
+              <div><h3>Mi portafolio</h3><p>Branding, redes, apps y diseño que he hecho como publicista.</p></div>
+              <a class="pill pill-y" href="https://www.behance.net/bastinsanhueza1" target="_blank" rel="noopener"><i class="fab fa-behance" aria-hidden="true"></i> Ver en Behance</a>
+            </div>
             <div class="ia rv">
               <img src="assets/usamos-ia.webp" alt="" width="84" height="84" loading="lazy">
               <div><h3>Usamos IA wena wena</h3><p>Si tú quieres, editamos imágenes y reels con inteligencia artificial para que tu marca tenga contenido potente aunque no puedas producirlo.</p></div>
@@ -705,19 +726,6 @@
     document.querySelectorAll('#menu a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
 
-    // Filtros de proyectos
-    var botones = document.querySelectorAll('.filtros button');
-    botones.forEach(function(b){
-      b.addEventListener('click', function(){
-        var f = b.dataset.f;
-        botones.forEach(function(x){ x.setAttribute('aria-pressed', x === b); });
-        document.querySelectorAll('#gridProyectos .proy').forEach(function(p){
-          p.hidden = !(f === 'todos' || p.dataset.c === f);
-          p.style.opacity = 1; p.style.transform = 'none';
-        });
-      });
-    });
-
     // Cargar TikTok e Instagram solo cuando la sección se acerca
     var embedsCargados = false;
     function cargarEmbeds(){
@@ -727,9 +735,10 @@
       });
     }
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function(entries, obs){
+      var io = new IntersectionObserver(function(entries, obs){
         if (entries.some(function(e){ return e.isIntersecting; })) { cargarEmbeds(); obs.disconnect(); }
-      }, { rootMargin:'600px' }).observe(document.getElementById('redes'));
+      }, { rootMargin:'600px' });
+      ['clientes','redes'].forEach(function(id){ io.observe(document.getElementById(id)); });
     } else { cargarEmbeds(); }
 
     // Animaciones de entrada; si GSAP no carga, todo queda visible
