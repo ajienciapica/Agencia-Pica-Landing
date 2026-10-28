@@ -201,6 +201,17 @@
     .pieza-flechas button:hover{ background:var(--negro); color:var(--blanco); }
     .carrusel{ display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; padding-bottom:12px; scrollbar-width:thin; }
     .carrusel img{ flex:0 0 auto; width:min(62%, 640px); max-width:none; height:auto; aspect-ratio:1400 / 788; object-fit:cover; scroll-snap-align:start; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.12); }
+    .miniaturas{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; align-content:start; }
+    .miniaturas img{ width:100%; height:auto; aspect-ratio:16 / 9; object-fit:cover; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.14); transition:transform .3s; }
+    .miniaturas img:hover{ transform:scale(1.03); }
+    .ad{ display:flex; flex-direction:column; gap:16px; }
+    .ad-cab{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+    .ad-cab h5{ font-family:var(--display); font-weight:800; font-size:1.7rem; text-transform:uppercase; line-height:1; }
+    .ad-cab span{ background:var(--negro); color:var(--amarillo); border-radius:999px; padding:6px 12px; }
+    .ad-videos{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.316fr); gap:16px; align-items:start; }
+    .ad-videos figure{ margin:0; display:flex; flex-direction:column; gap:8px; }
+    .ad-videos video{ width:100%; height:auto; border-radius:12px; background:#000; box-shadow:0 10px 30px rgba(0,0,0,.14); }
+    .ad-videos figcaption{ font-size:.85rem; color:#4a4a45; }
     .cliente-reels{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px; align-items:start; }
     .cliente-reels.uno{ grid-template-columns:minmax(0, 440px); justify-content:center; }
     .cliente-reels .embed{ min-height:0; background:transparent; border:0; padding:0; border-radius:12px; }
@@ -348,6 +359,8 @@
       .stat{ padding:34px 18px; }
       .seccion{ padding:84px 0; }
       .cliente-reels{ grid-template-columns:1fr; }
+      .ad-videos{ grid-template-columns:1fr; }
+      .ad-videos figure:last-child{ max-width:280px; }
       .carrusel img{ width:86%; }
       .pieza-flechas{ display:none; }
       .hero-indice{ grid-template-columns:repeat(2, minmax(0,1fr)); }
@@ -472,8 +485,8 @@
       <div class="wrap">
         <div class="cab">
           <p class="kicker rv">Clientes con los que trabajamos</p>
-          <h2 class="t rv"><b>ARVI</b> y <b class="r">ARVI Happy</b></h2>
-          <p class="rv">Dos marcas de la misma familia: les hacemos reels, gestionamos sus redes y desarrollamos sus sitios web.</p>
+          <h2 class="t rv">Marcas que <b class="r">sazonamos</b></h2>
+          <p class="rv">ARVI, ARVI Happy, Club de Trading e Inversapiens: reels, redes, sitios web, piezas comerciales, miniaturas y anuncios.</p>
         </div>
 
         <article class="cliente rv">
@@ -549,6 +562,39 @@
           <div class="cliente-reels">
             <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DdW0e6FBeIf/" data-instgrm-version="14" style="max-width:540px; min-width:280px; width:100%; background:#fff; border:0; margin:0;"><div class="embed-fallback"><i class="fab fa-instagram" aria-hidden="true" style="color:#000"></i><a class="pill pill-n" target="_blank" rel="noopener" href="https://www.instagram.com/reel/DdW0e6FBeIf/">Ver el reel</a></div></blockquote></div>
             <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DewohuHBQg7/" data-instgrm-version="14" style="max-width:540px; min-width:280px; width:100%; background:#fff; border:0; margin:0;"><div class="embed-fallback"><i class="fab fa-instagram" aria-hidden="true" style="color:#000"></i><a class="pill pill-n" target="_blank" rel="noopener" href="https://www.instagram.com/reel/DewohuHBQg7/">Ver el reel</a></div></blockquote></div>
+          </div>
+        </article>
+        <article class="cliente rv">
+          <div class="cliente-info">
+            <h3>Club de Trading<span>e Inversapiens · Finanzas e inversión</span></h3>
+            <p>Dos marcas de educación financiera. Les diseñamos miniaturas para sus capítulos de YouTube, anuncios en video para Meta Ads y clips para redes, como el TikTok viral de @inversapiens.</p>
+            <div class="hicimos chip-txt"><span>Miniaturas de YouTube</span><span>Anuncios para Meta Ads</span><span>Clips para TikTok y reels</span></div>
+            <div class="cliente-links">
+              <a class="pill pill-n" href="#viral"><i class="fab fa-tiktok" aria-hidden="true"></i> Ver el clip viral</a>
+            </div>
+          </div>
+          <div class="miniaturas">
+            <img src="assets/trading/yt-tarjetas-credito.webp" alt="Miniatura: Mejores tarjetas de crédito, capítulo 305" width="1280" height="720" loading="lazy">
+            <img src="assets/trading/yt-cryptomonedas.webp" alt="Miniatura: Cryptomonedas, lo que estamos viendo, capítulo 312" width="1280" height="720" loading="lazy">
+            <img src="assets/trading/yt-cuentas-intereses.webp" alt="Miniatura: Cuentas que generan intereses, capítulo 314" width="1280" height="720" loading="lazy">
+            <img src="assets/trading/yt-dinero-moviendo.webp" alt="Miniatura: El dinero se está moviendo, transmisión en vivo" width="1280" height="720" loading="lazy">
+          </div>
+          <div class="piezas">
+            <h4 class="piezas-tit">Anuncios para Meta Ads</h4>
+            <div class="ad">
+              <div class="ad-cab"><h5>Reporte de Trading</h5><span class="chip-txt">Club de Trading</span></div>
+              <div class="ad-videos">
+                <figure><video controls playsinline preload="none" poster="assets/trading/reporte-horizontal.webp" width="1280" height="720"><source src="assets/trading/reporte-horizontal.mp4" type="video/mp4"></video><figcaption>Horizontal 16:9 · Feed</figcaption></figure>
+                <figure><video controls playsinline preload="none" poster="assets/trading/reporte-vertical.webp" width="720" height="1280"><source src="assets/trading/reporte-vertical.mp4" type="video/mp4"></video><figcaption>Vertical 9:16 · Reels y Stories</figcaption></figure>
+              </div>
+            </div>
+            <div class="ad">
+              <div class="ad-cab"><h5>Masterclass</h5><span class="chip-txt">Inversapiens</span></div>
+              <div class="ad-videos">
+                <figure><video controls playsinline preload="none" poster="assets/trading/masterclass-horizontal.webp" width="1280" height="720"><source src="assets/trading/masterclass-horizontal.mp4" type="video/mp4"></video><figcaption>Horizontal 16:9 · Feed</figcaption></figure>
+                <figure><video controls playsinline preload="none" poster="assets/trading/masterclass-vertical.webp" width="720" height="1280"><source src="assets/trading/masterclass-vertical.mp4" type="video/mp4"></video><figcaption>Vertical 9:16 · Reels y Stories</figcaption></figure>
+              </div>
+            </div>
           </div>
         </article>
       </div>
