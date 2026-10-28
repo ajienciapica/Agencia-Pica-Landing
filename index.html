@@ -144,6 +144,7 @@
     @keyframes girar{ to{ transform:rotate(360deg); } }
 
     .claro{ background:var(--hueso); color:var(--negro); }
+    .antes-arco{ padding-bottom:calc(var(--curva) + 70px) !important; }
     .seccion{ position:relative; padding:120px 0; }
 
     /* ---------- Declaración ---------- */
@@ -358,7 +359,7 @@
 
   <div class="menu" id="menu">
     <nav aria-label="Principal">
-      <a href="#proyectos">Proyectos <small>13</small></a>
+      <a href="#proyectos">Proyectos <small>12</small></a>
       <a href="#redes">Redes sociales</a>
       <a href="#viral">Clips virales</a>
       <a href="#servicios">Servicios</a>
@@ -408,7 +409,7 @@
     </section>
 
     <!-- PROYECTOS -->
-    <section class="claro seccion" id="proyectos" style="padding-top:20px">
+    <section class="claro seccion antes-arco" id="proyectos" style="padding-top:20px">
       <div class="grilla" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="wrap">
         <div class="cab">
@@ -416,10 +417,10 @@
           <h2 class="t rv"><b>Proyectos</b></h2>
         </div>
         <div class="filtros rv" role="group" aria-label="Filtrar proyectos">
-          <button type="button" data-f="todos" aria-pressed="true">Todos<sup>13</sup></button>
+          <button type="button" data-f="todos" aria-pressed="true">Todos<sup>12</sup></button>
           <button type="button" data-f="redes" aria-pressed="false">Redes sociales<sup>4</sup></button>
           <button type="button" data-f="marca" aria-pressed="false">Identidad de marca<sup>3</sup></button>
-          <button type="button" data-f="otros" aria-pressed="false">Otros proyectos<sup>6</sup></button>
+          <button type="button" data-f="otros" aria-pressed="false">Otros proyectos<sup>5</sup></button>
         </div>
 
         <div class="proyectos" id="gridProyectos">
@@ -465,15 +466,11 @@
           </a>
           <a class="proy rv" data-c="otros" href="https://www.behance.net/gallery/179957403/AFE-El-placer-de-lo-natural" target="_blank" rel="noopener">
             <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/b1246a179957403.651190d2089bc.png" alt="AFE, el placer de lo natural" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>AFE</h3><p class="chip-txt">El placer de lo natural</p></div></div>
+              <div class="proy-info"><h3>AFE</h3><p class="chip-txt">Campaña</p></div></div>
           </a>
           <a class="proy rv" data-c="otros" href="https://www.behance.net/gallery/168271539/Drink-Like-a-Fighter" target="_blank" rel="noopener">
             <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/210b95168271539.Y3JvcCw4MDgsNjMyLDAsMA.jpg" alt="Drink Like a Fighter" width="808" height="632" loading="lazy">
               <div class="proy-info"><h3>Drink Like a Fighter</h3><p class="chip-txt">Diseño</p></div></div>
-          </a>
-          <a class="proy rv" data-c="otros" href="https://www.behance.net/gallery/168088565/Mandarina-x-Veit" target="_blank" rel="noopener">
-            <div class="proy-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/808/cda83a168088565.Y3JvcCw4MDgsNjMyLDAsMA.png" alt="Mandarina x Veit" width="808" height="632" loading="lazy">
-              <div class="proy-info"><h3>Mandarina x Veit</h3><p class="chip-txt">Diseño</p></div></div>
           </a>
         </div>
         <div class="ver-mas rv"><a class="pill pill-n" href="https://www.behance.net/bastinsanhueza1" target="_blank" rel="noopener"><i class="fab fa-behance" aria-hidden="true"></i> Ver portafolio completo en Behance</a></div>
@@ -541,7 +538,7 @@
     </video>
 
     <!-- SERVICIOS -->
-    <section class="claro seccion" id="servicios">
+    <section class="claro seccion antes-arco" id="servicios">
       <div class="grilla" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="wrap">
         <div class="cab">
@@ -588,7 +585,7 @@
     </section>
 
     <!-- PLANES -->
-    <section class="oscuro arco-osc seccion" id="planes" style="position:relative; z-index:3">
+    <section class="oscuro arco-osc seccion antes-arco" id="planes" style="position:relative; z-index:3">
       <div class="grilla" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="wrap">
         <div class="cab">
@@ -599,9 +596,9 @@
           <article class="plan">
             <div class="plan-top">
               <div><h3>Básico</h3><p class="plan-desc">Ideal para comenzar.</p></div>
-              <span class="picor" aria-label="Picante 1 de 3"><i class="fa-solid fa-pepper-hot on"></i><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
             </div>
             <p class="plan-precio">$80.000<span>/ mes</span></p>
+            <span class="picor" aria-label="Picante 1 de 3"><i class="fa-solid fa-pepper-hot on"></i><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
             <ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>2 gráficas semanales</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Grilla semanal</li></ul>
             <a class="pill pill-b" href="https://wa.me/56930638154?text=Quiero%20saber%20m%C3%A1s%20del%20plan%20b%C3%A1sico" target="_blank" rel="noopener">Quiero el Básico</a>
           </article>
@@ -634,7 +631,7 @@
     </section>
 
     <!-- SOBRE BASTIÁN -->
-    <section class="claro arco seccion sobre" id="bastian" style="padding-top:calc(var(--curva) + 20px)">
+    <section class="claro arco seccion sobre antes-arco" id="bastian" style="padding-top:calc(var(--curva) + 20px)">
       <div class="grilla" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="wrap">
         <div class="sobre-grid">
