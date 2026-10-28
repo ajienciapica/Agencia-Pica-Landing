@@ -191,7 +191,7 @@
     .cliente-dato strong{ font-family:var(--display); font-weight:800; font-size:2.6rem; line-height:1; font-variant-numeric:tabular-nums; }
     .cliente-links{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
     .cliente-reels{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px; align-items:start; }
-    .cliente-reels .embed{ min-height:540px; background:var(--blanco); border:1px solid var(--linea-clara); padding:0; }
+    .cliente-reels .embed{ min-height:0; background:transparent; border:0; padding:0; border-radius:12px; }
     .cliente-reels .embed-fallback{ color:#4a4a45; }
 
     /* ---------- Redes ---------- */
@@ -273,6 +273,8 @@
     .portafolio p{ color:#cfcfcb; font-size:.92rem; margin-top:6px; max-width:260px; }
     .sobre-txt p{ color:#3a3a36; max-width:520px; font-size:1.1rem; }
     .sobre-txt p + p{ margin-top:14px; }
+    .sobre-txt .portafolio p{ color:#cfcfcb; font-size:.92rem; margin-top:6px; }
+    .sobre-txt .ia p{ color:#4a4a45; font-size:.92rem; margin-top:4px; }
     .herr{ display:flex; flex-wrap:wrap; gap:8px; margin:28px 0 34px; }
     .herr span{ border:1px solid rgba(0,0,0,.25); border-radius:999px; padding:6px 14px; font-size:.9rem; }
     .ia{ display:flex; gap:18px; align-items:center; margin-top:34px; padding:18px; background:var(--blanco); border-radius:16px; max-width:500px; }
@@ -412,7 +414,7 @@
             <svg class="sello-aro" viewBox="0 0 200 200">
               <defs><path id="aro" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"></path></defs>
               <text font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="600" font-size="13.5" letter-spacing="3.4" fill="#f4f4f2">
-                <textPath href="#aro">MARKETING QUE PICA ✱ HECHO CON MUCHO AJÍ ✱ SANTIAGO DE CHILE ✱ </textPath>
+                <textPath href="#aro" textLength="548" lengthAdjust="spacing">MARKETING QUE PICA ✱ HECHO CON MUCHO AJÍ ✱ SANTIAGO DE CHILE ✱ </textPath>
               </text>
             </svg>
             <div class="sello-centro"><img src="assets/logo-negativo.webp" alt="" width="1400" height="1400"></div>
@@ -482,7 +484,7 @@
             <h3>ARVI Happy<span>Salón de cumpleaños en El Bosque</span></h3>
             <p>Salón diseñado para celebrar a niños y niñas de hasta 10 años, con laberinto, piscina de pelotas y juegos.</p>
             <div class="hicimos chip-txt"><span>Reels</span><span>Gestión de Instagram</span><span>Sitio web con calendario</span><span>Encuesta de reseñas</span></div>
-            <p class="cliente-dato"><strong>@arvihappy</strong></p>
+            <p class="cliente-dato"><strong>640</strong> seguidores en Instagram</p>
             <div class="cliente-links">
               <a class="pill pill-n" href="https://arvi-cl.github.io/happy/" target="_blank" rel="noopener"><i class="fa-solid fa-globe" aria-hidden="true"></i> Ver sitio web</a>
               <a class="pill pill-b" href="https://www.instagram.com/arvihappy/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i> @arvihappy</a>
