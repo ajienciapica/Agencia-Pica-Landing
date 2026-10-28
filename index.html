@@ -231,7 +231,7 @@
     .plan.pro{ background:var(--amarillo); color:var(--negro); }
     .plan-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
     .plan h3{ font-family:var(--display); font-weight:800; font-size:2.4rem; text-transform:uppercase; line-height:1; }
-    .plan .etiqueta{ background:var(--rojo); color:var(--blanco); padding:6px 10px; border-radius:999px; }
+    .plan .etiqueta{ white-space:nowrap; background:var(--rojo); color:var(--blanco); padding:6px 10px; border-radius:999px; }
     .plan.pro .etiqueta{ background:var(--negro); color:var(--amarillo); }
     .picor{ display:flex; gap:5px; color:rgba(255,255,255,.2); font-size:1rem; }
     .picor .on{ color:#e2412d; }
@@ -314,6 +314,10 @@
       .marca span{ font-size:1.25rem; }
       .marca img{ width:38px; height:38px; }
       .hero{ padding-top:120px; }
+      .hero h1{ font-size:clamp(2.7rem, 12.5vw, 3.6rem); }
+      .hero h1 br{ display:none; }
+      .hero .kicker{ font-size:.9rem; }
+      .declaracion{ padding-top:190px; }
       .seccion{ padding:84px 0; }
       .proyectos{ grid-template-columns:1fr; }
       .redes-grid{ grid-template-columns:1fr; }
