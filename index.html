@@ -283,6 +283,13 @@
     .plan-precio{ font-family:var(--display); font-weight:800; font-size:clamp(3rem, 4.6vw, 4rem); line-height:1; font-variant-numeric:tabular-nums; }
     .plan-precio span{ font-weight:300; font-size:.4em; margin-left:4px; }
     .plan-iva{ margin-top:-6px; font-size:.82rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; opacity:.7; }
+    .plan-total{ display:flex; flex-direction:column; gap:2px; padding:16px 18px; border-radius:14px; background:rgba(255,255,255,.06); }
+    .plan-total span{ font-size:.75rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; opacity:.7; }
+    .plan-total b{ font-family:var(--display); font-weight:800; font-size:2rem; line-height:1.05; text-transform:uppercase; }
+    .plan-total small{ font-size:.9rem; opacity:.8; }
+    .plan.pro .plan-total{ background:rgba(0,0,0,.08); }
+    .plan-pago{ display:inline-flex; align-items:center; gap:8px; font-size:.78rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+    .plan-pago::before{ content:""; width:8px; height:8px; border-radius:50%; background:#2fbf71; }
     .plan ul{ list-style:none; display:flex; flex-direction:column; gap:12px; padding-top:22px; border-top:1px solid var(--linea-osc); }
     .plan.pro ul{ border-color:rgba(0,0,0,.15); }
     .plan li{ display:flex; gap:12px; }
@@ -781,8 +788,10 @@
             </div>
             <p class="plan-precio">$79.990<span>/ mes</span></p>
             <p class="plan-iva">IVA incluido</p>
+            <span class="plan-pago">Se paga mensualmente</span>
             <span class="picor" aria-label="Picante 1 de 3"><i class="fa-solid fa-pepper-hot on"></i><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
-            <ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>2 gráficas semanales</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Grilla semanal</li></ul>
+            <div class="plan-total"><span>Total al mes</span><b>8 piezas</b><small>8 gráficas + grilla semanal</small></div>
+            <ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>2 gráficas semanales</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Grilla semanal</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Gestión y publicación en redes</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>WhatsApp de lunes a viernes, 9:00 a 18:00</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Hasta 1 reunión mensual por Meet</li></ul>
             <a class="pill pill-b" href="https://wa.me/56930638154?text=Quiero%20saber%20m%C3%A1s%20del%20plan%20b%C3%A1sico" target="_blank" rel="noopener">Quiero el Básico</a>
           </article>
           <article class="plan pro">
@@ -792,8 +801,10 @@
             </div>
             <p class="plan-precio">$119.990<span>/ mes</span></p>
             <p class="plan-iva">IVA incluido</p>
+            <span class="plan-pago">Se paga mensualmente</span>
             <span class="picor" aria-label="Picante 2 de 3"><i class="fa-solid fa-pepper-hot on"></i><i class="fa-solid fa-pepper-hot on"></i><i class="fa-solid fa-pepper-hot"></i></span>
-            <ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>2 gráficas semanales</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>1 story semanal</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>2 reels mensuales</li></ul>
+            <div class="plan-total"><span>Total al mes</span><b>14 piezas</b><small>8 gráficas + 4 stories + 2 reels</small></div>
+            <ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>2 gráficas semanales</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>1 story semanal</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>2 reels mensuales</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Gestión y publicación en redes</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>WhatsApp de lunes a viernes, 9:00 a 18:00</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Hasta 2 reuniones mensuales por Meet</li></ul>
             <a class="pill pill-n" href="https://wa.me/56930638154?text=Quiero%20saber%20m%C3%A1s%20del%20plan%20pro" target="_blank" rel="noopener">Quiero el Pro</a>
           </article>
           <article class="plan">
@@ -803,8 +814,10 @@
             </div>
             <p class="plan-precio">$189.990<span>/ mes</span></p>
             <p class="plan-iva">IVA incluido</p>
+            <span class="plan-pago">Se paga mensualmente</span>
             <span class="picor" aria-label="Picante 3 de 3"><i class="fa-solid fa-pepper-hot on"></i><i class="fa-solid fa-pepper-hot on"></i><i class="fa-solid fa-pepper-hot on"></i></span>
-            <ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>3 gráficas semanales</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>1 reel semanal</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>1 story semanal</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Configuración de Meta Ads</li></ul>
+            <div class="plan-total"><span>Total al mes</span><b>20 piezas</b><small>12 gráficas + 4 reels + 4 stories + Meta Ads</small></div>
+            <ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>3 gráficas semanales</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>1 reel semanal</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>1 story semanal</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Configuración de Meta Ads</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Gestión y publicación en redes</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>WhatsApp de lunes a viernes, 9:00 a 18:00</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Hasta 2 reuniones mensuales por Meet</li></ul>
             <a class="pill pill-y" href="https://wa.me/56930638154?text=Quiero%20saber%20m%C3%A1s%20del%20plan%20picante" target="_blank" rel="noopener">Quiero el Picante</a>
           </article>
         </div>
